@@ -10,9 +10,31 @@
     display: block;
 }
 
+.subnav:hover .subnav-text,
+.subnav:active .subnav-text,
+.subnav:focus .subnav-text,
+.subnav:focus-within .subnav-text,
+
+.subnav-content>a:hover,
+.subnav-content>a:active,
+.subnav-content>a:focus,
+.subnav-content>a:focus-within {
+    filter: invert(100%) invert(8%) sepia(92%) saturate(6928%) hue-rotate(31deg) brightness(91%) contrast(120%);
+}
+
 .subnav-content>a {
     display: block;
 
     text-decoration: none;
+    text-align: left;
     margin-top: 10px;
+}
+
+
+
+.subnav-content>a>img {
+    max-width: 25px;
+    display: inline;
+    transform: translateY(25%);
+    margin-right: 5px;
 }

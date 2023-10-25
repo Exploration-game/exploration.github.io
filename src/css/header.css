@@ -5,16 +5,17 @@ header {
     text-align: center;
 }
 
+
 header>h1 {
     margin-right: 50px;
 }
 
-header>div>div>img {
+header>div>div>.subnav-text>img {
     max-width: 25px;
     transform: translateY(25%);
 }
 
-header>div>div>h2 {
+header>div>div>.subnav-text>h2 {
     margin-right: 25px;
     text-decoration: none;
     font-size: large;
@@ -24,6 +25,6 @@ header>div>div>h2 {
 header>h1,
 header>div,
 header>div>div,
-header>div>div>h2 {
+header>div>div>.subnav-text>h2 {
     display: inline-block;
 }

@@ -10,3 +10,8 @@ button {
 body {
     margin: 0;
 }
+
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
