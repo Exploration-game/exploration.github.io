@@ -30,11 +30,18 @@
     margin-top: 10px;
 }
 
-
-
 .subnav-content>a>img {
     max-width: 25px;
     display: inline;
     transform: translateY(25%);
     margin-right: 5px;
+}
+
+.svg-color {
+    max-width: 25px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+
+    transform: translateY(25%);
 }
