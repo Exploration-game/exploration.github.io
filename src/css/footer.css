@@ -1,0 +1,24 @@
+footer {
+    padding: 1vh;
+}
+
+
+
+footer>div,
+footer>div>button,
+footer>div>div {
+    display: inline;
+}
+
+footer>div>a {
+    margin: 5px;
+}
+
+footer:first-child {
+    float: left;
+}
+
+footer>:last-child {
+    float: right;
+    margin-right: 75px;
+}

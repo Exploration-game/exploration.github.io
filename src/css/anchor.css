@@ -1,0 +1,32 @@
+#theme>img,
+#settings>img,
+#scroll-down>a>img,
+#scroll-up>a>img {
+    width: 2vw;
+    height: 2vw;
+
+    margin: 5px;
+}
+
+#anchor {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+
+    display: grid;
+
+    max-width: min-content;
+}
+
+#theme,
+#settings,
+#scroll-down,
+#scroll-up {
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#anchor>#scroll-up {
+    position: fixed;
+    bottom: 5px;
+}

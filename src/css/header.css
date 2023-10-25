@@ -1,0 +1,29 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+header>h1 {
+    margin-right: 50px;
+}
+
+header>div>div>img {
+    max-width: 25px;
+    transform: translateY(25%);
+}
+
+header>div>div>h2 {
+    margin-right: 25px;
+    text-decoration: none;
+    font-size: large;
+    font-family: Varela;
+}
+
+header>h1,
+header>div,
+header>div>div,
+header>div>div>h2 {
+    display: inline-block;
+}

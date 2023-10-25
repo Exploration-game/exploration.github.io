@@ -1,0 +1,18 @@
+.subnav-content {
+    display: none;
+    position: absolute;
+}
+
+.subnav:hover .subnav-content,
+.subnav:active .subnav-content,
+.subnav:focus .subnav-content,
+.subnav:focus-within .subnav-content {
+    display: block;
+}
+
+.subnav-content>a {
+    display: block;
+
+    text-decoration: none;
+    margin-top: 10px;
+}
