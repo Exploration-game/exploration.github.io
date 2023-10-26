@@ -4,7 +4,6 @@ index(); async function index() {
     await styles();
     await includes();
 
-    customPage();
 }
 async function includes() {
     console.info("Loading includes");
@@ -14,6 +13,7 @@ async function includes() {
     await include_html("/src/html/include/header.html", "body", false);
     await include_html("/src/html/include/anchor.html", "body", false);
     await include_html("/src/html/include/content.html", "body", false);
+    await customPage();
     await include_html("/src/html/include/footer.html", "body", false);
 }
 
@@ -26,11 +26,14 @@ async function styles() {
     await include_css("/src/css/header.css");
     await include_css("/src/css/header-navbar.css");
     await include_css("/src/css/anchor.css");
+    await include_css("/src/css/content.css");
     await include_css("/src/css/footer.css");
 }
 
 async function customPage() {
     console.info("Loading custom page");
+
+    await include_html("/src/html/content/welcome.html", "content", true);
 }
 
 async function include_multiple(name, area) {

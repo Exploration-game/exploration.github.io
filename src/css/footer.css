@@ -1,8 +1,11 @@
 footer {
-    padding: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 15px;
+
+
+    position: relative;
+    bottom: 0;
 }
-
-
 
 footer>div {
     display: inline;
