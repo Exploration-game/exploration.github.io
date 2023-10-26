@@ -1,11 +1,8 @@
 index(); async function index() {
     console.info("Loading index");
 
-    //await include_html("/src/html/include/head.html", "head", false);
-
     await styles();
     await includes();
-
 }
 
 async function includes() {
@@ -14,7 +11,9 @@ async function includes() {
     await include_html("/src/html/include/header.html", "body", false);
     await include_html("/src/html/include/anchor.html", "body", false);
     await include_html("/src/html/include/content.html", "body", false);
+
     await customPage();
+    
     await include_html("/src/html/include/footer.html", "body", false);
 }
 
