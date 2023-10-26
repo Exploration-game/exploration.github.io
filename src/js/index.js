@@ -1,7 +1,7 @@
 index(); async function index() {
     console.info("Loading index");
 
-    await include_html("/src/html/include/head.html", "head", false);
+    //await include_html("/src/html/include/head.html", "head", false);
 
     await styles();
     await includes();
