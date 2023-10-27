@@ -8,8 +8,9 @@ header {
 }
 
 
-header>a>h1 {
+header>a {
     margin-right: 50px;
+    text-decoration: none;
 }
 
 header>div>div>.subnav-text>img {
