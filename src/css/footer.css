@@ -16,6 +16,10 @@ footer>div>p {
     margin: 5px;
 }
 
+footer>div>p {
+    opacity: 2%;
+}
+
 footer>:first-child {
     float: left;
 }
