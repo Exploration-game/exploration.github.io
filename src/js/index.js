@@ -10,6 +10,7 @@ async function includes() {
 
     await include_html("/src/html/include/header.html", "body", false);
     await include_html("/src/html/include/anchor.html", "body", false);
+    await setIconTheme();
     await include_html("/src/html/include/content.html", "body", false);
 
     await customPage();
