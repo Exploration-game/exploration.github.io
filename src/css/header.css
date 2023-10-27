@@ -4,6 +4,7 @@ header {
     width: 100%;
     text-align: center;
     z-index: 1000;
+    background: linear-gradient(var(--main-color), var(--background-color));
 }
 
 
@@ -29,3 +30,5 @@ header>div>div,
 header>div>div>.subnav-text>h2 {
     display: inline-block;
 }
+
+.subnav-content

@@ -9,3 +9,9 @@
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
+
+article>div>p,
+article>div>h2,
+article>div>h3 {
+    display: inline-block;
+}

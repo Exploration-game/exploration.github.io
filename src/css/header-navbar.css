@@ -1,6 +1,13 @@
 .subnav-content {
     display: none;
     position: absolute;
+    background-color: var(--background-color);
+    padding: 0px 15px 15px 15px;
+
+    border-radius: 5%;
+    border-width: 2px;
+    border-color: var(--main-color);
+    border-style: solid;
 }
 
 .subnav:hover .subnav-content,
@@ -39,7 +46,7 @@
 
 .svg-color {
     max-width: 25px;
-    
+
     padding-left: 5px;
     padding-right: 5px;
 

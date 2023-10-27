@@ -1,18 +1,21 @@
 :root.light {
-    background-color: rgb(225, 225, 225);
+    --background-color: rgb(225, 225, 225);
+    --main-color: rgb(30, 30, 30);
     --text-color: rgb(30, 30, 30);
     --link-color: rgb(200, 200, 200);
 }
 
 :root.day {
-    background-color: rgb(30, 30, 45);
+    --background-color: rgb(30, 30, 45);
+    --main-color: rgb(30, 30, 30);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(200, 200, 200);
 }
 
 :root.default-theme,
 :root.dark {
-    background-color: rgb(30, 30, 30);
+    --background-color: rgb(30, 30, 30);
+    --main-color: rgb(50, 50, 50);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(200, 200, 200);
 }
@@ -20,4 +23,8 @@
 :root.dark .svg,
 :root.default-theme .svg {
     filter: invert(1);
+}
+
+body {
+    background-color: var(--background-color);
 }
