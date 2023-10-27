@@ -13,7 +13,7 @@ async function includes() {
     await include_html("/src/html/include/content.html", "body", false);
 
     await customPage();
-    
+
     await include_html("/src/html/include/footer.html", "body", false);
 }
 
@@ -21,6 +21,7 @@ async function styles() {
     console.info("Loading style");
 
     await include_css("/src/css/theme.css");
+    await include_script("/src/js/theme.js");
     await include_css("/src/css/font.css");
     await include_css("/src/css/user-agent.css");
     await include_css("/src/css/header.css");
