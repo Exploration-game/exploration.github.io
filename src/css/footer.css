@@ -12,8 +12,12 @@ footer {
     background: linear-gradient(var(--background-color), var(--main-color));
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: baseline;
+
+    border-top-color: var(--main-color);
+    border-top-width: 2px;
+    border-top-style: solid;
 }
 
 footer>div>a,

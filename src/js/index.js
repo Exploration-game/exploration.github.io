@@ -36,6 +36,10 @@ async function customPage() {
     console.info("Loading custom page");
 
     await include_html("/src/html/content/welcome.html", "content", true);
+
+    await include_css("/src/css/github-update.css");
+    await include_html("/src/html/content/github-update.html", "content", true);
+    await include_script("/src/js/github-update.js");
 }
 
 async function include_multiple(name, area) {

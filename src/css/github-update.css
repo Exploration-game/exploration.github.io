@@ -1,0 +1,30 @@
+#github-update {
+    max-width: fit-content;
+    max-height: 120px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--main-color);
+
+    padding-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#github-update>img {
+    background-color: var(--main-color);
+    min-width: 120px;
+    min-height: 120px;
+    max-height: inherit;
+}
+
+#github-update>img,
+#github-update>div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#github-update>div>* {
+    display: block;
+    text-decoration: none;
+}
