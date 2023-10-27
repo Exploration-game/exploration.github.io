@@ -1,15 +1,15 @@
 :root.light {
     --background-color: rgb(225, 225, 225);
-    --main-color: rgb(30, 30, 30);
+    --main-color: rgb(205, 205, 205);
     --text-color: rgb(30, 30, 30);
-    --link-color: rgb(200, 200, 200);
+    --link-color: rgb(80, 80, 80);
 }
 
 :root.day {
     --background-color: rgb(30, 30, 45);
-    --main-color: rgb(30, 30, 30);
+    --main-color: rgb(50, 50, 65);
     --text-color: rgb(225, 225, 225);
-    --link-color: rgb(200, 200, 200);
+    --link-color: rgb(175, 175, 175);
 }
 
 :root.default-theme,
@@ -17,7 +17,8 @@
     --background-color: rgb(30, 30, 30);
     --main-color: rgb(50, 50, 50);
     --text-color: rgb(225, 225, 225);
-    --link-color: rgb(200, 200, 200);
+    --link-color: rgb(175, 175, 175);
+    --filter-color: invert(100%) invert(8%) sepia(92%) saturate(6928%) hue-rotate(31deg) brightness(91%) contrast(120%);
 }
 
 :root.dark .svg,

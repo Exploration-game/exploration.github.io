@@ -8,7 +8,7 @@ header {
 }
 
 
-header>h1 {
+header>a>h1 {
     margin-right: 50px;
 }
 
@@ -24,11 +24,9 @@ header>div>div>.subnav-text>h2 {
     font-family: Varela;
 }
 
-header>h1,
+header>a>h1,
 header>div,
 header>div>div,
 header>div>div>.subnav-text>h2 {
     display: inline-block;
 }
-
-.subnav-content
