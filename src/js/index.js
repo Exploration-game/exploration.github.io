@@ -36,7 +36,6 @@ async function customPage() {
     console.info("Loading custom page");
 
     await include_html("/src/html/content/welcome.html", "content", true);
-    await include_html("/readme.md", "content", true);
 }
 
 async function include_multiple(name, area) {
