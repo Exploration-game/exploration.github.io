@@ -6,8 +6,6 @@
     border-width: 2px;
     border-color: var(--main-color);
     border-radius: 10px;
-
-    padding-right: 20px;
 }
 
 #github-update>img {
@@ -17,13 +15,41 @@
     border-radius: inherit;
 }
 
-#github-update>img,
-#github-update>div {
-    display: inline-block;
-    vertical-align: middle;
-}
 
 #github-update>div>* {
     display: block;
     text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+    #github-update>img {
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+
+        margin-bottom: 20px;
+    }
+
+    #github-update>img,
+    #github-update>div {
+        display: block;
+    }
+
+    #github-update {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+
+    #github-update>img,
+    #github-update>div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #github-update {
+        padding-right: 20px;
+    }
+
 }
