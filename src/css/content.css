@@ -3,8 +3,7 @@
     height: max-content;
     position: relative;
 
-    margin-right: 15%;
-    margin-left: 15%;
+
 
     padding-top: 5vh;
     padding-bottom: 5vh;
@@ -14,4 +13,18 @@ article>div>p,
 article>div>h2,
 article>div>h3 {
     display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+    #content {
+        margin-right: 2vw;
+        margin-left: 2vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #content {
+        margin-right: 15vw;
+        margin-left: 15vw;
+    }
 }

@@ -8,6 +8,8 @@
     border-width: 2px;
     border-color: var(--main-color);
     border-style: solid;
+
+    z-index: 1001;
 }
 
 .subnav:hover .subnav-content,
