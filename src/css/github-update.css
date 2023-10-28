@@ -41,7 +41,6 @@
 }
 
 @media screen and (min-width: 700px) {
-
     #github-update>img,
     #github-update>div {
         display: inline-block;
@@ -51,5 +50,4 @@
     #github-update {
         padding-right: 20px;
     }
-
 }

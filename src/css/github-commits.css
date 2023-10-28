@@ -1,0 +1,92 @@
+#github-commits {
+    max-width: fit-content;
+    max-height: fit-content;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--main-color);
+    border-radius: 10px;
+}
+
+#github-commits>div {
+    display: flex;
+    flex-direction: row;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+#github-commits>div>img {
+    max-height: 50px;
+    padding: 5px;
+}
+
+#github-commits>div>a>img {
+    max-height: 25px;
+}
+
+#github-commits>div>a {
+    display: flex;
+    align-items: center;
+}
+
+#github-commits>div>p {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#github-commits>div>*:not(:first-child) {
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: var(--main-color);
+    font-size: 10px;
+}
+
+#github-commits>div:not(:last-child) {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--main-color);
+}
+
+#github-commits>div>img,
+#github-commits>div>a {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#github-commits>div>:nth-child(2) {
+    min-width: 6vw;
+    max-width: 8vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#github-commits>div>:nth-child(3) {
+    min-width: 15vw;
+    max-width: 15vw;
+    overflow-y: auto;
+}
+
+#github-commits>div>:nth-child(4) {
+    max-width: 55px;
+}
+
+#github-commits>div>:nth-child(5) {
+    max-width: 75px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+    #github-commits>div>:nth-child(2) {
+        min-width: 10vw;
+        max-width: 15vw;
+    }
+
+    #github-commits>div>:nth-child(4) {
+        display: none;
+    }
+
+    #github-commits>div>:nth-child(5) {
+        display: none;
+    }
+}
