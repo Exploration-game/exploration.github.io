@@ -18,6 +18,7 @@
 #github-commits>div>img {
     max-height: 50px;
     padding: 5px;
+    border-radius: 12px;
 }
 
 #github-commits>div>a>img {
