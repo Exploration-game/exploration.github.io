@@ -42,7 +42,7 @@ async function getCommits(amount) {
             var link = document.createElement("a");
             link.href = "https://github.com/GHub-fr/" + name;
             var logo = document.createElement("img");
-            logo.src = "/assets/svg/network.svg";
+            logo.src = "/assets/svg/link.svg";
             logo.classList = "svg";
 
             newDiv.appendChild(image);
