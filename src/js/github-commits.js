@@ -41,7 +41,7 @@ async function getCommits(amount) {
         var sha = document.createElement("p");
         sha.textContent = y2;
         var logo = document.createElement("img");
-        logo.src = "/assets/svg/network.svg";
+        logo.src = "/assets/svg/link.svg";
         logo.classList = "svg";
 
         newDiv.appendChild(image);
