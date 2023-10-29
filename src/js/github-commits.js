@@ -1,16 +1,16 @@
 (async function () {
-    await getCommits();
+    await getCommits(5);
 })();
 
 
-async function getCommits() {
+async function getCommits(amount) {
     console.info("Getting Github-Commits");
 
+    amount++;
     var x = await gather('https://api.github.com/repos/GHub-FR/Ghub-fr.github.io/commits');
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < amount; i++) {
         var y = getValue(x[i], "sha");
-        if (String(y).length >= 8)
-        {
+        if (String(y).length >= 8) {
             var y2 = String(y.substring(0, 12) + "...");
         }
         var z = getValue(x[i], "commit")
@@ -25,8 +25,6 @@ async function getCommits() {
 
         var gatherAvatar = getValue(x[i], "author");
         var avatarGatherValue = getValue(gatherAvatar, "avatar_url");
-
-        console.log(i + " : " + name + ", " + message + ". " + date);
 
         var div = document.getElementById("github-commits");
         var newDiv = document.createElement("div");

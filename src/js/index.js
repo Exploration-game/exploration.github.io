@@ -37,7 +37,7 @@ async function customPage() {
 
     await include_html("/src/html/content/welcome.html", "content", true);
 
-    /* await include_css("/src/css/github-update.css");
+    await include_css("/src/css/github-update.css");
     await include_script("/src/js/gather.js");
     await include_html("/src/html/content/github-update.html", "content", true);
     await include_script("/src/js/github-update.js");
@@ -45,7 +45,7 @@ async function customPage() {
     await include_css("/src/css/github-commits.css");
     await include_script("/src/js/gather.js");
     await include_html("/src/html/content/github-commits.html", "content", true);
-    await include_script("/src/js/github-commits.js"); */
+    await include_script("/src/js/github-commits.js");
 
     await include_css("/src/css/github-events.css");
     await include_script("/src/js/gather.js");
