@@ -6,6 +6,8 @@
     height: 2vw;
 
     margin: 5px;
+
+
 }
 
 #anchor {
@@ -29,4 +31,9 @@
 #scroll-up {
     position: fixed;
     bottom: 5px;
+}
+
+#anchor>button,
+#anchor>a>button {
+    background-color: var(--main-color);
 }
