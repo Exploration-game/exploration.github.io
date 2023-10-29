@@ -56,15 +56,14 @@
 
 #github-commits>div>:nth-child(2) {
     min-width: 6vw;
-    max-width: 8vw;
-    overflow-x: auto;
-    overflow-y: hidden;
+    max-width: 10vw;
+    overflow: hidden;
 }
 
 #github-commits>div>:nth-child(3) {
     min-width: 15vw;
     max-width: 15vw;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 #github-commits>div>:nth-child(4) {
