@@ -13,19 +13,19 @@ async function getUpdate() {
     }
 
     document.getElementById("hash").href += y;
-    document.getElementById("hash").textContent = "📊 Update Hash : " + y2;
+    document.getElementById("hash").textContent = "📊 Hash : " + y2;
 
     var z = getValue(x[0], "commit")
     var z2 = getValue(z, "author");
 
     var name = getValue(z2, "name");
     document.getElementById("author").href += name;
-    document.getElementById("author").textContent = "👤 Mise à jour par : " + name;
+    document.getElementById("author").textContent = "👤 Par : " + name;
 
     var date = getValue(z2, "date");
     const date1 = new Date(date);
     var date2 = date1.toLocaleString();
-    document.getElementById("date").textContent = "⏰ " + date2 + " (local UTC)";
+    document.getElementById("date").textContent = "⏰ " + date2;
 
     var message = getValue(z, "message")
     document.getElementById("message").textContent = "💬 " + message;
@@ -43,5 +43,5 @@ async function getUpdate() {
     var deploymentStatusUrl = await getValue(deploymentStatus[0], "log_url");
 
     document.getElementById("status").href = deploymentStatusUrl;
-    document.getElementById("status").textContent = "⭕ Build status : " + deploymentStatusState;
+    document.getElementById("status").textContent = "⭕ Build : " + deploymentStatusState;
 }
