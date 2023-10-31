@@ -1,9 +1,9 @@
 (async function () {
-    await getCommits(5, "GHub-fr");
+    await getEvents(5, "GHub-fr");
 })();
 
 
-async function getCommits(amount, orgsName) {
+async function getEvents(amount, orgsName) {
     console.info("Getting Github-PushEvent");
 
     var x = await gather('https://api.github.com/orgs/' + orgsName + '/events');
