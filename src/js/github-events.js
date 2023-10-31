@@ -44,8 +44,12 @@ async function getCommits(amount) {
             newDiv.appendChild(RepoName);
             newDiv.appendChild(TextDate);
             for (var i2 in commits) {
-                var sha = getValue(commits[i2], "sha");
+                var message = getValue(commits[i2], "message");
+                var TextMessage = document.createElement("p");
+                TextMessage.textContent = message;
+                newDiv.appendChild(TextMessage);
 
+                var sha = getValue(commits[i2], "sha");
                 var link = document.createElement("a");
                 link.href = "https://github.com/GHub-fr/" + name + "/commit/" + sha;
                 var logo = document.createElement("img");
@@ -53,13 +57,6 @@ async function getCommits(amount) {
                 logo.classList = "svg";
                 link.appendChild(logo);
                 newDiv.appendChild(link);
-
-                var message = getValue(commits[i2], "message");
-
-                var TextMessage = document.createElement("p");
-                TextMessage.textContent = message;
-
-                newDiv.appendChild(TextMessage);
             }
             
             var link = document.createElement("a");
