@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: start;
+    gap: 15px;
 }
 
 #content>article {
