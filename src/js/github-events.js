@@ -39,33 +39,34 @@ async function getCommits(amount) {
             var date2 = date1.toLocaleString();
             TextDate.textContent = date2;
 
-            var link = document.createElement("a");
-            link.href = "https://github.com/GHub-fr/" + name;
-            var logo = document.createElement("img");
-            logo.src = "/assets/svg/link.svg";
-            logo.classList = "svg";
-
             newDiv.appendChild(image);
             newDiv.appendChild(user);
             newDiv.appendChild(RepoName);
             newDiv.appendChild(TextDate);
             for (var i2 in commits) {
                 var sha = getValue(commits[i2], "sha");
+
+                var link = document.createElement("a");
+                link.href = "https://github.com/GHub-fr/" + name + "/commit/" + sha;
+                var logo = document.createElement("img");
+                logo.src = "/assets/svg/link.svg";
+                logo.classList = "svg";
+                link.appendChild(logo);
+                newDiv.appendChild(link);
+
                 var message = getValue(commits[i2], "message");
 
                 var TextMessage = document.createElement("p");
                 TextMessage.textContent = message;
 
-                var shaText = document.createElement("p");
-                if (String(sha).length >= 8) {
-                    var sha2 = String(sha.substring(0, 12) + "...");
-                }
-                shaText.textContent = sha2;
-
-                newDiv.appendChild(shaText);
                 newDiv.appendChild(TextMessage);
             }
-
+            
+            var link = document.createElement("a");
+            link.href = "https://github.com/GHub-fr/" + name;
+            var logo = document.createElement("img");
+            logo.src = "/assets/svg/link.svg";
+            logo.classList = "svg";
             link.appendChild(logo);
             newDiv.appendChild(link);
             div.appendChild(newDiv);

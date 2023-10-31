@@ -36,6 +36,12 @@
     padding: 10px;
 }
 
+#github-events>div>:last-child {
+    margin-left: auto;
+    background-color: var(--main-color);
+    padding: 5px;
+}
+
 #github-events>div>*:not(:first-child) {
     border-left-style: solid;
     border-left-width: 2px;
@@ -71,23 +77,6 @@
     max-width: 55px;
 }
 
-#github-events>div>:nth-child(6) {
-    max-width: 75px;
-    overflow: hidden;
-}
-
-#github-events>div>:nth-child(5) {
-    min-width: 5vw;
-    max-width: 10vw;
-    overflow: hidden;
-}
-
-#github-events>div>:last-child {
-    margin-left: auto;
-    background-color: var(--main-color);
-    padding: 5px;
-}
-
 @media screen and (max-width: 425px) {
     #github-events>div>:nth-child(2) {
         min-width: 10vw;
@@ -95,10 +84,6 @@
     }
 
     #github-events>div>:nth-child(4) {
-        display: none;
-    }
-
-    #github-events>div>:nth-child(6) {
         display: none;
     }
 }
