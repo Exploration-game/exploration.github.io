@@ -1,12 +1,12 @@
 (async function () {
-    await getCommits(5);
+    await getCommits(5, "GHub-fr");
 })();
 
 
-async function getCommits(amount) {
+async function getCommits(amount, orgsName) {
     console.info("Getting Github-PushEvent");
 
-    var x = await gather('https://api.github.com/orgs/GHub-fr/events');
+    var x = await gather('https://api.github.com/orgs/' + orgsName + '/events');
     var iResult = 0;
     for (var i in x) {
         var eventType = getValue(x[i], "type");
@@ -58,7 +58,7 @@ async function getCommits(amount) {
                 link.appendChild(logo);
                 newDiv.appendChild(link);
             }
-            
+
             var link = document.createElement("a");
             link.href = "https://github.com/GHub-fr/" + name;
             var logo = document.createElement("img");
