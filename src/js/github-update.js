@@ -1,12 +1,16 @@
 (async function () {
-    await getUpdate();
+    await getUpdate("Ghub-fr.github.io");
 })();
 
 
-async function getUpdate() {
+async function getUpdate(repoName) {
     console.info("Getting Github-Update");
 
-    var x = await gather('https://api.github.com/repos/GHub-FR/Ghub-fr.github.io/commits');
+    var div = document.getElementById("github-update");
+    var title = div.querySelector("#title");
+    title.textContent += repoName;
+
+    var x = await gather('https://api.github.com/repos/GHub-FR/'+repoName+'/commits');
     var y = getValue(x[0], "sha");
     if (String(y).length >= 8) {
         var y2 = String(y.substring(0, 12) + "...");
