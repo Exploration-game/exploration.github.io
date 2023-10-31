@@ -3,10 +3,20 @@
     height: max-content;
     position: relative;
 
-
-
     padding-top: 5vh;
     padding-bottom: 5vh;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+}
+
+#content>article {
+    width: 100%;
 }
 
 article>div>p,
