@@ -52,6 +52,7 @@
 #github-commits>div:not(:first-child)>a {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 #github-commits>div:not(:first-child)>p {
