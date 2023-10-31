@@ -1,13 +1,13 @@
 (async function () {
-    await getCommits(5);
+    await getCommits(5, "Ghub-fr.github.io");
 })();
 
 
-async function getCommits(amount) {
+async function getCommits(amount, repoName) {
     console.info("Getting Github-Commits");
 
     amount++;
-    var x = await gather('https://api.github.com/repos/GHub-FR/Ghub-fr.github.io/commits');
+    var x = await gather('https://api.github.com/repos/GHub-FR/' + repoName + '/commits');
     for (let i = 1; i < amount; i++) {
         var y = getValue(x[i], "sha");
         if (String(y).length >= 8) {
@@ -37,7 +37,7 @@ async function getCommits(amount) {
         var TextDate = document.createElement("p");
         TextDate.textContent = date2;
         var link = document.createElement("a");
-        link.href = "https://github.com/" + name;
+        link.href = "https://github.com/GHub-fr/" + repoName + "/commit/" + y;
         var sha = document.createElement("p");
         sha.textContent = y2;
         var logo = document.createElement("img");
