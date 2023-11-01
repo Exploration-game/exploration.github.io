@@ -19,7 +19,7 @@
 }
 
 .github-commits>:first-child {
-    background-color: var(--main-color);
+    background: linear-gradient(var(--background-color), var(--main-color));
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: var(--main-color);
