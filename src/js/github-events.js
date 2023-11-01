@@ -51,7 +51,7 @@ async function getEvents(amount, orgsName) {
 
                 var sha = getValue(commits[i2], "sha");
                 var link = document.createElement("a");
-                link.href = "https://github.com/GHub-fr/" + name + "/commit/" + sha;
+                link.href = "https://github.com/" + name + "/commit/" + sha;
                 var logo = document.createElement("img");
                 logo.src = "/assets/svg/link.svg";
                 logo.classList = "svg";
@@ -60,7 +60,7 @@ async function getEvents(amount, orgsName) {
             }
 
             var link = document.createElement("a");
-            link.href = "https://github.com/GHub-fr/" + name;
+            link.href = "https://github.com/" + name;
             var logo = document.createElement("img");
             logo.src = "/assets/svg/link.svg";
             logo.classList = "svg";
