@@ -31,9 +31,11 @@
     max-width: max-content;
     max-height: 120px;
     border-radius: 10px;
+    margin: 15px;
 }
 
 #github-update>:first-child {
+    background-color: var(--main-color);
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: var(--main-color);
