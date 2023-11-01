@@ -18,9 +18,8 @@
     --main-color: rgb(50, 50, 50);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(175, 175, 175);
-    --filter-color: invert(100%) invert(8%) sepia(92%) saturate(6928%) hue-rotate(31deg) brightness(91%) contrast(120%);
 }
- 
+
 :root.dark .svg,
 :root.default-theme .svg,
 :root.day .svg {
