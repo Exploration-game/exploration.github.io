@@ -62,8 +62,9 @@ async function getEvents(amount, orgsName) {
             var link = document.createElement("a");
             link.href = "https://github.com/" + name;
             var logo = document.createElement("img");
-            logo.src = "/assets/svg/link.svg";
+            logo.src = "/assets/svg/trademark/repo.svg";
             logo.classList = "svg";
+            
             link.appendChild(logo);
             newDiv.appendChild(link);
             div.appendChild(newDiv);
