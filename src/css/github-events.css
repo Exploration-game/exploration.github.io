@@ -61,6 +61,12 @@
     padding: 5px;
 }
 
+#github-events>div>:nth-last-child(2) {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: var(--main-color);
+}
+
 #github-events>div>*:not(:first-child) {
     border-left-style: solid;
     border-left-width: 2px;
