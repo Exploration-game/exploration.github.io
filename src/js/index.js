@@ -34,10 +34,10 @@ async function styles() {
 
 async function customPage() {
     console.info("Loading custom page");
-
     await include_html("/src/html/content/welcome.html", "content", true);
 
     await include_script("/src/js/gather.js");
+    
     
     await include_css("/src/css/github-update.css");
     await include_html("/src/html/content/github-update.html", "content", true);
@@ -50,4 +50,6 @@ async function customPage() {
     await include_css("/src/css/github-events.css");
     await include_html("/src/html/content/github-events.html", "content", true);
     await include_script("/src/js/github-events.js");
+
+    await include_script("/src/js/markdown.js");
 }

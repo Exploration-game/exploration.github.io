@@ -1,6 +1,6 @@
 :root.light {
-    --background-color: rgb(225, 225, 225);
-    --main-color: rgb(205, 205, 205);
+    --background-color: rgb(255 255 255);
+    --main-color: rgb(175 175 175);
     --text-color: rgb(30, 30, 30);
     --link-color: rgb(80, 80, 80);
 }

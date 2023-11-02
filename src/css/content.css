@@ -16,6 +16,19 @@
     gap: 15px;
 }
 
+#content>#markdown>img{
+    max-width: 80vw;
+}
+
+#content>#markdown>*:not(hr) {
+    display: inline;
+
+}
+
+#content>#markdown>a {
+    text-decoration: none;
+}
+
 #content>article {
     width: 100%;
 }
