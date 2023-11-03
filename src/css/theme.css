@@ -1,6 +1,7 @@
 :root.light {
-    --background-color: rgb(255 255 255);
-    --main-color: rgb(175 175 175);
+    --background-color: rgb(255, 255, 255);
+    --main-color: rgb(175, 175, 175);
+    --main-color-transparent: rgba(175, 175, 175, 0.5);
     --text-color: rgb(30, 30, 30);
     --link-color: rgb(80, 80, 80);
 }
@@ -8,6 +9,7 @@
 :root.day {
     --background-color: rgb(30, 30, 45);
     --main-color: rgb(50, 50, 65);
+    --main-color-transparent: rgba(50, 50, 65, 0.5);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(175, 175, 175);
 }
@@ -16,8 +18,14 @@
 :root.dark {
     --background-color: rgb(30, 30, 30);
     --main-color: rgb(50, 50, 50);
+    --main-color-transparent: rgba(50, 50, 50, 0.5);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(175, 175, 175);
+}
+
+:root {
+    --box-shadow-all-inset-main-color: 0px 0px 20px 5px var(--main-color), inset 0px 0px 20px 1px var(--main-color);
+    --box-shadow-all-inset-main-transparent-color: 0px 0px 20px 5px var(--main-color-transparent), inset 0px 0px 20px 1px var(--main-color-transparent);
 }
 
 :root.dark .svg,

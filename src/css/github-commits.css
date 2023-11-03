@@ -6,6 +6,7 @@
     border-width: 2px;
     border-color: var(--main-color);
     border-radius: 10px;
+    box-shadow: var(--box-shadow-all-inset-main-transparent-color);
 }
 
 .github-commits>:first-child>h1 {
@@ -23,6 +24,8 @@
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: var(--main-color);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
 }
 
 .github-commits>:first-child>img {
