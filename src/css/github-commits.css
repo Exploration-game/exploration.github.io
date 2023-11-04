@@ -90,8 +90,7 @@
 
 .github-commits>div:not(:first-child)>:nth-child(3) {
     min-width: 7vw;
-    max-width: 7vw;
-    overflow-y: auto;
+    max-width: 7vw;overflow: hidden;
 }
 
 .github-commits>div:not(:first-child)>:nth-child(4) {
@@ -100,7 +99,6 @@
 
 .github-commits>div:not(:first-child)>:nth-child(5) {
     max-width: 75px;
-    overflow: hidden;
 }
 
 .github-commits>div:not(:first-child)>:last-child {
