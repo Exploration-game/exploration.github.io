@@ -8,11 +8,19 @@
     src: url(/assets/font/VarelaRound-Regular.ttf);
 }
 
+b,
+summary {
+    font-family: Varela;
+    font-size: x-large;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
 p,
 a {
     font-family: Varela;
 
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
 }
 
@@ -22,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Pacifico;
+    font-family: Varela;
     color: var(--text-color);
 }
 
@@ -36,10 +44,16 @@ h2 {
     font-weight: bold;
 }
 
-p {
+p,
+b {
     color: var(--text-color);
 }
 
-a {
+a,
+summary {
+    color: var(--link-color);
+}
+
+li::marker {
     color: var(--link-color);
 }
