@@ -18,7 +18,7 @@ const parseMarkdown = (text) => {
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
         .replace(/\n\s?[0-9]+\.\s*(.*)/gim, '<ol>\n\t<li>$1</li>\n</ol>') // <ol>
 
-        .replace(/(?!>)([a-z0-9 :;|@&+-.]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
+        .replace(/(?!>)([a-z0-9 :;|@&+-.éèàç]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
         .replace(/[\n]{1}/g, "<br>") //new line 
 
         .trim();
