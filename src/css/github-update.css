@@ -1,5 +1,5 @@
 #github-update {
-    max-width: fit-content;
+    max-width: 100%;
     max-height: fit-content;
 
     border-style: solid;
@@ -75,5 +75,11 @@
     #github-update>div>div {
         display: inline-block;
         vertical-align: middle;
+        max-width: 70%;
+    }
+
+    #github-update>div>div>* {
+        display: inline-block;
+        padding-right: 15px;
     }
 }
