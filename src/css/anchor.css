@@ -1,7 +1,5 @@
-#theme>img,
-#settings>img,
-#scroll-down>img,
-#scroll-up>img {
+#anchor>a>button>img,
+#anchor>button>img {
     width: 2vw;
     height: 2vw;
 
@@ -20,10 +18,8 @@
     padding-top: 10px;
 }
 
-#theme,
-#settings,
-#scroll-down,
-#scroll-up {
+#anchor>a>button,
+#anchor>button {
     border-radius: 10px;
     margin: 5px;
 }

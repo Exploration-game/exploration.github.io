@@ -39,12 +39,27 @@ async function getMarkdown(url) {
     });
 }
 
-(async function () {
-    var x = await getMarkdown('https://raw.githubusercontent.com/Ghub-fr/.github/main/profile/README.md');
+(async function (repo, file) {
+    var x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
     var x2 = parseMarkdown(x);
     var content = document.querySelector("#content");
     var newDiv = document.createElement("div");
     newDiv.id = "markdown";
     newDiv.innerHTML = x2;
     content.appendChild(newDiv);
-})(); 
+
+    var content = document.querySelector("#anchor");
+    var link = document.createElement("a");
+    link.href = "https://github.com/" + repo + "/edit/main/" + file;
+    link.target = "_blank";
+    var button = document.createElement("button");
+    button.id = "edit-md"
+    var image = document.createElement("img");
+    image.src = "/assets/svg/edit.svg";
+    image.classList = "svg";
+
+    button.appendChild(image);
+    link.appendChild(button);
+    content.appendChild(link);
+})
+    ("Ghub-fr/.github", "profile/README.md");  
