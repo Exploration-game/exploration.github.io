@@ -27,3 +27,7 @@ del>* {
 del>* {
     text-decoration: line-through;
 }
+
+h1>* {
+    display: inline;
+}

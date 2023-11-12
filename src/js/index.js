@@ -37,7 +37,6 @@ async function pages() {
         await includes();
 
         await include_html("/src/html/content/welcome.html", "content", true);
-        await include_script("/src/js/markdown.js");
     }
 
     else if (pathNameMatchPage("statistiques")) {
@@ -56,6 +55,16 @@ async function pages() {
         await include_css("/src/css/github-events.css");
         await include_html("/src/html/content/github-events.html", "content", true);
         await include_script("/src/js/github-events.js");
+    }
+
+    else if (pathNameMatchPage("readme")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'profile/README.md'); });
+    }
+
+    else if (pathNameMatchPage("notereadme")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/README.md'); });
     }
 
     /*

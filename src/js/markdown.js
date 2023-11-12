@@ -39,7 +39,7 @@ async function getMarkdown(url) {
     });
 }
 
-(async function (repo, file) {
+async function addMarkdown(repo, file) {
     var x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
     var x2 = parseMarkdown(x);
     var content = document.querySelector("#content");
@@ -57,9 +57,7 @@ async function getMarkdown(url) {
     var image = document.createElement("img");
     image.src = "/assets/svg/edit.svg";
     image.classList = "svg";
-
     button.appendChild(image);
     link.appendChild(button);
     content.appendChild(link);
-})
-    ("Ghub-fr/.github", "profile/README.md");  
+}

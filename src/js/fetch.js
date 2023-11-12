@@ -1,5 +1,5 @@
-include(); function include() {
-    include_script("/src/js/index.js");
+include(); async function include() {
+    await include_script("/src/js/index.js");
 }
 
 async function include_multiple(name, area) {
@@ -27,8 +27,18 @@ async function include_html(link, query, queryOrIndex) {
 
 async function include_script(url) {
     var script = document.createElement("script");
+    script.type = "text/javascript";
     script.src = url;
     document.head.appendChild(script);
+    
+    return new Promise((res, rej) => {
+        script.onload = function () {
+            res();
+        }
+        script.onerror = function () {
+            rej();
+        }
+    });
 }
 
 async function include_css(url) {
