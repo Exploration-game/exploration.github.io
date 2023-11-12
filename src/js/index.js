@@ -67,6 +67,11 @@ async function pages() {
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/README.md'); });
     }
 
+    else if (pathNameMatchPage("markdownlearning")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/Github/Markdown/Learning.md'); });
+    }
+
     /*
 else if (pathname === "/404.html" || pathname === "/404.html/" || pathname === "/404" || pathname === "/404/") {
     await include_all();
