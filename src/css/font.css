@@ -17,7 +17,9 @@ summary {
 }
 
 p,
-a {
+a,
+del,
+i {
     font-family: Varela;
 
     font-size: x-large;
@@ -45,19 +47,15 @@ h2 {
 }
 
 p,
-b {
+b,
+del,
+i {
     color: var(--text-color);
 }
 
 a,
-summary {
-    color: var(--link-color);
-}
-
-li::marker {
-    color: var(--link-color);
-}
-
+summary,
+li::marker,
 hr {
-    border-color: var(--link-color);
+    color: var(--link-color);
 }
