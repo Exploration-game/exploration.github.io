@@ -7,10 +7,6 @@ header {
     z-index: 1000;
     
     background: linear-gradient(var(--main-color), var(--background-color));
-
-    border-bottom-color:var(--main-color);
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
 }
 
 
