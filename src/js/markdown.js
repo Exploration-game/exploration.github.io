@@ -7,18 +7,18 @@ const parseMarkdown = (text) => {
         .replace(/^### (.*$)/gim, '<h3>$1</h3>') // h3 tag
         .replace(/^## (.*$)/gim, '<h2>$1</h2>') // h2 tag
         .replace(/^# (.*$)/gim, '<h1>$1</h1>') // h1 tag
-        .replace(/`(.*?)`/gim, '<code>$1</code>') // <code>
+        .replace(/\`{1,3}(.*?)\`{1,3}/gm, '<code>$1</code>') // <code>
         .replace(/-{3,}/gim, '<hr/>') //hr (Decoration line)
         .replace(/\~\~(.*?)\~\~/gim, '<del>$1</del>')// <del>
         .replace(/\n(?:&gt;|\>)\W*(.*)/gim, '<blockquote><p>$1</p></blockquote>') // <blockquote>
-
+ 
         .replace(/\*\*(.*?)\*\*/gm, '<b>$1</b>') // bold text
         .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
 
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
         .replace(/\n\s?[0-9]+\.\s*(.*)/gim, '<ol>\n\t<li>$1</li>\n</ol>') // <ol>
 
-        .replace(/(?!>)([a-z0-9 :;|@&+-.éèàç]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
+        .replace(/(?!>)([a-z0-9 :;|'@&+-.,éêëèàç]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
         .replace(/[\n]{1}/g, "<br>") //new line 
 
         .trim();
