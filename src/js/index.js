@@ -62,6 +62,11 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'profile/README.md'); });
     }
+        
+    else if (pathNameMatchPage("contribuer")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'CONTRIBUTING.md'); });
+    }
 
     else if (pathNameMatchPage("notereadme")) {
         await includes();
