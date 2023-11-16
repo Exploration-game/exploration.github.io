@@ -37,6 +37,7 @@ async function pages() {
         await includes();
 
         await include_html("/src/html/content/welcome.html", "content", true);
+        await include_css("/src/css/welcome.css");
     }
 
     else if (pathNameMatchPage("statistiques")) {

@@ -1,0 +1,42 @@
+#welcome>#title>* {
+    display: inline;
+}
+
+#welcome>#banner>img {
+    max-width: 100%;
+}
+
+
+
+
+
+
+#games,
+#opensource {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#games>:first-child,
+#opensource>:first-child {
+    max-width: 30%;
+    padding-right: 15px;
+}
+
+#games>*,
+#opensource>* {
+    display: inline-block;
+}
+
+#games>div>h1,
+#opensource>div>h1 {
+    text-decoration: underline;
+}
+
+
+
+#games>:last-child {
+    width: max-content;
+    padding-top: 25px;
+    transform: translateX(50%);
+}
