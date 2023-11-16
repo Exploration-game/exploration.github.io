@@ -21,6 +21,7 @@
 #opensource>:first-child {
     max-width: 30%;
     padding-right: 15px;
+    border-radius: 32px;
 }
 
 #games>*,
@@ -36,7 +37,8 @@
 
 
 #games>:last-child {
-    width: max-content;
-    padding-top: 25px;
+    border-radius: 12px;
+    width: 50%;
+    margin-top: 25px;
     transform: translateX(50%);
 }
