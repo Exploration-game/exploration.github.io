@@ -4,6 +4,7 @@
     await getCommits(3, "bot");
     await getCommits(3, "server");
     await getCommits(3, "plugin");
+    await getCommits(3, "resourcePack");
 })();
 
 
