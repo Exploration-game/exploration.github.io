@@ -62,7 +62,7 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'profile/README.md'); });
     }
-        
+
     else if (pathNameMatchPage("contribuer")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'CONTRIBUTING.md'); });
@@ -78,29 +78,15 @@ async function pages() {
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
 
-    /*
-else if (pathname === "/404.html" || pathname === "/404.html/" || pathname === "/404" || pathname === "/404/") {
-    await include_all();
-    await include("/html/contents/404Custom.html", "contentHolder", true);
+    else if (pathNameMatchPage("404")) {
+        await includes();
+        //ajouter un 404 custom (easter egg)
+    }
 
-    await include_css("/css/404.css");
-
-    await include("/html/contents/lostTravolta.html", "contentHolder", true);
-
-    await include_multiple("github_update", "contentHolder");
-    await include_multiple("viewCount", "contentHolder");
-}
-
-else {
-    await include_all();
-    await include("/html/contents/404.html", "contentHolder", true);
-
-    await include_css("/css/404.css");
-
-    await include_multiple("github_update", "contentHolder");
-    await include_multiple("viewCount", "contentHolder");
-}
-*/
+    else {
+        await includes();
+        //ajouter le 404 par défault
+    }
 }
 
 function pathNameMatchPage(path) {
