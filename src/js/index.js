@@ -95,8 +95,8 @@ function pathNameMatchPage(path) {
     pathname = pathname.replace(".html", "");
     pathname = pathname.replaceAll("/", "");
     if (path.toLowerCase() === pathname) {
-        return true;
         console.log("Loading : " + pathname);
+        return true;
     }
     return false;
 }
