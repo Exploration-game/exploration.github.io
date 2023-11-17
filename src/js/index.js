@@ -1,6 +1,8 @@
 index(); async function index() {
     console.info("Loading index");
-    await pages();
+    if (!devMode()) {
+        await pages();
+    }
 }
 
 async function includes() {
@@ -77,7 +79,7 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
-    
+
     else if (pathNameMatchPage("settings")) {
         await includes();
 
@@ -106,4 +108,20 @@ function pathNameMatchPage(path) {
         return true;
     }
     return false;
+}
+
+function devMode() {
+    console.log(window.location.hostname);
+    if (window.location.hostname === "127.0.0.1") {
+        console.log("Dev mode ON");
+        devTest();
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+async function devTest() {
+    await includes();
 }
