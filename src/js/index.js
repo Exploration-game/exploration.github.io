@@ -91,7 +91,6 @@ async function pages() {
 
 function pathNameMatchPage(path) {
     var pathname = window.location.pathname;
-    pathname = pathname.replace("page/", "");
     pathname = pathname.replace(".html", "");
     pathname = pathname.replaceAll("/", "");
     if (path.toLowerCase() === pathname.toLowerCase()) {
