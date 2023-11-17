@@ -77,6 +77,14 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
+    
+    else if (pathNameMatchPage("settings")) {
+        await includes();
+
+        await include_css("/src/css/settings.css");
+        await include_html("/src/html/content/settings.html", "content", true);
+        await include_script("/src/js/settings.js");
+    }
 
     else if (pathNameMatchPage("404")) {
         await includes();
