@@ -157,6 +157,4 @@ async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
     await include_css("/src/css/devTest.css");
     await include_html("/src/html/content/devTest.html", "content", true);
-    await include_html("/src/html/content/welcome.html", "content", true);
-    await include_css("/src/css/welcome.css");
 }
