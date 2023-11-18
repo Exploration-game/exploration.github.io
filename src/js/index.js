@@ -46,8 +46,6 @@ async function Metadata() {
 async function pages() {
     console.info("Loading custom page");
 
-    await include_script("/src/js/viewcount.js");
-
     if (pathNameMatchPage("") || pathNameMatchPage("index")) {
         await includes();
 
@@ -111,6 +109,8 @@ async function pages() {
             await include_html("/src/html/content/404-custom.html", "erreur", true);
         }
     }
+    
+    await include_script("/src/js/viewcount.js");
 }
 
 function getShortPathname() {
