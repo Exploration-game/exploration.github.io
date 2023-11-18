@@ -145,6 +145,9 @@ function devMode() {
     if (window.location.hostname === "127.0.0.1") {
         return true;
     }
+    if (localStorage.getItem('devMode') == true) {
+        return true;
+    }
     else {
         return false;
     }

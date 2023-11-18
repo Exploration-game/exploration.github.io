@@ -28,4 +28,6 @@ const getViews = async (repo, callback) => {
     return value;
 }
 
-viewCount("GHub-fr.github.io");
+if (localStorage.getItem('viewCount') == true || localStorage.getItem('viewCount') == null) {
+    viewCount("GHub-fr.github.io");
+}
