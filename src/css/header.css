@@ -7,7 +7,7 @@ header {
     z-index: 1000;
 
     background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
-    backdrop-filter: blur(3px);
+    backdrop-filter: var(--blur);
 }
 
 

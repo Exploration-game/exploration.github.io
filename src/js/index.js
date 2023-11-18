@@ -1,8 +1,5 @@
 index(); async function index() {
     console.info("Loading website");
-    if (devMode()) {
-        devTest();
-    }
     await Metadata();
     await pages();
 }
@@ -51,9 +48,12 @@ async function pages() {
 
     if (pathNameMatchPage("") || pathNameMatchPage("index")) {
         await includes();
-
-        await include_html("/src/html/content/welcome.html", "content", true);
-        await include_css("/src/css/welcome.css");
+        if (devMode()) {
+            devTest();
+        } else {
+            await include_html("/src/html/content/welcome.html", "content", true);
+            await include_css("/src/css/welcome.css");
+        }
     }
 
     else if (pathNameMatchPage("statistiques")) {
@@ -117,7 +117,7 @@ async function pages() {
         await include_script("/src/js/viewcount.js");
     }
 
-    await include_script("/src/js/cursor.js"); //must be last for handler a & btn
+    await include_script("/src/js/cursor.js"); //must be last for handler a & btn, buggy with long loading scheme async
 }
 
 function getShortPathname() {
@@ -146,5 +146,56 @@ function devMode() {
 }
 
 async function devTest() {
+    await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     console.log("Dev mode ON : " + window.location.hostname);
+    await include_css("/src/css/devTest.css");
+    await include_html("/src/html/content/devTest.html", "content", true);
+
+    const inputBox = document.getElementById("input-box");
+    const resultsBox = document.getElementById("result-box");
+    resultsBox.style.display = "none"
+
+    const links = [
+        {
+            href: "/faqs",
+            text: "Frequently asked questions",
+        },
+        {
+            href: "/article",
+            text: "Article",
+        },
+        {
+            href: "/contact",
+            text: "Contact",
+        },
+        {
+            href: "https://discord.gg/abc",
+            text: "Discord",
+        },
+    ];
+
+    inputBox.onkeyup = function () {
+        let result = [];
+        let input = inputBox.value;
+        if (input.length) {
+            result = links.filter((link) => {
+                return link.text.toLowerCase().includes(input.toLowerCase());
+            });
+        }
+        display(result);
+    }
+
+    function display(result) {
+        if (result.length) {
+            const content = result.map((list, index) => {
+                const href = list.href;
+                return `<li><a href="${href}">${list.text}</a></li>`;
+            });
+            resultsBox.innerHTML = `<ul>${content.join('')}</ul>`;
+            resultsBox.style.display = "block"
+        } else {
+            resultsBox.innerHTML = '';
+            resultsBox.style.display = "none"
+        }
+    }
 }

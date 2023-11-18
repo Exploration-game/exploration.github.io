@@ -35,6 +35,7 @@
 :root {
     --box-shadow-all-inset-main-color: 0px 0px 10px 5px var(--main-color), inset 0px 0px 20px 1px var(--main-color);
     --box-shadow-all-inset-main-transparent-color: 0px 0px 10px 5px var(--main-color-transparent), inset 0px 0px 20px 1px var(--main-color-transparent);
+    --blur: blur(5px);
 }
 
 :root.dark .svg,

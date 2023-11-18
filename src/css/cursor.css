@@ -1,6 +1,7 @@
 a,
 button,
-html {
+html,
+input {
     cursor: none;
 }
 

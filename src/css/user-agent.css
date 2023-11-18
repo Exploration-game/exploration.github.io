@@ -31,3 +31,9 @@ del>* {
 h1>* {
     display: inline;
 }
+
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
