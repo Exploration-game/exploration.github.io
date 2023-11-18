@@ -73,22 +73,22 @@ async function pages() {
 
     else if (pathNameMatchPage("readme")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'profile/README.md'); });
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'profile/README.md'); });
     }
 
     else if (pathNameMatchPage("contribuer")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'CONTRIBUTING.md'); });
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CONTRIBUTING.md'); });
     }
 
     else if (pathNameMatchPage("notereadme")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/README.md'); });
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/README.md'); });
     }
 
     else if (pathNameMatchPage("markdownlearning")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('Ghub-fr/.github', 'note/Github/Markdown/Learning.md'); });
+        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
 
     else if (pathNameMatchPage("settings")) {
@@ -109,7 +109,7 @@ async function pages() {
             await include_html("/src/html/content/404-custom.html", "erreur", true);
         }
     }
-    
+
     await include_script("/src/js/viewcount.js");
 }
 

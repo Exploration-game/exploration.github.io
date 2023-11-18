@@ -16,7 +16,7 @@ async function getUpdate(repoName) {
         var y2 = String(y.substring(0, 12) + "...");
     }
 
-    document.getElementById("hash").href = 'https://github.com/Ghub-fr/' + repoName + '/commit/' +y;
+    document.getElementById("hash").href = 'https://github.com/GHub-fr/' + repoName + '/commit/' +y;
     document.getElementById("hash").textContent = "📊 Hash : " + y2;
 
     var z = getValue(x[0], "commit")
@@ -39,7 +39,7 @@ async function getUpdate(repoName) {
 
     document.getElementById("author-image").src = avatarGatherValue;
 
-    var deployment = await gather('https://api.github.com/repos/Ghub-fr/' + repoName + '/deployments');
+    var deployment = await gather('https://api.github.com/repos/GHub-fr/' + repoName + '/deployments');
     var deploymentID = await getValue(deployment[0], "id");
 
     var deploymentStatus = await gather('https://api.github.com/repos/Ghub-fr/' + repoName + '/deployments/' + deploymentID + '/statuses');
