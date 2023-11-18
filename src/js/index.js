@@ -1,6 +1,9 @@
 index(); async function index() {
-    console.info("Loading index");
-    Metadata();
+    console.info("Loading website");
+    if (devMode()) {
+        devTest();
+    }
+    await Metadata();
     await pages();
 }
 
@@ -30,6 +33,7 @@ async function styles() {
     await include_css("/src/css/content.css");
     await include_css("/src/css/cursor.css");
     await include_css("/src/css/footer.css");
+    await include_css("/src/css/scrollbar.css");
 }
 
 async function Metadata() {
@@ -133,10 +137,7 @@ function pathNameMatchPage(path) {
 }
 
 function devMode() {
-    console.log(window.location.hostname);
     if (window.location.hostname === "127.0.0.1") {
-        console.log("Dev mode ON");
-        devTest();
         return true;
     }
     else {
@@ -145,4 +146,5 @@ function devMode() {
 }
 
 async function devTest() {
+    console.log("Dev mode ON : " + window.location.hostname);
 }

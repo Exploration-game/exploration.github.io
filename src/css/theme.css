@@ -5,8 +5,8 @@
     --main-color-transparent: rgba(235, 235, 235, 0.5);
     --text-color: rgb(30, 30, 30);
     --link-color: rgb(80, 80, 80);
-    --cursor-default: rgba(0, 0, 0, 0.75);
-    --cursor-hover: rgba(0, 0, 0, 0.5);
+    --second-default: rgba(0, 0, 0, 0.75);
+    --second-hover: rgba(0, 0, 0, 0.5);
 }
 
 :root.day {
@@ -16,8 +16,8 @@
     --main-color-transparent: rgba(50, 50, 65, 0.5);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(175, 175, 175);
-    --cursor-default: rgba(255, 255, 255, 0.75);
-    --cursor-hover: rgba(255, 255, 255, 0.5);
+    --second-default: rgba(255, 255, 255, 0.75);
+    --second-hover: rgba(255, 255, 255, 0.5);
 }
 
 :root.default-theme,
@@ -28,8 +28,8 @@
     --main-color-transparent: rgba(50, 50, 50, 0.5);
     --text-color: rgb(225, 225, 225);
     --link-color: rgb(175, 175, 175);
-    --cursor-default: rgba(255, 255, 255, 0.75);
-    --cursor-hover: rgba(255, 255, 255, 0.5);
+    --second-default: rgba(255, 255, 255, 0.75);
+    --second-hover: rgba(255, 255, 255, 0.5);
 }
 
 :root {
