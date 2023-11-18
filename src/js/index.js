@@ -1,9 +1,7 @@
 index(); async function index() {
     console.info("Loading index");
     Metadata();
-    if (!devMode()) {
-        await pages();
-    }
+    await pages();
 }
 
 async function includes() {
@@ -30,6 +28,7 @@ async function styles() {
     await include_css("/src/css/header-navbar.css");
     await include_css("/src/css/anchor.css");
     await include_css("/src/css/content.css");
+    await include_css("/src/css/cursor.css");
     await include_css("/src/css/footer.css");
 }
 
@@ -110,7 +109,11 @@ async function pages() {
         }
     }
 
-    await include_script("/src/js/viewcount.js");
+    if (!devMode()) {
+        await include_script("/src/js/viewcount.js");
+    }
+
+    await include_script("/src/js/cursor.js"); //must be last for handler a & btn
 }
 
 function getShortPathname() {
@@ -142,5 +145,4 @@ function devMode() {
 }
 
 async function devTest() {
-    await includes();
 }
