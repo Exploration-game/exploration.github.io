@@ -101,12 +101,17 @@ async function pages() {
 
     else if (pathNameMatchPage("404")) {
         await includes();
-        //ajouter un 404 custom (easter egg)
+
+        await include_css("/src/css/404.css");
+        await include_html("/src/html/content/404.html", "content", true);
+        await include_html("/src/html/content/404-custom.html", "404", true);
     }
 
     else {
         await includes();
-        //ajouter le 404 par défault
+
+        await include_css("/src/css/404.css");
+        await include_html("/src/html/content/404.html", "content", true);
     }
 }
 
