@@ -105,7 +105,7 @@ async function pages() {
         await include_css("/src/css/404.css");
         await include_html("/src/html/content/404.html", "content", true);
 
-        if (pathNameMatchPage("404")) { 
+        if (pathNameMatchPage("404")) {
             await include_html("/src/html/content/404-custom.html", "erreur", true);
         }
     }
