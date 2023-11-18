@@ -1,5 +1,6 @@
 index(); async function index() {
     console.info("Loading index");
+    Metadata();
     if (!devMode()) {
         await pages();
     }
@@ -30,6 +31,16 @@ async function styles() {
     await include_css("/src/css/anchor.css");
     await include_css("/src/css/content.css");
     await include_css("/src/css/footer.css");
+}
+
+async function Metadata() {
+    document.title = "GHub-FR - " + getShortPathname();
+
+    link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/x-icon";
+    link.href = "/assets/icon/icone.png";
+    document.head.appendChild(link);
 }
 
 async function pages() {
@@ -99,10 +110,15 @@ async function pages() {
     }
 }
 
+function getShortPathname() {
+    var path = window.location.pathname;
+    path = path.replace(".html", "");
+    path = path.replaceAll("/", "");
+    return path;
+}
+
 function pathNameMatchPage(path) {
-    var pathname = window.location.pathname;
-    pathname = pathname.replace(".html", "");
-    pathname = pathname.replaceAll("/", "");
+    var pathname = getShortPathname();
     if (path.toLowerCase() === pathname.toLowerCase()) {
         console.log("Loading : " + pathname);
         return true;
