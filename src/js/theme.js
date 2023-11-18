@@ -30,18 +30,18 @@ function toggleTheme() {
 }
 
 function changeTheme() {
-    if (localStorage.getItem('theme') === 'dark') {
-        setTheme('day');
+    if (localStorage.getItem('theme') === 'day') {
+        setTheme('dark');
     }
-    else if (localStorage.getItem('theme') === 'day') {
+    else if (localStorage.getItem('theme') === 'dark') {
         setTheme('light');
     }
     else if (localStorage.getItem('theme') === 'light') {
-        setTheme('dark');
+        setTheme('day');
     }
 
     else { setTheme('dark'); }
-    
+
     setIconTheme();
 }
 
