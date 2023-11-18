@@ -22,6 +22,22 @@ const links = [
         href: "/contribuer",
         text: "Comment contribuer ?",
     },
+    {
+        href: "/support",
+        text: "Support d'aide",
+    },
+    {
+        href: "/security",
+        text: "Security",
+    },
+    {
+        href: "/license",
+        text: "License Apache",
+    },
+    {
+        href: "/code_of_conduct",
+        text: "Code de conduite",
+    },
 ];
 
 function keyup() {
