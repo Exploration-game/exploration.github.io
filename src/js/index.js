@@ -99,19 +99,15 @@ async function pages() {
         await include_script("/src/js/settings.js");
     }
 
-    else if (pathNameMatchPage("404")) {
-        await includes();
-
-        await include_css("/src/css/404.css");
-        await include_html("/src/html/content/404.html", "content", true);
-        await include_html("/src/html/content/404-custom.html", "erreur", true);
-    }
-
     else {
         await includes();
 
         await include_css("/src/css/404.css");
         await include_html("/src/html/content/404.html", "content", true);
+
+        if (pathNameMatchPage("404")) { 
+            await include_html("/src/html/content/404-custom.html", "erreur", true);
+        }
     }
 }
 
