@@ -104,7 +104,7 @@ async function pages() {
 
         await include_css("/src/css/404.css");
         await include_html("/src/html/content/404.html", "content", true);
-        await include_html("/src/html/content/404-custom.html", "404", true);
+        await include_html("/src/html/content/404-custom.html", "erreur", true);
     }
 
     else {
