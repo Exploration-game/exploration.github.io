@@ -10,9 +10,13 @@ async function includes() {
     console.info("Loading includes");
 
     await include_html("/src/html/include/header.html", "body", false);
+
     await include_html("/src/html/include/anchor.html", "body", false);
     await setIconTheme();
+
     await include_html("/src/html/include/content.html", "body", false);
+    await include_html("/src/html/include/searchbar.html", "body", false);
+    await include_script("/src/js/searchbar.js");
 
     await include_html("/src/html/include/footer.html", "body", false);
 }
@@ -31,6 +35,7 @@ async function styles() {
     await include_css("/src/css/cursor.css");
     await include_css("/src/css/footer.css");
     await include_css("/src/css/scrollbar.css");
+    await include_css("/src/css/searchbar.css");
 }
 
 async function Metadata() {
@@ -146,56 +151,9 @@ function devMode() {
 }
 
 async function devTest() {
-    await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     console.log("Dev mode ON : " + window.location.hostname);
     await include_css("/src/css/devTest.css");
     await include_html("/src/html/content/devTest.html", "content", true);
-
-    const inputBox = document.getElementById("input-box");
-    const resultsBox = document.getElementById("result-box");
-    resultsBox.style.display = "none"
-
-    const links = [
-        {
-            href: "/faqs",
-            text: "Frequently asked questions",
-        },
-        {
-            href: "/article",
-            text: "Article",
-        },
-        {
-            href: "/contact",
-            text: "Contact",
-        },
-        {
-            href: "https://discord.gg/abc",
-            text: "Discord",
-        },
-    ];
-
-    inputBox.onkeyup = function () {
-        let result = [];
-        let input = inputBox.value;
-        if (input.length) {
-            result = links.filter((link) => {
-                return link.text.toLowerCase().includes(input.toLowerCase());
-            });
-        }
-        display(result);
-    }
-
-    function display(result) {
-        if (result.length) {
-            const content = result.map((list, index) => {
-                const href = list.href;
-                return `<li><a href="${href}">${list.text}</a></li>`;
-            });
-            resultsBox.innerHTML = `<ul>${content.join('')}</ul>`;
-            resultsBox.style.display = "block"
-        } else {
-            resultsBox.innerHTML = '';
-            resultsBox.style.display = "none"
-        }
-    }
+    await include_html("/src/html/content/welcome.html", "content", true);
+    await include_css("/src/css/welcome.css");
 }
