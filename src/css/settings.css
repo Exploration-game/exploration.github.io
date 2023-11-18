@@ -1,4 +1,80 @@
-#settings>button {
+#settingsmenu>* {
+    margin: 50px;
+}
+
+#settingsmenu>button {
     border-radius: 6px;
     padding: 10px;
+}
+
+.check,
+.check>* {
+    display: inline-block;
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    transform: translateY(25%);
+}
+
+.checkbox>input {
+    z-index: 999;
+    opacity: 0;
+}
+
+.checkbox>input,
+.checkbox>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.checkbox>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    backdrop-filter: invert(0.75);
+    transition: 0.5s;
+}
+
+.checkbox>span:before {
+    position: absolute;
+    content: "";
+    --size: 25px;
+    height: var(--size);
+    width: var(--size);
+    left: 10%;
+    bottom: 20%;
+    background-color: var(--background-color);
+    transition: 0.5s;
+}
+
+.checkbox>input:checked+span {
+    background-color: green;
+}
+
+.checkbox>input:focus+span {
+    /*keyboard space / click*/
+}
+
+.checkbox>input:checked+span:before {
+    transition: 1.5s;
+    right: 10%;
+    left: unset;
+}
+
+.checkbox>span {
+    border-radius: 34px;
+}
+
+.checkbox>span:before {
+    border-radius: 50%;
 }

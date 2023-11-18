@@ -9,7 +9,7 @@
     border-color: var(--main-color);
     border-style: solid;
 
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .subnav:hover .subnav-content,

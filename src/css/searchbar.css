@@ -12,7 +12,7 @@
     margin-right: auto;
     max-width: 90vw;
     width: 90vw;
-    z-index: 1000;
+    z-index: 999;
 }
 
 #search-box>input {
