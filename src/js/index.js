@@ -46,6 +46,8 @@ async function Metadata() {
 async function pages() {
     console.info("Loading custom page");
 
+    await include_script("/src/js/viewcount.js");
+
     if (pathNameMatchPage("") || pathNameMatchPage("index")) {
         await includes();
 
