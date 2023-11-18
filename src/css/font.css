@@ -19,7 +19,8 @@ summary {
 p,
 a,
 del,
-i {
+i,
+li {
     font-family: Varela;
 
     font-size: x-large;
@@ -49,7 +50,8 @@ h2 {
 p,
 b,
 del,
-i {
+i,
+li {
     color: var(--text-color);
 }
 
