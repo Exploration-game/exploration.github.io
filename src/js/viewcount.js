@@ -28,4 +28,4 @@ const getViews = async (repo, callback) => {
     return value;
 }
 
-viewCount("testgithubpage.io.test2");
+viewCount("GHub-fr.github.io");
