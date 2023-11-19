@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  test:
+  clone:
     runs-on: ubuntu-latest
 
     steps:
