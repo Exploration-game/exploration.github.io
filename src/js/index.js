@@ -83,7 +83,7 @@ async function pages() {
         await includes();
 
         await include_script("/src/js/gather.js");
-        
+
         await include_html("/src/html/content/contributeur.html", "content", true);
         await include_script("/src/js/contributeur.js");
     }
@@ -195,5 +195,11 @@ async function devTest() {
      await include_html("/src/html/content/devTest.html", "content", true); 
      */
 
-    await includes(); 
+    await includes();
+
+    await include_script("/src/js/gather.js");
+    
+    await include_html("/src/html/content/issues.html", "content", true);
+    await include_css("/src/css/issues.css");
+    await include_script("/src/js/issues.js");
 }
