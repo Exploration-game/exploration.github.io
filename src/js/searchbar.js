@@ -3,7 +3,7 @@ resultsBox.style.display = "none"
 
 const links = [
     {
-        href: "/statistiques",
+        href: "/github/statistiques",
         text: "Statistiques",
     },
     {
@@ -19,24 +19,28 @@ const links = [
         text: "Paramètres",
     },
     {
-        href: "/contribuer",
+        href: "/github/contribuer",
         text: "Comment contribuer ?",
     },
     {
-        href: "/support",
+        href: "/github/support",
         text: "Support d'aide",
     },
     {
-        href: "/security",
+        href: "/github/security",
         text: "Security",
     },
     {
-        href: "/license",
+        href: "/github/license",
         text: "License Apache",
     },
     {
-        href: "/code_of_conduct",
+        href: "/github/code_of_conduct",
         text: "Code de conduite",
+    },
+    {
+        href: "/outils/matrice",
+        text: "Matrice / Matrix",
     },
 ];
 
