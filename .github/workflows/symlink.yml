@@ -17,7 +17,8 @@ jobs:
     steps:
      - name: clone
        run: |
-         ln -s ./page/ ./
+         ln -s ./page/* ./
      - name: show
        run: |
-         ls -a -R
+         ls -a
+         ls -R
