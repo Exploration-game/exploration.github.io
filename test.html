@@ -6,7 +6,8 @@
     var meta = document.createElement("meta");
     meta.property = "og:description";
     meta.content = "Page d'erreur 404 de GHub.fr";
-    document.appendChild(meta);
+    var html = document.querySelector("html");
+    html.appendChild(meta);
 </script>
 <script rel="preload" as="script" src="/src/js/fetch.js">
 </script>
