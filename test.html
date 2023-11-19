@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-<meta property="og:title" content="GHub.fr test !" />
-<script>
-    console.log("test");
-    var meta = document.createElement("meta");
-    meta.property = "og:description";
-    meta.content = "Page d'erreur 404 de GHub.fr";
-    var html = document.querySelector("html");
-    html.appendChild(meta);
-</script>
-<script rel="preload" as="script" src="/src/js/fetch.js">
-</script>
+
+<head>
+    <meta property="og:title" content="GHub.fr test !" />
+    <script>
+        console.log("test");
+        var meta = document.createElement("meta");
+        meta.property = "og:description";
+        meta.content = "Page d'erreur 404 de GHub.fr";
+        var html = document.querySelector("head");
+        html.appendChild(meta);
+    </script>
+    <script rel="preload" as="script" src="/src/js/fetch.js">
+    </script>
+</head>
 
 </html>
