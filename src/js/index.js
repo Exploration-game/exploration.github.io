@@ -79,6 +79,15 @@ async function pages() {
         await include_script("/src/js/github-events.js");
     }
 
+    else if (pathNameMatchPage("/github/contributeur")) {
+        await includes();
+
+        await include_script("/src/js/gather.js");
+        
+        await include_html("/src/html/content/contributeur.html", "content", true);
+        await include_script("/src/js/contributeur.js");
+    }
+
     else if (pathNameMatchPage("/github/readme")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'profile/README.md'); });
@@ -180,7 +189,14 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
-    await include_html("/src/html/include/content.html", "body", false);
-    await include_css("/src/css/devTest.css");
-    await include_html("/src/html/content/devTest.html", "content", true);
+    /*  
+     await include_html("/src/html/include/content.html", "body", false);
+     await include_css("/src/css/devTest.css");
+     await include_html("/src/html/content/devTest.html", "content", true); 
+     */
+
+    await includes();
+    await include_script("/src/js/gather.js");
+    await include_html("/src/html/content/contributeur.html", "content", true);
+    await include_script("/src/js/contributeur.js");
 }
