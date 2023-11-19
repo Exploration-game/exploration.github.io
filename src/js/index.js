@@ -39,7 +39,7 @@ async function styles() {
 }
 
 async function Metadata() {
-    document.title = "GHub " + getShortPathname();
+    document.title = "📰 " + "GHub " + getShortPathname();
 
     link = document.createElement("link");
     link.rel = "icon";
