@@ -148,7 +148,6 @@ async function pages() {
 function getShortPathname() {
     var path = window.location.pathname;
     path = path.replace(".html", "");
-    path = path.replaceAll("/", "");
     return path;
 }
 
