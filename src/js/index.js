@@ -195,8 +195,5 @@ async function devTest() {
      await include_html("/src/html/content/devTest.html", "content", true); 
      */
 
-    await includes();
-    await include_script("/src/js/gather.js");
-    await include_html("/src/html/content/contributeur.html", "content", true);
-    await include_script("/src/js/contributeur.js");
+    await includes(); 
 }
