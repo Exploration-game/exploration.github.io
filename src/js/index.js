@@ -109,12 +109,12 @@ async function pages() {
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
     }
         
-    else if (pathNameMatchPage("/cours/notereadme")) {
+    else if (pathNameMatchPage("/cours/readme")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/README.md'); });
     }
 
-    else if (pathNameMatchPage("/cours/markdownlearning")) {
+    else if (pathNameMatchPage("/cours/markdown")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
@@ -132,6 +132,7 @@ async function pages() {
 
         await include_css("/src/css/404.css");
         await include_html("/src/html/content/404.html", "content", true);
+        console.warn("Erreur : 404");
 
         if (pathNameMatchPage("404")) {
             await include_html("/src/html/content/404-custom.html", "erreur", true);
