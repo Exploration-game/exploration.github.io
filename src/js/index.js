@@ -52,10 +52,10 @@ async function pages() {
     console.info("Loading custom page");
 
     if (pathNameMatchPage("/") || pathNameMatchPage("/index")) {
-        await includes();
         if (devMode()) {
             devTest();
         } else {
+            await includes();
             await include_html("/src/html/content/welcome.html", "content", true);
             await include_css("/src/css/welcome.css");
         }
@@ -88,12 +88,12 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CONTRIBUTING.md'); });
     }
-    
+
     else if (pathNameMatchPage("/github/support")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SUPPORT.md'); });
     }
-        
+
     else if (pathNameMatchPage("/github/security")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SECURITY.md'); });
@@ -103,12 +103,12 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'LICENSE.md'); });
     }
-        
+
     else if (pathNameMatchPage("/github/code_of_conduct")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
     }
-        
+
     else if (pathNameMatchPage("/cours/readme")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/README.md'); });
@@ -125,6 +125,11 @@ async function pages() {
         await include_css("/src/css/settings.css");
         await include_html("/src/html/content/settings.html", "content", true);
         await include_script("/src/js/settings.js");
+    }
+
+    else if (pathNameMatchPage("/outils/matrice")) {
+        await include_html("/src/html/include/content.html", "body", false);
+        await include_multiple("matrice", "content");
     }
 
     else {
@@ -175,6 +180,9 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
+    await include_html("/src/html/include/content.html", "body", false);
     await include_css("/src/css/devTest.css");
     await include_html("/src/html/content/devTest.html", "content", true);
+
+    await include_multiple("matrice", "content");
 }

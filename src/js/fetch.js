@@ -4,7 +4,7 @@ include(); async function include() {
 
 async function include_multiple(name, area) {
     await include_css("/src/css/" + name + ".css");
-    await include_html("/src/html/contents/" + name + ".html", area, true);
+    await include_html("/src/html/content/" + name + ".html", area, true);
     await include_script("/src/js/" + name + ".js");
 }
 
@@ -30,7 +30,7 @@ async function include_script(url) {
     script.type = "text/javascript";
     script.src = url;
     document.head.appendChild(script);
-    
+
     return new Promise((res, rej) => {
         script.onload = function () {
             res();
