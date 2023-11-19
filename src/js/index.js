@@ -61,7 +61,7 @@ async function pages() {
         }
     }
 
-    else if (pathNameMatchPage("statistiques")) {
+    else if (pathNameMatchPage("github/statistiques")) {
         await includes();
 
         await include_script("/src/js/gather.js");
@@ -79,32 +79,32 @@ async function pages() {
         await include_script("/src/js/github-events.js");
     }
 
-    else if (pathNameMatchPage("readme")) {
+    else if (pathNameMatchPage("github/readme")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'profile/README.md'); });
     }
 
-    else if (pathNameMatchPage("contribuer")) {
+    else if (pathNameMatchPage("github/contribuer")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CONTRIBUTING.md'); });
     }
     
-    else if (pathNameMatchPage("support")) {
+    else if (pathNameMatchPage("github/support")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SUPPORT.md'); });
     }
         
-    else if (pathNameMatchPage("security")) {
+    else if (pathNameMatchPage("github/security")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SECURITY.md'); });
     }
 
-    else if (pathNameMatchPage("license")) {
+    else if (pathNameMatchPage("github/license")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'LICENSE.md'); });
     }
         
-    else if (pathNameMatchPage("code_of_conduct")) {
+    else if (pathNameMatchPage("github/code_of_conduct")) {
         await includes();
         await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
     }
