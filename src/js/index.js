@@ -87,6 +87,16 @@ async function pages() {
         await include_html("/src/html/content/contributeur.html", "content", true);
         await include_script("/src/js/contributeur.js");
     }
+    
+    else if (pathNameMatchPage("/github/issues")) {
+        await includes();
+
+        await include_script("/src/js/gather.js");
+
+        await include_html("/src/html/content/issues.html", "content", true);
+        await include_css("/src/css/issues.css");
+        await include_script("/src/js/issues.js");
+    }
 
     else if (pathNameMatchPage("/github/readme")) {
         await includes();
@@ -196,10 +206,4 @@ async function devTest() {
      */
 
     await includes();
-
-    await include_script("/src/js/gather.js");
-    
-    await include_html("/src/html/content/issues.html", "content", true);
-    await include_css("/src/css/issues.css");
-    await include_script("/src/js/issues.js");
 }
