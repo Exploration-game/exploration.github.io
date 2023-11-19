@@ -7,7 +7,7 @@ async function start(orgs) {
 async function getIssues(repo, orgs) {
     var x = await gather('https://api.github.com/repos/' + orgs + '/' + repo + '/issues');
     for (var i in x) {
-        var issueURL = getValue(x[i], "url");
+        var issueURL = getValue(x[i], "html_url");
         var issueTitle = getValue(x[i], "title");
 
         var user = getValue(x[i], "user");
