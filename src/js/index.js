@@ -87,7 +87,7 @@ async function pages() {
         await include_html("/src/html/content/contributeur.html", "content", true);
         await include_script("/src/js/contributeur.js");
     }
-    
+
     else if (pathNameMatchPage("/github/issues")) {
         await includes();
 
@@ -199,11 +199,8 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
-    /*  
-     await include_html("/src/html/include/content.html", "body", false);
-     await include_css("/src/css/devTest.css");
-     await include_html("/src/html/content/devTest.html", "content", true); 
-     */
 
-    await includes();
+    await include_html("/src/html/include/content.html", "body", false);
+    await include_css("/src/css/devTest.css");
+    await include_html("/src/html/content/devTest.html", "content", true);
 }

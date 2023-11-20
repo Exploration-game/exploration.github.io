@@ -11,20 +11,32 @@
 b,
 summary {
     font-family: Varela;
+
     font-size: x-large;
     font-weight: bolder;
-    text-decoration: underline;
+}
+
+i {
+    font-style: italic;
 }
 
 p,
-a,
 del,
 i,
 li {
     font-family: Varela;
 
-    font-size: x-large;
+    font-size: larger;
+    font-weight: normal;
+}
+
+a {
+    font-family: Varela;
+
+    font-size: larger;
     font-weight: bold;
+
+    text-decoration: underline;
 }
 
 h1,

@@ -23,11 +23,6 @@
 
 #content>#markdown>*:not(hr) {
     display: inline;
-
-}
-
-#content>#markdown>a {
-    text-decoration: none;
 }
 
 #content>#markdown>a>* {
