@@ -12,6 +12,9 @@ for (item of document.getElementsByTagName("a")) {
 for (item of document.getElementsByTagName("button")) {
     addHandlers(item);
 }
+for (item of document.getElementsByTagName("input")) {
+    addHandlers(item);
+}
 
 function addHandlers(item) {
     item.addEventListener("mouseenter", linkEnterHandler);

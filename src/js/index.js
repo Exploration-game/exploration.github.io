@@ -100,42 +100,42 @@ async function pages() {
 
     else if (pathNameMatchPage("/github/readme")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'profile/README.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'profile/README.md'); });
     }
 
     else if (pathNameMatchPage("/github/contribuer")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CONTRIBUTING.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'CONTRIBUTING.md'); });
     }
 
     else if (pathNameMatchPage("/github/support")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SUPPORT.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'SUPPORT.md'); });
     }
 
     else if (pathNameMatchPage("/github/security")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'SECURITY.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'SECURITY.md'); });
     }
 
     else if (pathNameMatchPage("/github/license")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'LICENSE.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'LICENSE.md'); });
     }
 
     else if (pathNameMatchPage("/github/code_of_conduct")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
     }
 
     else if (pathNameMatchPage("/cours/readme")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/README.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/README.md'); });
     }
 
     else if (pathNameMatchPage("/cours/markdown")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
     }
 
     else if (pathNameMatchPage("/settings")) {
@@ -202,9 +202,5 @@ async function devTest() {
 
     await include_html("/src/html/include/content.html", "body", false);
     await include_css("/src/css/devTest.css");
-    await include_html("/src/html/content/devTest.html", "content", true);
-
-
-    await includes();
-    await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
+    await include_html("/src/html/content/devTest.html", "content", true);  
 }
