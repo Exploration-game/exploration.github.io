@@ -53,7 +53,7 @@ async function pages() {
 
     if (pathNameMatchPage("/") || pathNameMatchPage("/index")) {
         if (devMode()) {
-            devTest();
+            await devTest();
         } else {
             await includes();
             await include_html("/src/html/content/welcome.html", "content", true);
@@ -167,7 +167,7 @@ async function pages() {
         await include_script("/src/js/viewcount.js");
     }
 
-    await include_script("/src/js/cursor.js"); //must be last for handler a & btn, buggy with long loading scheme async
+    await include_script("/src/js/cursor.js");
 }
 
 function getShortPathname() {
@@ -199,4 +199,7 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
+    await includes();
+
+    //Test module ⏬
 }
