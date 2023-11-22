@@ -158,7 +158,7 @@ async function pages() {
         await include_html("/src/html/content/404.html", "content", true);
         console.warn("Erreur : 404");
 
-        if (pathNameMatchPage("404")) {
+        if (pathNameMatchPage("/404")) {
             await include_html("/src/html/content/404-custom.html", "erreur", true);
         }
     }
