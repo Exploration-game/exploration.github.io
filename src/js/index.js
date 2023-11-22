@@ -199,8 +199,4 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
-
-    await include_html("/src/html/include/content.html", "body", false);
-    await include_css("/src/css/devTest.css");
-    await include_html("/src/html/content/devTest.html", "content", true);  
 }
