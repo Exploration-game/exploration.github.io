@@ -203,4 +203,8 @@ async function devTest() {
     await include_html("/src/html/include/content.html", "body", false);
     await include_css("/src/css/devTest.css");
     await include_html("/src/html/content/devTest.html", "content", true);
+
+
+    await includes();
+    await include_script("/src/js/markdown.js").then(() => { addMarkdown('GHub-fr/.github', 'note/Github/Markdown/Learning.md'); });
 }
