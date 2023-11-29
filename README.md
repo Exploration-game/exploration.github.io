@@ -1,4 +1,4 @@
-# [GHub-fr.github.io](https://GHub-fr.github.io) | [doc.ghub.fr](https://doc.ghub.fr)
+# [GHub-fr.github.io](https://GHub-fr.github.io)
 <br>
 <a href=""><img src="https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2FGHub-fr.github.io"></a>
 <br>
