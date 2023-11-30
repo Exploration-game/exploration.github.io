@@ -145,7 +145,7 @@ async function pages() {
         
     else if (pathNameMatchPage("/cours/fibre")) {
         await includes();
-        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('github/.github', 'note/Network/Fibre/README.md'); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Network/Fibre/README.md'); });
     }
 
     else if (pathNameMatchPage("/settings")) {
