@@ -206,5 +206,8 @@ async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
     await includes();
 
+    var devFooter = document.getElementById("devFooter");
+    devFooter.style = "";
+
     //Test module ⏬
 }
