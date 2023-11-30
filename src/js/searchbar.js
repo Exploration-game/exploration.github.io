@@ -49,9 +49,11 @@ function keyup() {
     const inputBox = document.getElementById("input-box");
     let input = inputBox.value;
 
-    result = links.filter((link) => {
-        return link.text.toLowerCase().includes(input.toLowerCase());
-    });
+    if (input.length > 0) {
+        result = links.filter((link) => {
+            return link.text.toLowerCase().includes(input.toLowerCase());
+        });
+    }
 
     display(result);
 }
