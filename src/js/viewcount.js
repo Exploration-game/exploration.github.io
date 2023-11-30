@@ -7,7 +7,9 @@ async function viewCount(page) {
         pathname = ".index"
     }
 
-    var content = document.getElementById("content");
+    var content = document.querySelector("footer");
+
+    var divView = document.createElement("div");
 
     var globalView = await getViews(page);
     var globalText = document.createElement("p");
@@ -18,8 +20,9 @@ async function viewCount(page) {
     pathname = pathname.replaceAll(".", "");
     pageText.textContent = pathname + " : " + pageView + " vues";
 
-    content.appendChild(globalText);
-    content.appendChild(pageText);
+    divView.appendChild(globalText);
+    divView.appendChild(pageText);
+    content.appendChild(divView);
 }
 
 const getViews = async (repo, callback) => {
