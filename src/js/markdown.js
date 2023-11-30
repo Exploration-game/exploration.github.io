@@ -14,6 +14,7 @@ const parseMarkdown = (text) => {
  
         .replace(/\*\*(.*?)\*\*/gm, '<b>$1</b>') // bold text
         .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
+        .replace(/\_\_(.*?)\_\_/gm, '<u>$1</u>') // underline
 
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
         .replace(/\n\s?[0-9]+\.\s*(.*)/gim, '<ol>\n\t<li>$1</li>\n</ol>') // <ol>
