@@ -142,7 +142,7 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('github/.github', 'profile/README.md'); });
     }
-        
+
     else if (pathNameMatchPage("/cours/fibre")) {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Network/Fibre/README.md'); });
@@ -175,6 +175,9 @@ async function pages() {
 
     if (!devMode()) {
         await include_script("/src/js/viewcount.js");
+    } else {
+        var devFooter = document.getElementById("devFooter");
+        devFooter.style = "";
     }
 
     await include_script("/src/js/cursor.js");
@@ -210,9 +213,6 @@ function devMode() {
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
     await includes();
-
-    var devFooter = document.getElementById("devFooter");
-    devFooter.style = "";
 
     //Test module ⏬
 }
