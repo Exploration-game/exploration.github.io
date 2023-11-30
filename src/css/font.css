@@ -20,14 +20,11 @@ i {
     font-style: italic;
 }
 
-u{
-    text-decoration-color: white;
-}
-
 p,
 del,
 i,
-li {
+li,
+u {
     font-family: Varela;
 
     font-size: larger;
@@ -67,7 +64,8 @@ p,
 b,
 del,
 i,
-li {
+li,
+u {
     color: var(--text-color);
 }
 
