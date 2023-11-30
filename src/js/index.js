@@ -142,6 +142,11 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('github/.github', 'profile/README.md'); });
     }
+        
+    else if (pathNameMatchPage("/cours/fibre")) {
+        await includes();
+       // await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('github/.github', 'profile/README.md'); });
+    }
 
     else if (pathNameMatchPage("/settings")) {
         await includes();
