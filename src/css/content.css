@@ -43,6 +43,7 @@ article>div>h3 {
     #content {
         margin-right: 2vw;
         margin-left: 2vw;
+        max-width: 96vw;
     }
 }
 
@@ -50,5 +51,10 @@ article>div>h3 {
     #content {
         margin-right: 15vw;
         margin-left: 15vw;
+        max-width: 70vw;
+    }
+
+    #content>#markdown {
+        max-width: inherit;
     }
 }
