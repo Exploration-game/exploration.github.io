@@ -147,7 +147,22 @@ async function pages() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Network/Fibre/README.md'); });
     }
-
+        
+    else if (pathNameMatchPage("/cours/html")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/HTML/learning.md'); });
+    }
+        
+    else if (pathNameMatchPage("/cours/css")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/learning.md'); });
+    }
+        
+    else if (pathNameMatchPage("/cours/js")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/JS/learning.md'); });
+    }
+        
     else if (pathNameMatchPage("/settings")) {
         await includes();
 
