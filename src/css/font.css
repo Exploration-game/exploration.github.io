@@ -75,3 +75,11 @@ li::marker,
 hr {
     color: var(--link-color);
 }
+
+code {
+    background-color: var(--second-default);
+    display: block !important;
+    color: var(--main-color);
+
+    padding: 16px;
+}
