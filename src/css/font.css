@@ -80,7 +80,7 @@ code {
     background-color: var(--second-default);
     display: block !important;
     color: var(--main-color);
-
+    max-width: fit-content;
     padding: 16px;
 
     border-color: var(--link-color);
