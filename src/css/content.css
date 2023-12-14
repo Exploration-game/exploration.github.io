@@ -45,6 +45,10 @@ article>div>h3 {
         margin-left: 2vw;
         max-width: 96vw;
     }
+
+    #content>#markdown {
+        max-width: 90%;
+    }
 }
 
 @media screen and (min-width: 1024px) {

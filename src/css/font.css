@@ -82,4 +82,10 @@ code {
     color: var(--main-color);
 
     padding: 16px;
+
+    border-color: var(--link-color);
+    border-width: 2px;
+    border-style: dashed;
+
+    max-width: fit-content;
 }

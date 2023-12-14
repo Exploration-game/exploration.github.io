@@ -10,8 +10,6 @@
     position: fixed;
     z-index: 1000;
 
-    right: 1.5vw;
-
     display: grid;
     max-width: min-content;
 
@@ -32,4 +30,16 @@
 #anchor>button,
 #anchor>a>button {
     background-color: var(--main-color);
+}
+
+@media screen and (max-width: 1024px) {
+    #anchor {
+        right: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #anchor {
+        right: 5vw;
+    }
 }
