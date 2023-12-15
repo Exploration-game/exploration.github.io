@@ -4,7 +4,7 @@ document.head.textContent = "";
 document.body.textContent = "";
 
 // Channel metadata for the RSS feed
-baseUrl = "doc.ghub.fr";
+baseUrl = "https://doc.ghub.fr";
 const channel = {
     title: "doc.ghub.fr",
     feedUrl: "https://doc.ghub.fr/rss",
@@ -45,7 +45,7 @@ const feedItems = linksList;
 
 // Generate the channel feed items based on the filtered pages
 const channelFeed = feedItems?.map((node) => {
-    const link = "https://"+baseUrl + "/" + node.link;
+    const link = baseUrl + "/" + node.link;
     console.log("test : " + link)
     const meta = node.meta || {}
     const title = node.title
