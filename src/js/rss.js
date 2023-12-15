@@ -125,4 +125,12 @@ btn2.onclick = function () {
 }
 div.appendChild(btn2);
 
+var btn3 = document.createElement("button");
+btn3.textContent = "RSS validator";
+btn3.style = "color:white;padding:12px;";
+btn3.onclick = function () {
+  window.open("https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fdoc.ghub.fr%2Frss.rss");
+}
+div.appendChild(btn3);
+
 document.body.querySelector("#content").appendChild(div);
