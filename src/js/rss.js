@@ -6,56 +6,56 @@ document.body.textContent = "";
 // Channel metadata for the RSS feed
 baseUrl = "https://doc.ghub.fr";
 const channel = {
-    title: "doc.ghub.fr",
-    feedUrl: "https://doc.ghub.fr/rss",
-    language: "fr",
-    image: "https://doc.ghub.fr/assets/icon/icone.png",
-    description: "Test description RSS feed for doc.GHub.fr",
+  title: "doc.ghub.fr",
+  feedUrl: "https://doc.ghub.fr/rss",
+  language: "fr",
+  image: "https://doc.ghub.fr/assets/icon/icone.png",
+  description: "Test description RSS feed for doc.GHub.fr",
 }
 
 const linksList = [
-    {
-        title: "Titleeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-        link: "github/test",
-        description: "Statistiques",
-        publicationDate: "",
-        image: "https://doc.ghub.fr/assets/icon/icone.png",
-        creator: "",
-    },
-    {
-        title: "Test2",
-        link: "github/statistiques",
-        description: "Statistiques",
-        publicationDate: "",
-        image: "https://doc.ghub.fr/assets/icon/icone.png",
-        creator: "test",
-    },
+  {
+    title: "Création cours sur le HTML",
+    link: "cours/html",
+    description: "Début du cours sur le HTML (Date, histoire, syntaxe)",
+    publicationDate: "15/12/2023",
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "",
+  },
+  {
+    title: "Création flux RSS (Bêta)",
+    link: "rss",
+    description: "Flux RSS",
+    publicationDate: "",
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "",
+  },
 ];
 
 const channelImage = channel.image
-    ? `<image>
+  ? `<image>
         <title>${channel.title}</title>
         <url>${channel.image}</url>
         <link>${baseUrl}</link>
       </image>`
-    : ''
+  : ''
 
 // Filter pages that have RSS enabled and map them to feed items
 const feedItems = linksList;
 
 // Generate the channel feed items based on the filtered pages
 const channelFeed = feedItems?.map((node) => {
-    const link = baseUrl + "/" + node.link;
-    console.log("test : " + link)
-    const meta = node.meta || {}
-    const title = node.title
-    const description = node.description
-    const publicationDate = node.publicationDate
-    const image = node.image
-    const creator = node.author || channel.title
-    const imageTag = image ? `<img src="${image}" alt="${title || ''}" />` : ''
+  const link = baseUrl + "/" + node.link;
+  console.log("test : " + link)
+  const meta = node.meta || {}
+  const title = node.title
+  const description = node.description
+  const publicationDate = node.publicationDate
+  const image = node.image
+  const creator = node.author || channel.title
+  const imageTag = image ? `<img src="${image}" alt="${title || ''}" />` : ''
 
-    return `
+  return `
       <item>
         <title><![CDATA[${title}]]></title>
         <link>${link}</link>
@@ -87,14 +87,14 @@ const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 document.body.innerText = rssFeed;
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "/rss", false);
+xhr.open("GET", "/rss", true);
 
 xhr.responseType = "application/rss+xml";
 
 xhr.onload = () => {
-    if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+  if (xhr.readyState === xhr.DONE && xhr.status === 200) {
 
-        xhr.send([rssFeed]);
-        console.log(xhr.response);
-    }
-};
+    xhr.send([rssFeed]);
+    console.log(xhr.response);
+  }
+}; 
