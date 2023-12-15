@@ -42,6 +42,10 @@ const links = [
         href: "/outils/matrice",
         text: "Matrice / Matrix",
     },
+    {
+        href: "/outils/rss",
+        text: "Flux RSS",
+    },
 ];
 
 function keyup() {
