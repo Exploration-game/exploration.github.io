@@ -45,7 +45,7 @@ const feedItems = linksList;
 
 // Generate the channel feed items based on the filtered pages
 const channelFeed = feedItems?.map((node) => {
-    const link = baseUrl + "/" + node.link;
+    const link = "https://"+baseUrl + "/" + node.link;
     console.log("test : " + link)
     const meta = node.meta || {}
     const title = node.title
@@ -89,7 +89,7 @@ document.body.innerText = rssFeed;
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "/rss", false);
 
-xhr.responseType = "xml";
+xhr.responseType = "application/rss+xml";
 
 xhr.onload = () => {
     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
