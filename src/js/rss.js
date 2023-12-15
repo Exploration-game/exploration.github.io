@@ -1,7 +1,26 @@
 console.log("start test RSS");
 
-document.head.textContent = "";
-document.body.textContent = "";
+function addLeadingZero(num) {
+  num = num.toString();
+  while (num.length < 2) num = "0" + num;
+  return num;
+}
+
+function buildRFC822Date(dateString) {
+  const dayStrings = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const monthStrings = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  const timeStamp = Date.parse(dateString);
+  const date = new Date(timeStamp);
+
+  const day = dayStrings[date.getDay()];
+  const dayNumber = addLeadingZero(date.getDate());
+  const month = monthStrings[date.getMonth()];
+  const year = date.getFullYear();
+  const time = `${addLeadingZero(date.getHours())}:${addLeadingZero(date.getMinutes())}:00`;
+
+  return `${day}, ${dayNumber} ${month} ${year} ${time}`;
+}
 
 // Channel metadata for the RSS feed
 baseUrl = "https://doc.ghub.fr";
@@ -18,15 +37,15 @@ const linksList = [
     title: "Création cours sur le HTML",
     link: "cours/html",
     description: "Début du cours sur le HTML (Date, histoire, syntaxe)",
-    publicationDate: "15/12/2023",
+    publicationDate: buildRFC822Date("2023-12-14T00:00:00.0000"),
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "",
   },
   {
     title: "Création flux RSS (Bêta)",
-    link: "rss",
+    link: "outils/rss",
     description: "Flux RSS",
-    publicationDate: "",
+    publicationDate: buildRFC822Date("2023-12-15T00:00:00.0000"),
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "",
   },
@@ -83,18 +102,27 @@ const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
   </rss>
   `
 
+var div = document.createElement("div");
+var p = document.createElement("p");
+p.textContent = rssFeed;
+div.appendChild(p);
 
-document.body.innerText = rssFeed;
+div.appendChild(document.createElement("hr"));
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "/rss", true);
+var btn = document.createElement("button");
+btn.textContent = "Copier le flux RSS";
+btn.style = "color:white;padding:12px;";
+btn.onclick = function () {
+  navigator.clipboard.writeText(rssFeed);
+}
+div.appendChild(btn);
 
-xhr.responseType = "application/rss+xml";
+var btn2 = document.createElement("button");
+btn2.textContent = "Aller vers RSS.rss";
+btn2.style = "color:white;padding:12px;";
+btn2.onclick = function () {
+  window.open("https://doc.ghub.fr/rss.rss");
+}
+div.appendChild(btn2);
 
-xhr.onload = () => {
-  if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-
-    xhr.send([rssFeed]);
-    console.log(xhr.response);
-  }
-}; 
+document.body.querySelector("#content").appendChild(div);

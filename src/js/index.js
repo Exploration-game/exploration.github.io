@@ -51,14 +51,6 @@ async function Metadata() {
 async function pages() {
     console.info("Loading custom page");
 
-    if (pathNameMatchPage("/rss.rss")) {
-    }
-    else if (pathNameMatchPage("/outils/rss")) {
-        await include_script("/src/js/rss.js");
-        return; //return to avoid loading more code
-        //This page should load without this code as in "/rss.html" link RSS.JS 
-    }
-
     if (pathNameMatchPage("/") || pathNameMatchPage("/index")) {
         if (devMode()) {
             await devTest();
@@ -182,6 +174,11 @@ async function pages() {
     else if (pathNameMatchPage("/outils/matrice")) {
         await include_html("/src/html/include/content.html", "body", false);
         await include_multiple("matrice", "content");
+    }
+
+    else if (pathNameMatchPage("/outils/rss")) {
+        await includes();
+        await include_script("/src/js/rss.js");
     }
 
     else {

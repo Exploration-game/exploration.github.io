@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<title>doc.ghub.fr</title>
-<link>https://doc.ghub.fr</link>
-<atom:link href="https://doc.ghub.fr/rss" rel="self" type="application/rss+xml" />
-<description>Test description RSS feed for doc.GHub.fr</description>
-
-<language>fr</language>
-<image>
-<title>doc.ghub.fr</title>
-<url>https://doc.ghub.fr/assets/icon/icone.png</url>
-<link>https://doc.ghub.fr</link>
-</image>
-
-<item>
-<title><![CDATA[Création cours sur le HTML]]></title>
-<link>https://doc.ghub.fr/cours/html</link>
-<guid isPermaLink="true">https://doc.ghub.fr/cours/html</guid>
-<pubDate>Invalid Date</pubDate>
-<dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
-<description><![CDATA[Début du cours sur le HTML (Date, histoire, syntaxe)]]></description>
-<content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Création cours sur le HTML" />]]></content:encoded>
-</item>
-
-<item>
-<title><![CDATA[Création flux RSS (Bêta)]]></title>
-<link>https://doc.ghub.fr/rss</link>
-<guid isPermaLink="true">https://doc.ghub.fr/rss</guid>
-
-<dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
-<description><![CDATA[Flux RSS]]></description>
-<content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Création flux RSS (Bêta)" />]]></content:encoded>
-</item>
-
-</channel>
-</rss>
+  <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>doc.ghub.fr</title>
+      <link>https://doc.ghub.fr</link>
+      <atom:link href="https://doc.ghub.fr/rss" rel="self" type="application/rss+xml" />
+      <description>Test description RSS feed for doc.GHub.fr</description>
+      
+      <language>fr</language>
+      <image>
+        <title>doc.ghub.fr</title>
+        <url>https://doc.ghub.fr/assets/icon/icone.png</url>
+        <link>https://doc.ghub.fr</link>
+      </image>
+      
+      <item>
+        <title><![CDATA[Création cours sur le HTML]]></title>
+        <link>https://doc.ghub.fr/cours/html</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/cours/html</guid>
+        <pubDate>Wed, 13 Dec 2023 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Début du cours sur le HTML (Date, histoire, syntaxe)]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Création cours sur le HTML" />]]></content:encoded>
+      </item>
+    
+      <item>
+        <title><![CDATA[Création flux RSS (Bêta)]]></title>
+        <link>https://doc.ghub.fr/outils/rss</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/outils/rss</guid>
+        <pubDate>Thu, 14 Dec 2023 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Flux RSS]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Création flux RSS (Bêta)" />]]></content:encoded>
+      </item>
+    
+    </channel>
+  </rss>
+  
