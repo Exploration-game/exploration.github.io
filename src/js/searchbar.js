@@ -46,6 +46,18 @@ const links = [
         href: "/outils/rss",
         text: "Flux RSS",
     },
+    {
+        href: "/cours/html",
+        text: "Cours sur le HTML",
+    },
+    {
+        href: "/cours/css",
+        text: "Cours sur le CSS",
+    },
+    {
+        href: "/cours/js",
+        text: "Cours sur le JavaScript (JS)",
+    },
 ];
 
 function keyup() {
