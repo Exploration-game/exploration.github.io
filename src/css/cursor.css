@@ -34,3 +34,16 @@ input {
     transition: background 1s ease, transform 1s ease, opacity 0.5s ease-out;
     transform-origin: center;
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+    .cursor {
+        display: none !important;
+    }
+
+    a,
+    button,
+    html,
+    input {
+        cursor: default !important;
+    }
+}
