@@ -103,9 +103,11 @@ const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
   `
 
 var div = document.createElement("div");
-var p = document.createElement("p");
-p.textContent = rssFeed;
-div.appendChild(p);
+var textarea = document.createElement("textarea");
+textarea.textContent = rssFeed;
+textarea.style = "width:70vw;height:70vh;";
+textarea.spellcheck = false;
+div.appendChild(textarea);
 
 div.appendChild(document.createElement("hr"));
 
