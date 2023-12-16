@@ -3,7 +3,7 @@
     <channel>
       <title>doc.ghub.fr</title>
       <link>https://doc.ghub.fr</link>
-      <atom:link href="https://doc.ghub.fr/rss" rel="self" type="application/rss+xml" />
+      <atom:link href="https://doc.ghub.fr/rss.rss" rel="self" type="application/rss+xml" />
       <description>Test description RSS feed for doc.GHub.fr</description>
       
       <language>fr</language>

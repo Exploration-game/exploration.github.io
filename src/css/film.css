@@ -1,0 +1,54 @@
+.films>h1 {
+    text-align: center;
+    color: var(--text-color);
+    padding-top: 50px;
+}
+
+.films>div>div {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px;
+    margin: 10px;
+
+    width: 300px;
+    height: 450px;
+    overflow-x: auto;
+}
+
+.films>div>div>img {
+    width: 150px;
+    height: 200px;
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.films>div>div>a {
+    font-size: xx-large;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.films>div>div>p {
+    max-width: 250px;
+}
+
+.card {
+    background-color: var(--background-color-transparent);
+
+    border-radius: 16px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--main-color);
+}
+
+.card.best {
+    background-color: var(--main-color-transparent);
+
+    border-color: var(--text-color);
+}
+
+.card.medium {}

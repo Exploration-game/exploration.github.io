@@ -181,6 +181,27 @@ async function pages() {
         await include_script("/src/js/rss.js");
     }
 
+    else if (pathNameMatchPage("/admin/film")) {
+        await includes();
+
+        await include_css("/src/css/film.css");
+        await include_html("/src/html/content/film.html", "content", true);
+    }
+
+    else if (pathNameMatchPage("/admin/music")) {
+        await includes();
+
+        await include_css("/src/css/music.css");
+        await include_html("/src/html/content/music.html", "content", true);
+    }
+    
+    else if (pathNameMatchPage("/admin/contact")) {
+        await includes();
+
+        await include_css("/src/css/contact.css");
+        await include_html("/src/html/content/contact.html", "content", true);
+    }
+
     else {
         await includes();
 

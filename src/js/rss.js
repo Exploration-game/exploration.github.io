@@ -26,7 +26,7 @@ function buildRFC822Date(dateString) {
 baseUrl = "https://doc.ghub.fr";
 const channel = {
   title: "doc.ghub.fr",
-  feedUrl: "https://doc.ghub.fr/rss",
+  feedUrl: "https://doc.ghub.fr/rss.rss",
   language: "fr",
   image: "https://doc.ghub.fr/assets/icon/icone.png",
   description: "Test description RSS feed for doc.GHub.fr",

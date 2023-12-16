@@ -1,0 +1,58 @@
+.contact {
+    text-align: center;
+}
+
+.contact>h1 {
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 64px;
+}
+
+.contact>img {
+    margin-bottom: 4px;
+
+
+    width: 256px;
+
+    border-radius: 100%;
+
+    box-shadow: var(--box-shadow-all-inset-main-color);
+}
+
+.contact>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contact>div>a>h2 {
+    font-weight: bold;
+    font-size: large;
+    text-decoration: underline;
+
+    padding-top: 3px;
+}
+
+.contact>div>a>p {
+    font-size: 30px;
+    padding-right: 12px;
+}
+
+.contact>div>a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border: 4px ridge var(--main-color);
+    border-radius: 12px;
+
+    margin: 12px;
+    padding: 24px;
+
+    flex-basis: 40%;
+}
+
+.contact>div>a:hover {
+    background-color: var(--main-color);
+    box-shadow: var(--box-shadow-all-inset-main-color);
+}
