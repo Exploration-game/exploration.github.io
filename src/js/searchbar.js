@@ -58,6 +58,18 @@ const links = [
         href: "/cours/js",
         text: "Cours sur le JavaScript (JS)",
     },
+    {
+        href: "/admin/contact",
+        text: "Contacter l'administrateur du projet",
+    },
+    {
+        href: "/admin/film",
+        text: "Les films conseillés par GHub",
+    },
+    {
+        href: "/admin/music",
+        text: "Musiques conseillés par GHub (Music)",
+    },
 ];
 
 function keyup() {
