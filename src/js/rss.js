@@ -105,15 +105,17 @@ const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 var div = document.createElement("div");
 var textarea = document.createElement("textarea");
 textarea.textContent = rssFeed;
-textarea.style = "width:70vw;height:70vh;";
+textarea.style = "width:70vw;height:50vh;color:var(--text-color);background-color:var(--main-color)";
 textarea.spellcheck = false;
 div.appendChild(textarea);
 
-div.appendChild(document.createElement("hr"));
+var hr = document.createElement("hr");
+hr.style = "margin-top:60px;margin-bottom:60px;";
+div.appendChild(hr);
 
 var btn = document.createElement("button");
 btn.textContent = "Copier le flux RSS";
-btn.style = "color:white;padding:12px;";
+btn.style = "color:var(--text-color);padding:12px;margin:6px;";
 btn.onclick = function () {
   navigator.clipboard.writeText(rssFeed);
 }
@@ -121,7 +123,7 @@ div.appendChild(btn);
 
 var btn2 = document.createElement("button");
 btn2.textContent = "Aller vers RSS.rss";
-btn2.style = "color:white;padding:12px;";
+btn2.style = "color:var(--text-color);padding:12px;margin:6px;";
 btn2.onclick = function () {
   window.open("https://doc.ghub.fr/rss.rss");
 }
@@ -129,7 +131,7 @@ div.appendChild(btn2);
 
 var btn3 = document.createElement("button");
 btn3.textContent = "RSS validator";
-btn3.style = "color:white;padding:12px;";
+btn3.style = "color:var(--text-color);padding:12px;margin:6px;";
 btn3.onclick = function () {
   window.open("https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fdoc.ghub.fr%2Frss.rss");
 }
