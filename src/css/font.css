@@ -91,10 +91,26 @@ code {
 }
 
 .background-clip {
-    background-size: 100%;
     background-repeat: repeat !important;
     background-clip: text !important;
     color: transparent !important;
     background: var(--gradient-color);
     backdrop-filter: blur(100px);
+
+    background-size: 400% 400%;
+    animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
