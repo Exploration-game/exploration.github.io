@@ -45,10 +45,15 @@
     border-color: var(--main-color);
 }
 
-.card.best {
-    background-color: var(--main-color-transparent);
-
-    border-color: var(--text-color);
+.card>img.svg {
+    content: url(/assets/svg/thumbs-down.svg);
+    max-width: 50px;
 }
 
-.card.medium {}
+.card.best>img.svg {
+    content: url(/assets/svg/star.svg);
+}
+
+.card.medium>img.svg {
+    content: url(/assets/svg/star-half.svg);
+}

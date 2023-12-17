@@ -62,3 +62,12 @@ article>div>h3 {
         max-width: inherit;
     }
 }
+
+#markdown {
+    min-width: 85%;
+}
+
+#markdown>*>p {
+    max-width: fit-content;
+    display: inline-block;
+}
