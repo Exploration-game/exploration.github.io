@@ -85,7 +85,7 @@ async function addMarkdown(repo, file) {
         anchor.href = "#" + text;
         anchor.id = text;
         anchor.textContent = "#";
-        anchor.style = "padding-left:12px;";
+        anchor.style = "padding-left:12px;scroll-margin-top: 100px;";
         childDiv.append(anchor);
 
         var anchorOnList = document.createElement("a");
