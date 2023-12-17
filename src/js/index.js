@@ -39,7 +39,8 @@ async function styles() {
 }
 
 async function Metadata() {
-    document.title = "📰 " + "GHub " + getShortPathname();
+    var title = getShortPathname().replaceAll("/", " ");
+    document.title = "GHub 📰 " + title;
 
     link = document.createElement("link");
     link.rel = "icon";
@@ -194,7 +195,7 @@ async function pages() {
         await include_css("/src/css/music.css");
         await include_html("/src/html/content/music.html", "content", true);
     }
-    
+
     else if (pathNameMatchPage("/admin/contact")) {
         await includes();
 
