@@ -20,6 +20,10 @@ async function getIssues(repo, orgs) {
 
         await display(issueURL, repo, issueTitle, userLogin, userAvatar, state, dateUpdate, body);
     }
+    if (x === null || x === undefined || x.length <= 0) { } else {
+        var root = document.getElementById("github_issue");
+        root.appendChild(document.createElement("hr"));
+    }
 }
 
 async function getRepo(orgs) {
@@ -35,7 +39,7 @@ async function display(issueURL, repo, issueTitle, userLogin, userAvatar, state,
     var root = document.getElementById("github_issue");
 
     var div = document.createElement('div');
-    div.style = "display: inline-block;margin:20px;"
+    div.style = "display: inline-block;margin:20px;max-width:30vw;max-height:30vh;overflow-x:auto;"
 
     var img = document.createElement('img');
     img.src = userAvatar;
