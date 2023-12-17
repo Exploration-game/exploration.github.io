@@ -94,11 +94,11 @@ code {
     background-repeat: repeat !important;
     background-clip: text !important;
     color: transparent !important;
-    background: var(--gradient-color);
+    background: var(--gradient-color-all);
     backdrop-filter: blur(100px);
 
     background-size: 400% 400%;
-    animation: animate 5s ease-in-out infinite;
+    animation: animate 30s ease-in-out infinite;
 }
 
 @keyframes animate {
