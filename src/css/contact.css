@@ -53,6 +53,8 @@
     padding: 24px;
 
     flex-basis: 40%;
+
+    text-decoration: none !important;
 }
 
 .contact>div>a:hover {
