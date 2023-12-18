@@ -12,6 +12,9 @@
     font-family: Roboto;
 
     max-width: 100%;
+    
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--text-color);
 }
 
 .contact>img {
