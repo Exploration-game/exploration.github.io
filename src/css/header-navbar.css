@@ -56,12 +56,27 @@
     transform: translateY(25%);
 }
 
-.subnav-content>.sided:first-child {
-    float: left;
-    padding-right: 15px;
+
+
+@media screen and (max-height: 750px) {
+    .subnav-content {
+        max-height: 50vh;
+
+        overflow-y: auto;
+
+        left: 15vw;
+        right: 15vw;
+    }
 }
 
-.subnav-content>.sided:last-child {
-    float: right;
-    padding-left: 15px;
+@media screen and (min-width: 1024px) {
+    .subnav-content>.sided:first-child {
+        float: left;
+        padding-right: 15px;
+    }
+
+    .subnav-content>.sided:last-child {
+        float: right;
+        padding-left: 15px;
+    }
 }
