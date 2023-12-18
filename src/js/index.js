@@ -203,6 +203,20 @@ async function pages() {
         await include_html("/src/html/content/contact.html", "content", true);
     }
 
+    else if (pathNameMatchPage("/discord/login")) {
+        await includes();
+
+        await include_css("/src/css/discord.css");
+        await include_html("/src/html/content/discord-login.html", "content", true);
+    }
+
+    else if (pathNameMatchPage("/discord/tools")) {
+        await includes();
+
+        await include_css("/src/css/discord.css");
+        await include_script("/src/js/discord-login.js");
+    }
+
     else {
         await includes();
 
