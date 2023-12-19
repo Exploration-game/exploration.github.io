@@ -43,6 +43,14 @@ const links = [
         text: "Matrice / Matrix",
     },
     {
+        href: "/outils/cube",
+        text: "Cube & Sphère (Sphere) 3D",
+    },
+    {
+        href: "/discord/login",
+        text: "Exemple de Discord login Tools [WIP]",
+    },
+    {
         href: "/outils/rss",
         text: "Flux RSS",
     },
