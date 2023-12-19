@@ -60,7 +60,7 @@ body {
     transform-style: preserve-3d;
 }
 
-.trigger:active~.monitor .vr_layer_item {
+.container:active .vr_layer_item {
     width: 40%;
     height: 40%;
     border-radius: 5px;
@@ -79,7 +79,7 @@ body {
     animation-duration: 60s;
     animation-delay: 0ms;
     animation-iteration-count: infinite;
-    animation-direction: normal;
+    animation-direction: reverse;
 }
 
 .camera.o-x {
@@ -323,10 +323,10 @@ body {
 
 @keyframes rotateX {
     0% {
-        transform: rotateX(30deg);
+        transform: rotateX(160deg);
     }
 
     100% {
-        transform: rotateX(70deg);
+        transform: rotateX(220deg);
     }
 }
