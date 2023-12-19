@@ -79,7 +79,7 @@ body {
     animation-duration: 60s;
     animation-delay: 0ms;
     animation-iteration-count: infinite;
-    animation-direction: reverse;
+    animation-direction: alternate;
 }
 
 .camera.o-x {
@@ -87,7 +87,7 @@ body {
     animation-duration: 30s;
     animation-delay: 0ms;
     animation-iteration-count: infinite;
-    animation-direction: reverse;
+    animation-direction: alternate;
 }
 
 .vr {
