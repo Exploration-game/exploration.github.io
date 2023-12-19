@@ -1,3 +1,36 @@
+#menu {
+    max-width: fit-content;
+
+    background: rgba(0, 153, 255, 0.006);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    border-style: solid;
+
+    margin-top: 64px;
+    padding: 16px;
+    padding-top: 8px;
+
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
+
+#menu>a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu>a:first-of-type {
+    padding-right: 32px;
+}
+
+#menu>a>img {
+    filter: invert(1);
+    transform: translateY(25%);
+    padding-right: 4px;
+    max-width: 32px;
+}
+
 body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     height: 100vh;
