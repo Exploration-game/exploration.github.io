@@ -33,6 +33,26 @@
         <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Création flux RSS (Bêta)" />]]></content:encoded>
       </item>
     
+      <item>
+        <title><![CDATA[Cube & sphère en 3D]]></title>
+        <link>https://doc.ghub.fr/outils/cube</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/outils/cube</guid>
+        <pubDate>Mon, 18 Dec 2023 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[3D]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Cube & sphère en 3D" />]]></content:encoded>
+      </item>
+    
+      <item>
+        <title><![CDATA[Connexion via Discord OAuth]]></title>
+        <link>https://doc.ghub.fr/discord/login</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/discord/login</guid>
+        <pubDate>Mon, 18 Dec 2023 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Discord OAuth]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Connexion via Discord OAuth" />]]></content:encoded>
+      </item>
+    
     </channel>
   </rss>
   

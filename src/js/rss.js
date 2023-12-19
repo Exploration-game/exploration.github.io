@@ -39,7 +39,7 @@ const linksList = [
     description: "Début du cours sur le HTML (Date, histoire, syntaxe)",
     publicationDate: buildRFC822Date("2023-12-14T00:00:00.0000"),
     image: "https://doc.ghub.fr/assets/icon/icone.png",
-    creator: "",
+    creator: "GHub",
   },
   {
     title: "Création flux RSS (Bêta)",
@@ -47,7 +47,23 @@ const linksList = [
     description: "Flux RSS",
     publicationDate: buildRFC822Date("2023-12-15T00:00:00.0000"),
     image: "https://doc.ghub.fr/assets/icon/icone.png",
-    creator: "",
+    creator: "GHub",
+  },
+  {
+    title: "Cube & sphère en 3D",
+    link: "outils/cube",
+    description: "3D",
+    publicationDate: buildRFC822Date("2023-12-19T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub & YusukeNakaya",
+  },
+  {
+    title: "Connexion via Discord OAuth",
+    link: "discord/login",
+    description: "Discord OAuth",
+    publicationDate: buildRFC822Date("2023-12-19T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
   },
 ];
 
