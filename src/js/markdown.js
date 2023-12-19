@@ -75,7 +75,7 @@ async function addMarkdown(repo, file) {
     content.appendChild(link);
 
     //chapter ancre
-    var childDivs = document.getElementById('markdown').getElementsByTagName('h1');
+    var childDivs = document.getElementById('markdown').querySelectorAll("h1, h2, h3, h4, h5, h6");
 
     for (i = 0; i < childDivs.length; i++) {
         var childDiv = childDivs[i];
@@ -90,7 +90,22 @@ async function addMarkdown(repo, file) {
 
         var anchorOnList = document.createElement("a");
         anchorOnList.href = "#" + text;
-        anchorOnList.textContent = textPre;
+        if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
+            anchorOnList.textContent = textPre;
+            anchorOnList.style = "padding-left:0px";
+        }
+        else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
+            anchorOnList.textContent = textPre;
+            anchorOnList.style = "padding-left:15px";
+        }
+        else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
+            anchorOnList.textContent = textPre;
+            anchorOnList.style = "padding-left:45px";
+        }
+        else {
+            anchorOnList.style = "padding-left:60px";
+            anchorOnList.textContent = textPre;
+        }
         anchorList.appendChild(anchorOnList);
     }
 }

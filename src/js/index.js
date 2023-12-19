@@ -177,6 +177,12 @@ async function pages() {
         await include_multiple("matrice", "content");
     }
 
+    else if (pathNameMatchPage("/outils/cube")) {
+        await include_html("/src/html/include/content.html", "body", false);
+        await include_html("/src/html/content/cube.html", "content", true);
+        await include_css("/src/css/cube.css");
+    }
+
     else if (pathNameMatchPage("/outils/rss")) {
         await includes();
         await include_script("/src/js/rss.js");
