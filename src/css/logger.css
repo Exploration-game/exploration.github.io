@@ -1,0 +1,12 @@
+div>h1,
+div>p {
+    display: inline-block;
+}
+
+div>p {
+    padding-left: 16px;
+}
+
+#logger {
+    max-width: 90%;
+}

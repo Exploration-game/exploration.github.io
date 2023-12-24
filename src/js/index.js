@@ -188,6 +188,13 @@ async function pages() {
         await include_script("/src/js/rss.js");
     }
 
+    else if (pathNameMatchPage("/outils/logger")) {
+        await includes();
+        await include_css("/src/css/logger.css");
+        await include_html("/src/html/content/logger.html", "content", true);
+        await include_script("/src/js/logger.js");
+    }
+
     else if (pathNameMatchPage("/admin/film")) {
         await includes();
 
