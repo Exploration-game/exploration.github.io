@@ -86,56 +86,78 @@ function logIntoDocumentHR() {
 async function show() {
     logIntoDocumentHR();
 
-    logIntoDocument("Langue : ", navigator.language);
-    logIntoDocument("Langue(s) : ", navigator.languages);
+    try {
+        logIntoDocument("Langue : ", navigator.language);
+        logIntoDocument("Langue(s) : ", navigator.languages);
+    } catch { }
 
     logIntoDocumentHR();
 
-    logIntoDocument("OS : ", navigator.userAgentData.platform);
-    logIntoDocument("Téléphone : ", navigator.userAgentData.mobile);
+    try {
+        logIntoDocument("OS : ", navigator.userAgentData.platform);
+        logIntoDocument("Téléphone : ", navigator.userAgentData.mobile);
+    } catch { }
     logIntoDocument("Browser : ", navigator.vendor);
-    logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " v." + navigator.userAgentData.brands[1].version);
+    try {
+        logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " v." + navigator.userAgentData.brands[1].version);
+    } catch { }
     logIntoDocument("UserAgent : ", window.navigator.userAgent);
 
     logIntoDocumentHR();
 
     logIntoDocument("Memory : ", navigator.deviceMemory + "GB of browser RAM");
     logIntoDocument("logical processors : ", navigator.hardwareConcurrency);
-    logIntoDocument("Connection : ", navigator.connection.effectiveType);
-    logIntoDocument("DownLink : ", navigator.connection.downlink + " Mb / s");
-    logIntoDocument("Économiseur de données : ", navigator.connection.saveData);
 
-    logIntoDocumentHR();
-
-    const adapter = await navigator.gpu.requestAdapter();
-    for (value in adapter.limits) {
-        logIntoDocument(value + " : ", adapter.limits[value]);
-    }
+    try {
+        logIntoDocument("Connection : ", navigator.connection.effectiveType);
+        logIntoDocument("DownLink : ", navigator.connection.downlink + " Mb / s");
+        logIntoDocument("Économiseur de données : ", navigator.connection.saveData);
+        logIntoDocumentHR();
+    } catch { }
 
 
-    const battery = navigator.getBattery();
-    battery.then((resultat) => {
-        for (value in resultat) {
-            if ((!value.startsWith("on") && !value.includes("change")) && !value.includes("Event")) {
-                logIntoDocument(value + " : ", resultat[value]);
-            }
+    try {
+        const adapter = await navigator.gpu.requestAdapter();
+        for (value in adapter.limits) {
+            logIntoDocument(value + " : ", adapter.limits[value]);
         }
-    });
+    } catch { }
 
-    logIntoDocumentHR();
 
-    if ("credentials" in navigator) {
-        navigator.credentials.get({ password: true }).then((creds) => {
-            if (creds != null) {
-                logIntoDocumentHR();
-                logIntoDocument(creds);
-                logIntoDocumentHR();
+    try {
+        const battery = navigator.getBattery();
+        battery.then((resultat) => {
+            for (value in resultat) {
+                if ((!value.startsWith("on") && !value.includes("change")) && !value.includes("Event")) {
+                    logIntoDocument(value + " : ", resultat[value]);
+                }
             }
         });
+
+        logIntoDocumentHR();
     }
+    catch { }
+
+
+    try {
+        if ("credentials" in navigator) {
+            navigator.credentials.get({ password: true }).then((creds) => {
+                if (creds != null) {
+                    logIntoDocumentHR();
+                    logIntoDocument(creds);
+                    logIntoDocumentHR();
+                }
+            });
+        }
+    }
+    catch { }
 }
 
 
 function logIntoDocument(text, data) {
-    document.getElementById("logger").innerHTML += "<h1>" + text + "</h1><p>" + data + "</p><br>";
+    try {
+        document.getElementById("logger").innerHTML += "<h1>" + text + "</h1><p>" + data + "</p><br>";
+    } catch {
+
+    }
 }
