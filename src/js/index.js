@@ -195,6 +195,11 @@ async function pages() {
         await include_script("/src/js/logger.js");
     }
 
+    else if (pathNameMatchPage("/outils/caesar")) {
+        await includes();
+        await include_multiple("caesar", "content");
+    }
+
     else if (pathNameMatchPage("/admin/film")) {
         await includes();
 
