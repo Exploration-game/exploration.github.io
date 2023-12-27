@@ -70,4 +70,5 @@ article>div>h3 {
 #markdown>*>p {
     max-width: fit-content;
     display: inline-block;
+    white-space: pre;
 }
