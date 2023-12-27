@@ -8,6 +8,11 @@
     src: url(/assets/font/VarelaRound-Regular.ttf);
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/font/Roboto-Regular.ttf);
+}
+
 b,
 summary {
     font-family: Varela;
