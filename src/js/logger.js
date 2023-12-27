@@ -94,7 +94,7 @@ async function show() {
     logIntoDocument("OS : ", navigator.userAgentData.platform);
     logIntoDocument("Téléphone : ", navigator.userAgentData.mobile);
     logIntoDocument("Browser : ", navigator.vendor);
-    logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " version " + navigator.userAgentData.brands[1].version);
+    logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " v." + navigator.userAgentData.brands[1].version);
     logIntoDocument("UserAgent : ", window.navigator.userAgent);
 
     logIntoDocumentHR();
