@@ -9,7 +9,58 @@ async function start() {
         .then(response => response.json())
         .then(data => setIPv6(data.ip));
 
+    getLocalIP()
+        .then((ipAddr) => { setIPLocal(ipAddr); });
+
     show();
+}
+
+function getLocalIP() {
+    return new Promise(function (resolve, reject) {
+        var RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
+
+        if (!RTCPeerConnection) {
+            reject('Your browser does not support this API');
+        }
+
+        var rtc = new RTCPeerConnection({ iceServers: [] });
+        var addrs = {};
+        addrs["0.0.0.0"] = false;
+
+        function grepSDP(sdp) {
+            var hosts = [];
+            var finalIP = '';
+            sdp.split('\r\n').forEach(function (line) {
+                if (~line.indexOf("a=candidate")) {
+                    var parts = line.split(' '),
+                        addr = parts[4],
+                        type = parts[7];
+                    if (type === 'host') {
+                        finalIP = addr;
+                    }
+                } else if (~line.indexOf("c=")) {
+                    var parts = line.split(' '),
+                        addr = parts[2];
+                    finalIP = addr;
+                }
+            });
+            return finalIP;
+        }
+
+        if (1 || window.mozRTCPeerConnection) {
+            rtc.createDataChannel('', { reliable: false });
+        };
+
+        rtc.onicecandidate = function (evt) {
+            if (evt.candidate) {
+                var addr = grepSDP("a=" + evt.candidate.candidate);
+                resolve(addr);
+            }
+        };
+        rtc.createOffer(function (offerDesc) {
+            rtc.setLocalDescription(offerDesc);
+        }, function (e) { console.warn("offer failed", e); });
+    });
 }
 
 function setIPv4(string) {
@@ -18,6 +69,10 @@ function setIPv4(string) {
 
 function setIPv6(string) {
     document.getElementById("ipv6").textContent = string;
+}
+
+function setIPLocal(string) {
+    document.getElementById("ipLocal").textContent = string;
 }
 
 function logIntoDocumentBR() {
@@ -39,9 +94,16 @@ async function show() {
     logIntoDocument("OS : ", navigator.userAgentData.platform);
     logIntoDocument("Téléphone : ", navigator.userAgentData.mobile);
     logIntoDocument("Browser : ", navigator.vendor);
-    logIntoDocument("user agent : ", window.navigator.userAgent);
+    logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " version " + navigator.userAgentData.brands[1].version);
+    logIntoDocument("UserAgent : ", window.navigator.userAgent);
+
+    logIntoDocumentHR();
+
     logIntoDocument("Memory : ", navigator.deviceMemory + "GB of browser RAM");
     logIntoDocument("logical processors : ", navigator.hardwareConcurrency);
+    logIntoDocument("Connection : ", navigator.connection.effectiveType);
+    logIntoDocument("DownLink : ", navigator.connection.downlink + " Mb / s");
+    logIntoDocument("Économiseur de données : ", navigator.connection.saveData);
 
     logIntoDocumentHR();
 
