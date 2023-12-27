@@ -65,6 +65,14 @@ const linksList = [
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
   },
+  {
+    title: "Chiffrement de César",
+    link: "outils/caesar",
+    description: "Chiffrement par décalage",
+    publicationDate: buildRFC822Date("2023-12-27T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
+  },
 ];
 
 const channelImage = channel.image

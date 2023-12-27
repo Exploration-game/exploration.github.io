@@ -53,6 +53,16 @@
         <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Connexion via Discord OAuth" />]]></content:encoded>
       </item>
     
+      <item>
+        <title><![CDATA[Chiffrement de César]]></title>
+        <link>https://doc.ghub.fr/outils/caesar</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/outils/caesar</guid>
+        <pubDate>Tue, 26 Dec 2023 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Chiffrement par décalage]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Chiffrement de César" />]]></content:encoded>
+      </item>
+    
     </channel>
   </rss>
   
