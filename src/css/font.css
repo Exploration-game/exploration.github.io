@@ -94,10 +94,15 @@ code {
 
 .background-clip {
     background-repeat: repeat !important;
+
     background-clip: text !important;
+    -webkit-background-clip: text !important;
+
     color: transparent !important;
     background: var(--gradient-color-all);
+
     backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
 
     background-size: 400% 400%;
     animation: animate 30s ease-in-out infinite;
