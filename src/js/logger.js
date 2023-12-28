@@ -97,16 +97,25 @@ async function show() {
         logIntoDocument("OS : ", navigator.userAgentData.platform);
         logIntoDocument("Téléphone : ", navigator.userAgentData.mobile);
     } catch { }
-    logIntoDocument("Browser : ", navigator.vendor);
+
+    try {
+        logIntoDocument("Browser : ", navigator.vendor);
+    } catch { }
+    
     try {
         logIntoDocument("AgentData : ", navigator.userAgentData.brands[1].brand + " v." + navigator.userAgentData.brands[1].version);
     } catch { }
-    logIntoDocument("UserAgent : ", window.navigator.userAgent);
+
+    try {
+        logIntoDocument("UserAgent : ", window.navigator.userAgent);
+    } catch { }
 
     logIntoDocumentHR();
 
-    logIntoDocument("Memory : ", navigator.deviceMemory + "GB of browser RAM");
-    logIntoDocument("logical processors : ", navigator.hardwareConcurrency);
+    try {
+        logIntoDocument("Memory : ", navigator.deviceMemory + "GB of browser RAM");
+        logIntoDocument("logical processors : ", navigator.hardwareConcurrency);
+    } catch (error) { }
 
     try {
         logIntoDocument("Connection : ", navigator.connection.effectiveType);
