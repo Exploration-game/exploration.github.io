@@ -254,6 +254,7 @@ async function pages() {
         devFooter.style = "";
     }
 
+    await include_script("/src/js/date.js");
     await include_script("/src/js/cursor.js");
 }
 
