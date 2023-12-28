@@ -55,6 +55,10 @@ const links = [
         text: "Flux RSS",
     },
     {
+        href: "/outils/caesar",
+        text: "Chiffrement par décalage (Caesar / César)",
+    },
+    {
         href: "/cours/html",
         text: "Cours sur le HTML",
     },
