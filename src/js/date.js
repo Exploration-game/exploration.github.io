@@ -5,6 +5,8 @@ setDateHTML();
 setInterval(getDate, 250);
 
 function setDateHTML() {
+    var div = document.createElement("div");
+
     var date = document.createElement("p")
     date.id = id;
 
@@ -12,8 +14,11 @@ function setDateHTML() {
     dateTimeZone.id = id + "TimeZone";
 
     var content = document.querySelector("#content");
-    content.appendChild(date);
-    content.appendChild(dateTimeZone);
+
+    content.appendChild(div);
+
+    div.appendChild(date);
+    div.appendChild(dateTimeZone);
 }
 
 function getDate() {
