@@ -21,6 +21,7 @@
 }
 
 :root.default-theme,
+:root,
 :root.dark {
     --background-color: rgb(30, 30, 30);
     --background-color-transparent: rgb(30, 30, 30, 0.5);

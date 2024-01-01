@@ -235,6 +235,16 @@ async function pages() {
         await include_script("/src/js/discord-login.js");
     }
 
+    else if (pathNameMatchPage("/games/fruits")) {
+        await include_css("/src/css/user-agent.css");
+        await include_css("/src/css/font.css");
+        await include_css("/src/css/theme.css");
+
+        await include_css("/src/css/fruits.css");
+        await include_html("/src/html/content/fruits.html", "body", false);
+        await include_script("/src/js/fruits.js");
+    }
+
     else {
         await includes();
 
@@ -251,7 +261,9 @@ async function pages() {
         await include_script("/src/js/viewcount.js");
     } else {
         var devFooter = document.getElementById("devFooter");
-        devFooter.style = "";
+        if (devFooter != null) {
+            devFooter.style = "";
+        }
     }
 
     await include_script("/src/js/date.js");
