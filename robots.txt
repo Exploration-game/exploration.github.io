@@ -1,0 +1,4 @@
+# https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
+User-agent: *
+Allow: /
+Disallow:
