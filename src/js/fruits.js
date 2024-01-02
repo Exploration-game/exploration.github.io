@@ -45,6 +45,19 @@ function spawnProps(path) {
     props.style.top = -propsHeight + "px";
 }
 
+function mergeProps(path, top, left) {
+    var props = document.createElement("img");
+
+    containerProps.appendChild(props);
+
+    props.src = path || "/assets/fruits/banana.png";
+
+    props.className = "props";
+
+    props.style.left = left + "px";
+    props.style.top = top + "px";
+}
+
 document.addEventListener("keydown", event => {
     if (keyPressed == false) {
         /*
@@ -138,7 +151,6 @@ window.addEventListener("gamepadconnected", function (e) {
 });
 
 function isColliding(prop, prop2) {
-    let hasJustCollided = false;
     const propHeight = parseInt(window.getComputedStyle(prop).getPropertyValue("height"));
     const propWidth = parseInt(window.getComputedStyle(prop).getPropertyValue("width"));
     const prop2Height = parseInt(window.getComputedStyle(prop2).getPropertyValue("height"));
@@ -151,24 +163,12 @@ function isColliding(prop, prop2) {
     const radius2 = Math.sqrt(prop2Width * prop2Width + prop2Height * prop2Height) / 2;
 
     if (distance < radius + radius2) {
-        hasJustCollided = true;
-
-        console.log("collide !");
-
-        prop.remove(); //get middle of the two points, spawn new one
-        prop2.remove();
-        /* if (!this.moveableDiv.ref.classList.contains('collision-state')) {
-            this.moveableDiv.ref.classList.add('collision-state');
-        } */
-    } /*else if (this.moveableDiv.ref.classList.contains('collision-state') && !hasJustCollided) {
-        this.moveableDiv.ref.classList.remove('collision-state');
-    }*/
+        afterCollide(prop, prop2);
+    }
 }
 
 function checkCollide() {
     var props = document.getElementById("container-props");
-    console.log("start check");
-
     var propsChild = props.childNodes;
     for (const prop of props.children) {
         for (const prop2 of props.children) {
@@ -179,3 +179,22 @@ function checkCollide() {
         }
     }
 }
+
+function afterCollide(prop, prop2) {
+    PropTop = parseInt(window.getComputedStyle(prop).getPropertyValue("top"));
+    PropLeft = parseInt(window.getComputedStyle(prop).getPropertyValue("left"));
+
+    Prop2Top = parseInt(window.getComputedStyle(prop2).getPropertyValue("top"));
+    Prop2Left = parseInt(window.getComputedStyle(prop2).getPropertyValue("left"));
+
+    medianneTop = ((PropTop + Prop2Top) / 2);
+    medianneLeft = ((PropLeft + Prop2Left) / 2);
+
+    prop.remove(); //get middle of the two points, spawn new one
+    prop2.remove();
+
+    mergeProps("/assets/fruits/coconut.png", medianneTop, medianneLeft);
+
+    //spawn new prop for test
+    //with a merge prop func
+} 
