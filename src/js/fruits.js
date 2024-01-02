@@ -190,11 +190,8 @@ function afterCollide(prop, prop2) {
     medianneTop = ((PropTop + Prop2Top) / 2);
     medianneLeft = ((PropLeft + Prop2Left) / 2);
 
-    prop.remove(); //get middle of the two points, spawn new one
+    prop.remove();
     prop2.remove();
 
     mergeProps("/assets/fruits/coconut.png", medianneTop, medianneLeft);
-
-    //spawn new prop for test
-    //with a merge prop func
 } 
