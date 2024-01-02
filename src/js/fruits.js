@@ -43,8 +43,6 @@ function spawnProps(path) {
 
     var propsHeight = parseInt(window.getComputedStyle(props).getPropertyValue("height"));
     props.style.top = -propsHeight + "px";
-
-    console.log(propsHeight);
 }
 
 document.addEventListener("keydown", event => {
@@ -88,6 +86,9 @@ var gameLoop = setInterval(function () {
     }
 }, 1);
 
+var collideLoop = setInterval(function () {
+    checkCollide();
+}, 250);
 
 window.addEventListener("gamepadconnected", function (e) {
     setInterval(function () {
@@ -136,3 +137,45 @@ window.addEventListener("gamepadconnected", function (e) {
     }, 1);
 });
 
+function isColliding(prop, prop2) {
+    let hasJustCollided = false;
+    const propHeight = parseInt(window.getComputedStyle(prop).getPropertyValue("height"));
+    const propWidth = parseInt(window.getComputedStyle(prop).getPropertyValue("width"));
+    const prop2Height = parseInt(window.getComputedStyle(prop2).getPropertyValue("height"));
+    const prop2Width = parseInt(window.getComputedStyle(prop2).getPropertyValue("width"));
+    const dx = parseInt(window.getComputedStyle(prop).getPropertyValue("left")) - parseInt(window.getComputedStyle(prop2).getPropertyValue("left"));
+    const dy = parseInt(window.getComputedStyle(prop).getPropertyValue("top")) - parseInt(window.getComputedStyle(prop2).getPropertyValue("top"));
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    const radius = Math.sqrt(propWidth * propWidth + propHeight * propHeight) / 2;
+    const radius2 = Math.sqrt(prop2Width * prop2Width + prop2Height * prop2Height) / 2;
+
+    if (distance < radius + radius2) {
+        hasJustCollided = true;
+
+        console.log("collide !");
+
+        prop.remove(); //get middle of the two points, spawn new one
+        prop2.remove();
+        /* if (!this.moveableDiv.ref.classList.contains('collision-state')) {
+            this.moveableDiv.ref.classList.add('collision-state');
+        } */
+    } /*else if (this.moveableDiv.ref.classList.contains('collision-state') && !hasJustCollided) {
+        this.moveableDiv.ref.classList.remove('collision-state');
+    }*/
+}
+
+function checkCollide() {
+    var props = document.getElementById("container-props");
+    console.log("start check");
+
+    var propsChild = props.childNodes;
+    for (const prop of props.children) {
+        for (const prop2 of props.children) {
+            if (prop !== prop2) {
+                console.log(prop + "  :  " + prop2);
+                isColliding(prop, prop2);
+            }
+        }
+    }
+}
