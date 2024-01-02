@@ -43,11 +43,6 @@
     position: absolute;
 
     z-index: 999;
-
-
-    /*
-    transform:scale(x); //Scale up fruits par LVL/tier
-    */
 }
 
 #container {

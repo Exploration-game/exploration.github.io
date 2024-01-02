@@ -15,10 +15,19 @@ var characterHeight = characterHeightPx.replace("px", "");
 var interval;
 var keyPressed = false;
 
+var score = 0;
+
 const fruits = [
-    { "level": 1, "points": 25, "src": "/assets/fruits/coconut.png" },
-    { "level": 2, "points": 100, "src": "/assets/fruits/lime.png" },
-    { "level": 3, "points": 250, "src": "/assets/fruits/plum.png" },];
+    { "level": 1, "points": 25, "src": "/assets/fruits/coconut.png", "scale": 1 },
+    { "level": 2, "points": 100, "src": "/assets/fruits/lime.png", "scale": 1.25 },
+    { "level": 3, "points": 250, "src": "/assets/fruits/plum.png", "scale": 1.5 },
+    { "level": 4, "points": 500, "src": "/assets/fruits/peach.png", "scale": 1.75 },
+    { "level": 5, "points": 1000, "src": "/assets/fruits/orange.png", "scale": 2 },
+    { "level": 6, "points": 2500, "src": "/assets/fruits/green-apple.png", "scale": 2.5 },
+    { "level": 7, "points": 4000, "src": "/assets/fruits/raspberry.png", "scale": 2.75 },
+    { "level": 8, "points": 5000, "src": "/assets/fruits/star-fruit.png", "scale": 3 },
+    { "level": 9, "points": 10000, "src": "/assets/fruits/watermelon.png", "scale": 5 },
+];
 
 function moveLeft() {
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
@@ -44,13 +53,16 @@ function spawnProps(path) {
 
     props.dataset.level = 1;
 
-    //props.classList.add(fruits[0].level);
-
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     props.style.left = left + "px";
 
     var propsHeight = parseInt(window.getComputedStyle(props).getPropertyValue("height"));
     props.style.top = -propsHeight + "px";
+
+    props.style.scale = fruits[0].scale;
+
+    score += fruits[0].points;
+    updateScore();
 }
 
 document.addEventListener("keydown", event => {
@@ -82,13 +94,17 @@ document.addEventListener("keyup", event => {
     keyPressed = false;
 });
 
+
+//fix size of props or calcule
+//Des props sortes du cadres et d'autres pas
 var gameLoop = setInterval(function () {
     for (props of document.getElementsByClassName("props")) {
         var top = parseInt(window.getComputedStyle(props).getPropertyValue("top"));
         var propseHeightPx = window.getComputedStyle(props).height;
         var propseHeight = propseHeightPx.replace("px", "");
+        // var propseScale = parseInt(window.getComputedStyle(props).getPropertyValue("scale"));
 
-        if (top < (parseFloat(containerHeight) - parseFloat(propseHeight) * 2)) {
+        if (top < (parseFloat(containerHeight) - (parseFloat(propseHeight) * 2))) {
             props.style.top = top + 5 + "px";
         }
     }
@@ -168,7 +184,6 @@ function checkCollide() {
     for (const prop of props.children) {
         for (const prop2 of props.children) {
             if (prop !== prop2) {
-                console.log(prop + "  :  " + prop2);
                 isColliding(prop, prop2);
             }
         }
@@ -192,7 +207,7 @@ function afterCollide(prop, prop2) {
         //check max level
         //if !max level do things
         //else go fck it
-        if (1 === 1) {
+        if (fruits[level] !== undefined) {
             mergeProps(level, medianneTop, medianneLeft);
 
             prop.remove();
@@ -213,4 +228,14 @@ function mergeProps(level, top, left) {
 
     newProp.style.left = left + "px";
     newProp.style.top = top + "px";
+
+    newProp.style.scale = fruits[level].scale;
+
+    score += fruits[level - 1].points;
+    updateScore();
+}
+
+function updateScore() {
+    var scoreTag = document.getElementById("score");
+    scoreTag.textContent = score;
 }
