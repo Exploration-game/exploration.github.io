@@ -12,9 +12,13 @@ var containerHeight = containerHeightPx.replace("px", "");
 var characterHeightPx = window.getComputedStyle(character).height;
 var characterHeight = characterHeightPx.replace("px", "");
 
-
 var interval;
 var keyPressed = false;
+
+const fruits = [
+    { "level": 1, "points": 25, "src": "/assets/fruits/coconut.png" },
+    { "level": 2, "points": 100, "src": "/assets/fruits/lime.png" },
+    { "level": 3, "points": 250, "src": "/assets/fruits/plum.png" },];
 
 function moveLeft() {
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
@@ -34,28 +38,19 @@ function spawnProps(path) {
 
     containerProps.appendChild(props);
 
-    props.src = path || "/assets/fruits/banana.png";
+    props.src = path || fruits[0].src;
 
-    props.className = "props";
+    props.classList.add("props");
+
+    props.dataset.level = 1;
+
+    //props.classList.add(fruits[0].level);
 
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     props.style.left = left + "px";
 
     var propsHeight = parseInt(window.getComputedStyle(props).getPropertyValue("height"));
     props.style.top = -propsHeight + "px";
-}
-
-function mergeProps(path, top, left) {
-    var props = document.createElement("img");
-
-    containerProps.appendChild(props);
-
-    props.src = path || "/assets/fruits/banana.png";
-
-    props.className = "props";
-
-    props.style.left = left + "px";
-    props.style.top = top + "px";
 }
 
 document.addEventListener("keydown", event => {
@@ -190,8 +185,32 @@ function afterCollide(prop, prop2) {
     medianneTop = ((PropTop + Prop2Top) / 2);
     medianneLeft = ((PropLeft + Prop2Left) / 2);
 
-    prop.remove();
-    prop2.remove();
+    var level = prop.dataset.level;
+    var level2 = prop2.dataset.level;
 
-    mergeProps("/assets/fruits/coconut.png", medianneTop, medianneLeft);
-} 
+    if (level === level2) {
+        //check max level
+        //if !max level do things
+        //else go fck it
+        if (1 === 1) {
+            mergeProps(level, medianneTop, medianneLeft);
+
+            prop.remove();
+            prop2.remove();
+        }
+    }
+}
+
+function mergeProps(level, top, left) {
+    var newProp = document.createElement("img");
+
+    containerProps.appendChild(newProp);
+
+    newProp.src = fruits[level].src;
+    newProp.dataset.level = fruits[level].level;
+
+    newProp.className = "props";
+
+    newProp.style.left = left + "px";
+    newProp.style.top = top + "px";
+}
