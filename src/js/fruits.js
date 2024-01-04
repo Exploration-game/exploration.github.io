@@ -9,6 +9,8 @@ var containerSize = containerSizePx.replace("px", "");
 
 var containerHeightPx = window.getComputedStyle(container).height;
 var containerHeight = containerHeightPx.replace("px", "");
+var containerPropsHeightPx = window.getComputedStyle(containerProps).height;
+var containerPropsHeight = containerPropsHeightPx.replace("px", "");
 var characterHeightPx = window.getComputedStyle(character).height;
 var characterHeight = characterHeightPx.replace("px", "");
 
@@ -18,15 +20,15 @@ var keyPressed = false;
 var score = 0;
 
 const fruits = [
-    { "level": 1, "points": 25, "src": "/assets/fruits/coconut.png", "scale": 1 },
-    { "level": 2, "points": 100, "src": "/assets/fruits/lime.png", "scale": 1.25 },
-    { "level": 3, "points": 250, "src": "/assets/fruits/plum.png", "scale": 1.5 },
-    { "level": 4, "points": 500, "src": "/assets/fruits/peach.png", "scale": 1.75 },
-    { "level": 5, "points": 1000, "src": "/assets/fruits/orange.png", "scale": 2 },
-    { "level": 6, "points": 2500, "src": "/assets/fruits/green-apple.png", "scale": 2.5 },
-    { "level": 7, "points": 4000, "src": "/assets/fruits/raspberry.png", "scale": 2.75 },
-    { "level": 8, "points": 5000, "src": "/assets/fruits/star-fruit.png", "scale": 3 },
-    { "level": 9, "points": 10000, "src": "/assets/fruits/watermelon.png", "scale": 5 },
+    { "level": 1, "points": 25, "src": "/assets/fruits/coconut.png" },
+    { "level": 2, "points": 100, "src": "/assets/fruits/lime.png" },
+    { "level": 3, "points": 250, "src": "/assets/fruits/plum.png" },
+    { "level": 4, "points": 500, "src": "/assets/fruits/peach.png" },
+    { "level": 5, "points": 1000, "src": "/assets/fruits/orange.png" },
+    { "level": 6, "points": 2500, "src": "/assets/fruits/green-apple.png" },
+    { "level": 7, "points": 4000, "src": "/assets/fruits/raspberry.png" },
+    { "level": 8, "points": 5000, "src": "/assets/fruits/star-fruit.png" },
+    { "level": 9, "points": 10000, "src": "/assets/fruits/watermelon.png" },
 ];
 
 function moveLeft() {
@@ -58,8 +60,6 @@ function spawnProps(path) {
 
     var propsHeight = parseInt(window.getComputedStyle(props).getPropertyValue("height"));
     props.style.top = -propsHeight + "px";
-
-    props.style.scale = fruits[0].scale;
 
     score += fruits[0].points;
     updateScore();
@@ -95,20 +95,24 @@ document.addEventListener("keyup", event => {
 });
 
 
-//fix size of props or calcule
-//Des props sortes du cadres et d'autres pas
 var gameLoop = setInterval(function () {
     for (props of document.getElementsByClassName("props")) {
-        var top = parseInt(window.getComputedStyle(props).getPropertyValue("top"));
-        var propseHeightPx = window.getComputedStyle(props).height;
-        var propseHeight = propseHeightPx.replace("px", "");
-        // var propseScale = parseInt(window.getComputedStyle(props).getPropertyValue("scale"));
+        var top = parseFloat(window.getComputedStyle(props).getPropertyValue("top"));
 
-        if (top < (parseFloat(containerHeight) - (parseFloat(propseHeight) * 2))) {
-            props.style.top = top + 5 + "px";
+        var propseHeightPx = window.getComputedStyle(props).getPropertyValue("height");
+        var propseHeight = parseFloat(propseHeightPx.replace("px", ""));
+
+        var size = propseHeight;
+
+        if ((top + size) < parseFloat(containerPropsHeight)) {
+            if (props.dataset.collide != "true") {
+                props.style.top = top + 1 + "px";
+            } else {
+                //push to a side
+            }
         }
     }
-}, 1);
+}, 0.5);
 
 var collideLoop = setInterval(function () {
     checkCollide();
@@ -161,6 +165,19 @@ window.addEventListener("gamepadconnected", function (e) {
     }, 1);
 });
 
+
+
+function checkCollide() {
+    var props = document.getElementById("container-props");
+    for (const prop of props.children) {
+        for (const prop2 of props.children) {
+            if (prop !== prop2) {
+                isColliding(prop, prop2);
+            }
+        }
+    }
+}
+
 function isColliding(prop, prop2) {
     const propHeight = parseInt(window.getComputedStyle(prop).getPropertyValue("height"));
     const propWidth = parseInt(window.getComputedStyle(prop).getPropertyValue("width"));
@@ -178,18 +195,6 @@ function isColliding(prop, prop2) {
     }
 }
 
-function checkCollide() {
-    var props = document.getElementById("container-props");
-    var propsChild = props.childNodes;
-    for (const prop of props.children) {
-        for (const prop2 of props.children) {
-            if (prop !== prop2) {
-                isColliding(prop, prop2);
-            }
-        }
-    }
-}
-
 function afterCollide(prop, prop2) {
     PropTop = parseInt(window.getComputedStyle(prop).getPropertyValue("top"));
     PropLeft = parseInt(window.getComputedStyle(prop).getPropertyValue("left"));
@@ -204,15 +209,39 @@ function afterCollide(prop, prop2) {
     var level2 = prop2.dataset.level;
 
     if (level === level2) {
-        //check max level
-        //if !max level do things
-        //else go fck it
         if (fruits[level] !== undefined) {
             mergeProps(level, medianneTop, medianneLeft);
 
             prop.remove();
             prop2.remove();
         }
+    }
+    else {
+        setInterval(function () {
+            //Patch this
+            /*
+            It push both prop à tour de rôle
+            */
+            var propToPush;
+            if (PropTop < Prop2Top) {
+                propToPush = prop;
+            } else {
+                propToPush = prop2;
+            }
+            prop.dataset.collide = true;
+            prop2.dataset.collide = true;
+
+            console.log("propToPush " + propToPush.src);
+            //
+            if (PropLeft < Prop2Left) {
+                //Push propToPush 
+                PropToPushLeft = parseInt(window.getComputedStyle(propToPush).getPropertyValue("left"));
+                propToPush.style.left = PropToPushLeft - 1 + "px";
+            } else {
+                PropToPushLeft = parseInt(window.getComputedStyle(propToPush).getPropertyValue("left"));
+                propToPush.style.left = PropToPushLeft + 1 + "px";
+            }
+        }, 100);
     }
 }
 

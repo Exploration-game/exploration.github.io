@@ -37,13 +37,46 @@
 }
 
 .props {
-    max-width: var(--props-width);
-    max-height: var(--props-height);
-
     position: absolute;
+
+    overflow: none;
 
     z-index: 999;
 }
+
+.props[data-level="1"],
+.props[data-level="2"] {
+    max-width: var(--props-width);
+    max-height: var(--props-height);
+}
+
+.props[data-level="3"],
+.props[data-level="4"],
+.props[data-level="5"] {
+    max-width: calc(var(--props-width)*1.5);
+    max-height: calc(var(--props-height)*1.5);
+}
+
+.props[data-level="6"] {
+    max-width: calc(var(--props-width)*2);
+    max-height: calc(var(--props-height)*2);
+}
+
+.props[data-level="7"] {
+    max-width: calc(var(--props-width)*3);
+    max-height: calc(var(--props-height)*3);
+}
+
+.props[data-level="8"] {
+    max-width: calc(var(--props-width)*4);
+    max-height: calc(var(--props-height)*4);
+}
+
+.props[data-level="9"] {
+    max-width: calc(var(--props-width)*6);
+    max-height: calc(var(--props-height)*6);
+}
+
 
 #container {
     position: absolute;
