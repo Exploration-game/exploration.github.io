@@ -87,6 +87,8 @@ code {
     color: var(--main-color);
     max-width: fit-content;
     padding: 16px;
+    
+    white-space: pre;
 
     border-color: var(--link-color);
     border-width: 3px;
