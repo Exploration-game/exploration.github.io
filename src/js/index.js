@@ -162,6 +162,11 @@ async function pages() {
     else if (pathNameMatchPage("/cours/js")) {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/JS/learning.md'); });
+    } 
+    
+    else if (pathNameMatchPage("/cours/binaire")) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/Binaire/learning.md'); });
     }
 
     else if (pathNameMatchPage("/settings")) {
