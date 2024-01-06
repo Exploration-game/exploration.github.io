@@ -71,6 +71,10 @@ const links = [
         text: "Cours sur le JavaScript (JS)",
     },
     {
+        href: "/cours/binaire",
+        text: "Cours sur le binaire",
+    },
+    {
         href: "/admin/contact",
         text: "Contacter l'administrateur du projet",
     },
