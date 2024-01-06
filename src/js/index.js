@@ -310,7 +310,7 @@ function pathNameMatchPage(path, strict) {
     else if (strict === false) {
         var lowerCasePath = path.toLowerCase();
         if (pathname.startsWith(lowerCasePath.toLowerCase())) {
-            console.log("Loading : " + pathname + " DEBUG ");
+            console.log("Finding : " + lowerCasePath + "/...");
             return true;
         }
     }
