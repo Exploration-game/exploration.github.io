@@ -7,16 +7,16 @@ async function start(orgs) {
 async function getIssues(repo, orgs) {
     var x = await gather('https://api.github.com/repos/' + orgs + '/' + repo + '/issues');
     for (var i in x) {
-        var issueURL = getValue(x[i], "html_url");
-        var issueTitle = getValue(x[i], "title");
+        var issueURL = await getValue(x[i], "html_url");
+        var issueTitle = await getValue(x[i], "title");
 
-        var user = getValue(x[i], "user");
-        var userLogin = getValue(user, "login");
-        var userAvatar = getValue(user, "avatar_url");
+        var user = await getValue(x[i], "user");
+        var userLogin = await getValue(user, "login");
+        var userAvatar = await getValue(user, "avatar_url");
 
-        var state = getValue(x[i], "state");
-        var dateUpdate = getValue(x[i], "updated_at");
-        var body = getValue(x[i], "body");
+        var state = await getValue(x[i], "state");
+        var dateUpdate = await getValue(x[i], "updated_at");
+        var body = await getValue(x[i], "body");
 
         await display(issueURL, repo, issueTitle, userLogin, userAvatar, state, dateUpdate, body);
     }
@@ -28,7 +28,6 @@ async function getIssues(repo, orgs) {
 
 async function getRepo(orgs) {
     var x = await gather('https://api.github.com/orgs/' + orgs + '/repos');
-    var contributors = [];
     for (var i in x) {
         var repo = await getValue(x[i], "name");
         await getIssues(repo, orgs);

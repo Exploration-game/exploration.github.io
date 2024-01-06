@@ -95,10 +95,10 @@ function keyup() {
         });
     }
 
-    display(result);
+    searchbarResult(result);
 }
 
-function display(result) {
+function searchbarResult(result) {
     const resultsBox = document.getElementById("result-box");
     if (result.length) {
         const content = result.map((list, index) => {
