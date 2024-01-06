@@ -63,6 +63,16 @@
         <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Chiffrement de César" />]]></content:encoded>
       </item>
     
+      <item>
+        <title><![CDATA[Cours sur le binaire]]></title>
+        <link>https://doc.ghub.fr/cours/binaire</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/cours/binaire</guid>
+        <pubDate>Sat, 06 Jan 2024 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Un cours rapide et facile sur le binaire]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Cours sur le binaire" />]]></content:encoded>
+      </item>
+    
     </channel>
   </rss>
   

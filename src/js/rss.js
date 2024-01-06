@@ -73,6 +73,14 @@ const linksList = [
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
   },
+  {
+    title: "Cours sur le binaire",
+    link: "cours/binaire",
+    description: "Un cours rapide et facile sur le binaire",
+    publicationDate: buildRFC822Date("2024-01-07T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
+  },
 ];
 
 const channelImage = channel.image
