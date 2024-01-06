@@ -112,7 +112,7 @@ var gameLoop = setInterval(function () {
             }
         }
     }
-}, 0.5);
+}, 1);
 
 var collideLoop = setInterval(function () {
     checkCollide();
