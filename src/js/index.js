@@ -71,6 +71,8 @@ async function pages() {
         await include_script("/src/js/settings.js");
     }
 
+        //make pageABC return true/false if exist in
+        //Move it into the else if condition
     else if (pathNameMatchPage("/github", false)) { await pageGithub(); }
     else if (pathNameMatchPage("/cours", false)) { await pageCours(); }
     else if (pathNameMatchPage("/outils", false)) { await pageOutils(); }
