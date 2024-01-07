@@ -12,17 +12,24 @@
     padding: 25px;
     margin: 10px;
 
-    width: 300px;
-    height: 450px;
+    width: 17vw;
     overflow-x: auto;
 }
 
-.films>div>div>img {
-    width: 150px;
-    height: 200px;
 
-    padding-top: 16px;
-    padding-bottom: 24px;
+.films>div>div>img.svg {
+    width: 50px;
+    height: 50px;
+}
+
+.films>div>div>img {
+    width: 100%;
+    max-height: 60vh;
+
+    border-radius: 10%;
+
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 .films>div>div>a {
@@ -32,7 +39,8 @@
 }
 
 .films>div>div>p {
-    max-width: 250px;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .card {
@@ -56,4 +64,11 @@
 
 .card.medium>img.svg {
     content: url(/assets/svg/star-half.svg);
+}
+
+/*CSS mobile une seule carte par rangé 100%*/
+@media screen and (max-width: 1024px) {
+    .films>div>div {
+        width: 75%;
+    }
 }

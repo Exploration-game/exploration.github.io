@@ -238,6 +238,7 @@ async function pageOutils() {
         await include_html("/src/html/include/content.html", "body", false);
         await include_html("/src/html/content/cube.html", "content", true);
         await include_css("/src/css/cube.css");
+        await include_css("/src/css/theme.css");
     }
 
     else if (pathNameMatchPage("/outils/rss", true)) {
