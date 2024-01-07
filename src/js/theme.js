@@ -3,7 +3,7 @@ toggleTheme();
 function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
-    console.log("Set theme : " + themeName);
+    console.log("Loading theme : " + themeName);
 }
 
 function toggleTheme() {

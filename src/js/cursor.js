@@ -1,13 +1,13 @@
 var cursor
 //Cursor trigger often on header / Content wrapper (middle part of screen)
-console.info("loading cursor");
+console.info("Loading cursor");
 createCursor();
 
 async function createCursor() {
     cursor = document.createElement("div");
     cursor.id = "cursor";
     cursor.className = "cursor";
-    var content = document.querySelector("html"); //add into root (cube3D exemple)
+    var content = document.querySelector("html"); // add style / theme //sinon le CSS manque d'info (var-color) (matrice)
     content.appendChild(cursor);
 
     await include_css("/src/css/cursor.css");
@@ -47,13 +47,18 @@ async function addAllTags() {
     }
 
     list = document.getElementsByTagName("input");
-    for (item in list) {
-        addHandlers(item[i]);
+    for (i in list) {
+        addHandlers(list[i]);
+    }
+
+    list = document.getElementsByTagName("details");
+    for (i in list) {
+        addHandlers(list[i]);
     }
 
     list = document.getElementsByTagName("summary");
-    for (item in list) {
-        addHandlers(item[i]);
+    for (i in list) {
+        addHandlers(list[i]); 
     }
 }
 

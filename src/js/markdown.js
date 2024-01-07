@@ -1,5 +1,6 @@
 
 const parseMarkdown = (text) => {
+    console.log("Loading markdown parser");
     const toHTML = text
 
         .replace(/([^!])\[([^\[]+)\]\(([^\)]+)\)/gim, '$1<a href=\"$3\">$2</a>') // <a>
@@ -23,10 +24,12 @@ const parseMarkdown = (text) => {
         .replace(/[\n]{1}/g, "<br>") //new line 
 
         .trim();
+    console.log("Loading return markdown trim");
     return toHTML.trim();
 }
 
 async function getMarkdown(url) {
+    console.log("Loading download markdown");
     return new Promise(function (resolve, reject) {
         setTimeout(() => {
             fetch(url)
@@ -108,4 +111,6 @@ async function addMarkdown(repo, file) {
         }
         anchorList.appendChild(anchorOnList);
     }
+
+    console.log("Fin markdown");
 }
