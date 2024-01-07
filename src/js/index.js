@@ -32,7 +32,6 @@ async function styles() {
     await include_css("/src/css/header-navbar.css");
     await include_css("/src/css/anchor.css");
     await include_css("/src/css/content.css");
-    await include_css("/src/css/cursor.css");
     await include_css("/src/css/footer.css");
     await include_css("/src/css/scrollbar.css");
     await include_css("/src/css/searchbar.css");
@@ -62,7 +61,6 @@ async function pages() {
         }
     }
 
-    //Outils/settings ???
     else if (pathNameMatchPage("/settings", true)) {
         await includes();
 
@@ -71,41 +69,17 @@ async function pages() {
         await include_script("/src/js/settings.js");
     }
 
-        //make pageABC return true/false if exist in
-        //Move it into the else if condition
-    else if (pathNameMatchPage("/github", false)) { await pageGithub(); }
-    else if (pathNameMatchPage("/cours", false)) { await pageCours(); }
-    else if (pathNameMatchPage("/outils", false)) { await pageOutils(); }
-    else if (pathNameMatchPage("/admin", false)) { await pageAdmin(); }
+    else if (pathNameMatchPage("/github", false) && await pageGithub()) { }
+    else if (pathNameMatchPage("/cours", false) && await pageCours()) { }
+    else if (pathNameMatchPage("/outils", false) && await pageOutils()) { }
+    else if (pathNameMatchPage("/admin", false) && await pageAdmin()) { }
+    else if (pathNameMatchPage("/games", false) && await pageGames()) { }
+    else if (pathNameMatchPage("/discord", false) && await pageDiscord()) { }
 
-    //TO move in /outils/discord/login
-    //then move to async function pageOutils()
-    else if (pathNameMatchPage("/discord/login", true)) {
-        await includes();
 
-        await include_css("/src/css/discord.css");
-        await include_html("/src/html/content/discord-login.html", "content", true);
-    }
 
-    else if (pathNameMatchPage("/discord/tools", true)) {
-        await includes();
 
-        await include_css("/src/css/discord.css");
-        await include_script("/src/js/discord-login.js");
-    }
-
-    //TO move in //games/fruits
-    //then move to async function pageGames() //Create it
-    else if (pathNameMatchPage("/games/fruits", true)) {
-        await include_css("/src/css/user-agent.css");
-        await include_css("/src/css/font.css");
-        await include_css("/src/css/theme.css");
-
-        await include_css("/src/css/fruits.css");
-        await include_html("/src/html/content/fruits.html", "body", false);
-        await include_script("/src/js/fruits.js");
-    }
-
+    //never reach ? 
     else {
         await includes();
 
@@ -118,6 +92,7 @@ async function pages() {
         }
     }
 
+    //add check view counter too, or is it loaded after this ?
     if (!devMode()) {
         await include_script("/src/js/viewcount.js");
     } else {
@@ -127,8 +102,9 @@ async function pages() {
         }
     }
 
-    await include_script("/src/js/date.js");
+
     await include_script("/src/js/cursor.js");
+    await include_script("/src/js/date.js");
 }
 
 async function pageGithub() {
@@ -198,6 +174,11 @@ async function pageGithub() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md'); });
     }
+
+    else {
+        return false;
+    }
+    return true;
 }
 
 async function pageCours() {
@@ -240,6 +221,11 @@ async function pageCours() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/Binaire/learning.md'); });
     }
+
+    else {
+        return false;
+    }
+    return true;
 }
 
 async function pageOutils() {
@@ -270,6 +256,11 @@ async function pageOutils() {
         await includes();
         await include_multiple("caesar", "content");
     }
+
+    else {
+        return false;
+    }
+    return true;
 }
 
 async function pageAdmin() {
@@ -293,6 +284,49 @@ async function pageAdmin() {
         await include_css("/src/css/contact.css");
         await include_html("/src/html/content/contact.html", "content", true);
     }
+
+    else {
+        return false;
+    }
+    return true;
+}
+
+async function pageGames() {
+    if (pathNameMatchPage("/games/fruits", true)) {
+        await include_css("/src/css/user-agent.css");
+        await include_css("/src/css/font.css");
+        await include_css("/src/css/theme.css");
+
+        await include_css("/src/css/fruits.css");
+        await include_html("/src/html/content/fruits.html", "body", false);
+        await include_script("/src/js/fruits.js");
+    }
+
+    else {
+        return false;
+    }
+    return true;
+}
+
+async function pageDiscord() {
+    if (pathNameMatchPage("/discord/login", true)) {
+        await includes();
+
+        await include_css("/src/css/discord.css");
+        await include_html("/src/html/content/discord-login.html", "content", true);
+    }
+
+    else if (pathNameMatchPage("/discord/tools", true)) {
+        await includes();
+
+        await include_css("/src/css/discord.css");
+        await include_script("/src/js/discord-login.js");
+    }
+
+    else {
+        return false;
+    }
+    return true;
 }
 
 function getShortPathname() {
