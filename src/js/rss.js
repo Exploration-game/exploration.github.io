@@ -81,6 +81,14 @@ const linksList = [
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
   },
+  {
+    title: "Mise à jour QOL",
+    link: "",
+    description: "Mise à jour de qualité de vie sur le site",
+    publicationDate: buildRFC822Date("2024-01-08T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
+  },
 ];
 
 const channelImage = channel.image
