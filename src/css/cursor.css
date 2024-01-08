@@ -1,7 +1,8 @@
 a,
 button,
 html,
-input {
+input,
+textarea {
     cursor: none;
 }
 

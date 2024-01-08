@@ -8,7 +8,7 @@ const parseMarkdown = (text) => {
         .replace(/^### (.*$)/gim, '<h3>$1</h3>') // h3 tag
         .replace(/^## (.*$)/gim, '<h2>$1</h2>') // h2 tag
         .replace(/^# (.*$)/gim, '<h1>$1</h1>') // h1 tag
-        .replace(/\`{1,3}(.*?)\`{1,3}/gms, '<code><plaintext>$1</plaintext></code>') // <code>
+        .replace(/\`{1,3}(.*?)\`{1,3}/gms, '<code><textarea>$1</textarea></code>') // <code>
         .replace(/-{3,}/gim, '<hr/>') //hr (Decoration line)
         .replace(/\~\~(.*?)\~\~/gim, '<del>$1</del>')// <del>
         .replace(/\n(?:&gt;|\>)\W*(.*)/gim, '<blockquote><p>$1</p></blockquote>') // <blockquote>
@@ -21,7 +21,8 @@ const parseMarkdown = (text) => {
         .replace(/\n\s?[0-9]+\.\s*(.*)/gim, '<ol>\n\t<li>$1</li>\n</ol>') // <ol>
 
         .replace(/(?!>)([a-z0-9 :;|!§%'’"°«»(){}@&=+-/^_¨$£¤µ*€.,âôœûùéêëèàç/]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
-        .replace(/[\n]{1}/g, "<br>") //new line 
+
+        .replace(/[\n]{1}/g, "<br>") //new line
 
         .trim();
     console.log("Loading return markdown trim");
@@ -44,8 +45,24 @@ async function getMarkdown(url) {
 }
 
 async function addMarkdown(repo, file) {
+    console.log("Loading .md");
     var x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
+    // console.log(".md : " + x);
     var x2 = parseMarkdown(x);
+    // console.log("Loading HTML wrapped .md :" + x2);
+
+    console.log("Loading clean code in .md");
+    var regex = /<textarea>((?!<<textarea>>))*((?!<\/textarea>)[\s\S])*<\/textarea>/gim;
+    var x3 = x2.match(regex);
+    //console.log(x3);
+
+    for (i in x3) {
+        //console.log(x3[i]);
+        var res = x3[i].replaceAll("<br>", "\n");
+        x2 = x2.replace(x3[i], res);
+    }
+    //console.log(x2)
+
     var content = document.querySelector("#content");
 
     var newDiv = document.createElement("div");

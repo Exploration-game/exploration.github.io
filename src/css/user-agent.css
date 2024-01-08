@@ -38,8 +38,72 @@ ul {
     padding-inline-start: 0;
 }
 
+textarea {
+    background-color: transparent;
+    border-radius: 32px;
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    min-width: 50vw;
+    width: 80vw;
+    max-width: 100%;
+
+    height: 10vh;
+    max-height: 50vh;
+
+    border-color: var(--link-color);
+    color: var(--main-color);
+
+    overflow: auto;
+}
+
+textarea::-webkit-scrollbar {
+    width: 1.5em;
+    background-color: transparent;
+    border: none;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-track-piece {
+    background-color: var(--second-default);
+    border-radius: 16px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    outline: 1px solid var(--link-color);
+}
+
+textarea::-webkit-scrollbar-corner {
+    background-color: var(--main-color);
+    border-radius: 100%;
+    border-color: transparent;
+}
+
 code>* {
     display: inline;
+}
+
+code {
+    background-color: var(--second-default);
+    display: block !important;
+    color: var(--main-color);
+    max-width: fit-content;
+    padding: 16px;
+
+    white-space: pre;
+
+    border-color: var(--link-color);
+    border-width: 3px;
+    border-style: solid;
+
+    border-radius: 10px;
+
+    max-width: fit-content;
 }
 
 input[type=checkbox] {

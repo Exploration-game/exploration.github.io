@@ -81,23 +81,7 @@ hr {
     color: var(--link-color);
 }
 
-code {
-    background-color: var(--second-default);
-    display: block !important;
-    color: var(--main-color);
-    max-width: fit-content;
-    padding: 16px;
-    
-    white-space: pre;
 
-    border-color: var(--link-color);
-    border-width: 3px;
-    border-style: solid;
-
-    border-radius: 10px;
-
-    max-width: fit-content;
-}
 
 .background-clip {
     background-repeat: repeat !important;
