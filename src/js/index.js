@@ -54,11 +54,11 @@ async function pages() {
     if (pathNameMatchPage("/", true) || pathNameMatchPage("/index", true)) {
         if (devMode()) {
             await devTest();
-        } else {
-            await includes();
-            await include_html("/src/html/content/welcome.html", "content", true);
-            await include_css("/src/css/welcome.css");
         }
+        await includes();
+        
+        await include_html("/src/html/content/welcome.html", "content", true);
+        await include_css("/src/css/welcome.css");
     }
 
     else if (pathNameMatchPage("/settings", true)) {
@@ -357,7 +357,7 @@ function pathNameMatchPage(path, strict) {
 
 function devMode() {
     if (window.location.hostname === "127.0.0.1") {
-        //return true;
+        return true;
     }
     if (localStorage.getItem('devMode') === "true") {
         return true;
@@ -369,7 +369,5 @@ function devMode() {
 
 async function devTest() {
     console.log("Dev mode ON : " + window.location.hostname);
-    await includes();
-
     //Test module ⏬
 }
