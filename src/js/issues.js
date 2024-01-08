@@ -7,7 +7,6 @@ async function start(orgs) {
 async function getIssues(repo, orgs) {
     var x = await gather('https://api.github.com/repos/' + orgs + '/' + repo + '/issues');
     for (var i in x) {
-        console.log(i);
         var issueURL = await getValue(x[i], "html_url");
         var issueNumber = await getValue(x[i], "number");
         var issueLabels = await gather("https://api.github.com/repos/" + orgs + "/" + repo + "/issues/" + issueNumber + "/labels");
@@ -47,15 +46,6 @@ async function display(issueURL, issueLabels, repo, issueTitle, userLogin, userA
     img.className = "profile";
     div.appendChild(img);
 
-    /* var img2 = document.createElement('img');
-    if (state === "open") {
-        img2.src = "/assets/svg/issue.svg";
-    } else {
-        img2.src = "/assets/svg/issue-closed.svg";
-    }
-    img2.className = "svg logoissue";
-    div.appendChild(img2); */
-
     var a = document.createElement('a');
     a.textContent = userLogin;
     a.href = "https://github.com/" + userLogin;
@@ -72,7 +62,6 @@ async function display(issueURL, issueLabels, repo, issueTitle, userLogin, userA
         var labelName = await getValue(issueLabels[i], "name");
         //var labelColor = await getValue(issueLabels[i], "color");
         var labelDescription = await getValue(issueLabels[i], "description");
-        console.log(labelDescription);
         var img3 = document.createElement('p');
         if (labelName === "wontfix") {
             img3.textContent = "🙅🔨";
@@ -85,19 +74,26 @@ async function display(issueURL, issueLabels, repo, issueTitle, userLogin, userA
         } else if (labelName === "good first issue") {
             img3.textContent = "🎓🎒";
         } else if (labelName === "enhancement") {
-            img3.textContent = "✨";
+            img3.textContent = "✨🚀";
         } else if (labelName === "duplicate") {
             img3.textContent = "🎭♻";
         } else if (labelName === "documentation") {
             img3.textContent = "📚💾";
         } else if (labelName === "bug") {
             img3.textContent = "🐛🐞";
-        } else {
-            img3.textContent = "❌🔐";
         }
         img3.className = "labelissue";
         div.appendChild(img3);
     }
+
+    var img4 = document.createElement('p');
+    if (state === "open") {
+        img4.textContent = "📂📭";
+    } else {
+        img4.textContent = "❌🔐";
+    }
+    img4.className = "labelissue";
+    div.appendChild(img4);
 
     var p = document.createElement('p');
     const date1 = new Date(dateUpdate);
