@@ -231,6 +231,7 @@ async function pageCours() {
 async function pageOutils() {
     if (pathNameMatchPage("/outils/matrice", true)) {
         await include_html("/src/html/include/content.html", "body", false);
+        await include_css("/src/css/theme.css");
         await include_multiple("matrice", "content");
     }
 
@@ -356,9 +357,9 @@ function pathNameMatchPage(path, strict) {
 
 function devMode() {
     if (window.location.hostname === "127.0.0.1") {
-        return true;
+        //return true;
     }
-    if (localStorage.getItem('devMode') == "true") {
+    if (localStorage.getItem('devMode') === "true") {
         return true;
     }
     else {
