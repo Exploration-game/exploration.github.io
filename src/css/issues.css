@@ -2,7 +2,7 @@ div.div {
     display: inline-block;
     margin: 60px;
     max-width: 70vw;
-    max-height: 30vh;
+    max-height: 70vh;
     overflow-x: auto;
 }
 
