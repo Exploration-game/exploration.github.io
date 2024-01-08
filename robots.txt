@@ -1,8 +1,4 @@
-# https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
-# SiteMap missing
-
-# Sitemap: https://doc.ghub.fr/sitemap.xml
-
 User-agent: *
 Allow: /
 Disallow:
+Sitemap: https://doc.ghub.fr/sitemap.xml
