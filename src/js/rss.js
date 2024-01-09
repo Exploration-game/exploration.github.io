@@ -96,6 +96,14 @@ const linksList = [
     publicationDate: buildRFC822Date("2024-01-09T00:00:00.0000"),
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
+  }, 
+  {
+    title: "Mise à jour admin music",
+    link: "admin/music",
+    description: "Mise à jour de qualité de vie sur le site (musique)",
+    publicationDate: buildRFC822Date("2024-01-09T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
   },
 ];
 
