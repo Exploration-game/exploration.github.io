@@ -3,11 +3,7 @@ resultsBox.style.display = "none"
 
 const links = [
     {
-        href: "/github/statistiques",
-        text: "Statistiques",
-    },
-    {
-        href: "https://discord.gg/rF25kjuv4v",
+        href: "/discord.html",
         text: "Serveur Discord",
     },
     {
@@ -15,76 +11,92 @@ const links = [
         text: "Serveur Minecraft",
     },
     {
-        href: "/settings",
+        href: "/settings.html",
         text: "Paramètres",
     },
     {
-        href: "/github/contribuer",
-        text: "Comment contribuer ?",
+        href: "/github/statistiques.html",
+        text: "Statistiques Github",
     },
     {
-        href: "/github/support",
+        href: "/github/contribuer.html",
+        text: "Comment contribuer sur github ?",
+    },
+    {
+        href: "/github/support.html",
         text: "Support d'aide",
     },
     {
-        href: "/github/security",
+        href: "/github/security.html",
         text: "Security",
     },
     {
-        href: "/github/license",
+        href: "/github/license.html",
         text: "License Apache",
     },
     {
-        href: "/github/code_of_conduct",
+        href: "/github/code_of_conduct.html",
         text: "Code de conduite",
     },
     {
-        href: "/outils/matrice",
+        href: "/github/issues.html",
+        text: "Erreur / Issues list Github",
+    },
+    {
+        href: "/github/contributeur.html",
+        text: "Contributeurs Github",
+    },
+    {
+        href: "/outils/matrice.html",
         text: "Matrice / Matrix",
     },
     {
-        href: "/outils/cube",
+        href: "/outils/cube.html",
         text: "Cube & Sphère (Sphere) 3D",
     },
     {
-        href: "/discord/login",
-        text: "Exemple de Discord login Tools [WIP]",
+        href: "/discord/login.html",
+        text: "Exemple de Discord login Tools",
     },
     {
-        href: "/outils/rss",
+        href: "/outils/rss.html",
         text: "Flux RSS",
     },
     {
-        href: "/outils/caesar",
+        href: "/outils/caesar.html",
         text: "Chiffrement par décalage (Caesar / César)",
     },
     {
-        href: "/cours/html",
+        href: "/cours/html.html",
         text: "Cours sur le HTML",
     },
     {
-        href: "/cours/css",
+        href: "/cours/css.html",
         text: "Cours sur le CSS",
     },
     {
-        href: "/cours/js",
+        href: "/cours/js.html",
         text: "Cours sur le JavaScript (JS)",
     },
     {
-        href: "/cours/binaire",
+        href: "/cours/binaire.html",
         text: "Cours sur le binaire",
     },
     {
-        href: "/admin/contact",
+        href: "/admin/contact.html",
         text: "Contacter l'administrateur du projet",
     },
     {
-        href: "/admin/film",
+        href: "/admin/film.html",
         text: "Les films conseillés par GHub",
     },
     {
-        href: "/admin/music",
+        href: "/admin/music.html",
         text: "Musiques conseillés par GHub (Music)",
+    },
+    {
+        href: "/404.html",
+        text: "Erreur 404",
     },
 ];
 
