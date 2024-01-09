@@ -79,7 +79,6 @@ async function pages() {
 
 
 
-    //never reach ? 
     else {
         await includes();
 
@@ -101,7 +100,6 @@ async function pages() {
             devFooter.style = "";
         }
     }
-
 
     await include_script("/src/js/cursor.js");
     await include_script("/src/js/date.js");
@@ -327,6 +325,10 @@ async function pageDiscord() {
 
     else if (pathNameMatchPage("/discord", true)) {
         await includes();
+        await include_html("/src/html/content/redirect.html", "content", true);
+        await include_css("/src/css/redirect.css");
+        await include_script("/src/js/redirect.js");
+        redirect("discord.gg/rF25kjuv4v");
     }
 
     else {

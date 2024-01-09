@@ -6,7 +6,7 @@ setDateHTML();
 
 function setDateHTML() {
     var div = document.createElement("div");
-
+    div.style = "margin-right: 16px;";
     var date = document.createElement("p")
     date.id = id;
 
