@@ -1,5 +1,5 @@
 .music>div>div>iframe {
-    background-color: var(--main-color);
+    background-color: var(--main-color-transparent);
 
     display: block;
 

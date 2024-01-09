@@ -29,7 +29,7 @@
 
 #anchor>button,
 #anchor>a>button {
-    background-color: var(--main-color);
+    background-color: var(--main-color-transparent);
 }
 
 @media screen and (max-width: 1024px) {
