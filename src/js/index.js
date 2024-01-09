@@ -1,4 +1,6 @@
-index(); async function index() {
+index();
+
+async function index() {
     console.info("Loading website");
     await Metadata();
     await pages();
@@ -261,6 +263,7 @@ async function pageAdmin() {
         await includes();
 
         await include_css("/src/css/music.css");
+        await include_script("/src/js/music.js");
         await include_html("/src/html/content/music.html", "content", true);
     }
 

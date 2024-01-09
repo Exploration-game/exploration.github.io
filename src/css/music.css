@@ -9,6 +9,18 @@
     margin-top: 24px;
 }
 
+.menu>button {
+    padding: 16px;
+    border-radius: 16px;
+    margin: 12px;
+}
+
+.music>div {
+    display: none;
+}
+
+.music>.chill {}
+
 .music>div>div>h1 {
     text-align: center;
     max-width: 15vw;
