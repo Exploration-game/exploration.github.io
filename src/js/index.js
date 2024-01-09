@@ -52,9 +52,6 @@ async function pages() {
     console.info("Loading custom page");
 
     if (pathNameMatchPage("/", true) || pathNameMatchPage("/index", true)) {
-        if (devMode()) {
-            await devTest();
-        }
         await includes();
 
         await include_html("/src/html/content/welcome.html", "content", true);
@@ -76,9 +73,6 @@ async function pages() {
     else if (pathNameMatchPage("/games", false) && await pageGames()) { }
     else if (pathNameMatchPage("/discord", false) && await pageDiscord()) { }
 
-
-
-
     else {
         await includes();
 
@@ -92,15 +86,8 @@ async function pages() {
     }
 
     //add check view counter too, or is it loaded after this ?
-    if (!devMode()) {
-        await include_script("/src/js/viewcount.js");
-    } else {
-        var devFooter = document.getElementById("devFooter");
-        if (devFooter != null) {
-            devFooter.style = "";
-        }
-    }
-
+    await include_script("/src/js/viewcount.js");
+    devFooter();
     await include_script("/src/js/cursor.js");
     await include_script("/src/js/date.js");
 }
@@ -370,6 +357,17 @@ function devMode() {
     }
     else {
         return false;
+    }
+}
+
+async function devFooter() {
+    if (devMode()) {
+        var devFooter = document.getElementById("devFooter");
+        if (devFooter != null) {
+            devFooter.style = "";
+        }
+
+        await devTest();
     }
 }
 

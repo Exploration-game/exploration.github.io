@@ -1,4 +1,5 @@
 async function viewCount(page) {
+    console.log("Loading view counter");
     var pathname = window.location.pathname;
     var pathname = pathname.replaceAll("/", ".");
     var pathname = pathname.replace(".html", "");
@@ -32,9 +33,13 @@ const getViews = async (repo, callback) => {
 }
 
 async function getViewSetting() {
-    if (localStorage.getItem('viewCount') == "true" || localStorage.getItem('viewCount') == null) {
-        console.log("loading view counter");
+    if (localStorage.getItem('viewCount') === "true") {
         await viewCount("GHub-fr.github.io");
+    }
+    if (devMode() === false) {
+        if (localStorage.getItem('viewCount') == null) {
+            await viewCount("GHub-fr.github.io");
+        }
     }
 }
 getViewSetting();
