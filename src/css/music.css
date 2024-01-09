@@ -15,25 +15,46 @@
     margin: 12px;
 }
 
+.menu>button>p.background-clip {
+    font-size: 1vw;
+}
+
 .music>div {
     display: none;
 }
 
-.music>.chill {}
+.music>.topvid {
+    display: block;
+}
+
+.music>.topvid>div {}
+
+.background-clip {
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 5vw;
+    font-family: Arial;
+    max-width: 100%;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--text-color);
+    text-shadow: 0px 0px 20px var(--background-color);
+}
 
 .music>div>div>h1 {
     text-align: center;
-    max-width: 15vw;
+    max-width: 95%;
 }
 
 .music>div>div>p {
     text-align: center;
     margin-top: -20px;
+    max-width: 90%;
 }
 
 .music>div>div {
     display: inline-block;
-    width: 20%;
+    min-width: 15vw;
+    max-width: 30vw;
 
     background-color: var(--background-color-transparent);
 
