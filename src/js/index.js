@@ -85,9 +85,8 @@ async function pages() {
         }
     }
 
-    //add check view counter too, or is it loaded after this ?
     await include_script("/src/js/viewcount.js");
-    devFooter();
+    await devFooter();
     await include_script("/src/js/cursor.js");
     await include_script("/src/js/date.js");
 }
