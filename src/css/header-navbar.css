@@ -63,6 +63,8 @@
         max-height: 50vh;
 
         overflow-y: auto;
+        padding-right: 50px;
+        padding-left: 50px;
 
         left: 15vw;
         right: 15vw;

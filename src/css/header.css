@@ -8,6 +8,10 @@ header {
 
     background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
     backdrop-filter: var(--blur);
+
+    border-bottom-style: solid;
+    border-bottom-color: var(--text-color);
+    border-bottom-width: 3px;
 }
 
 

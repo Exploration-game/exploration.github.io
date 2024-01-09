@@ -45,6 +45,8 @@ async function getMarkdown(url) {
 }
 
 async function addMarkdown(repo, file) {
+    console.log("Loading markdown CSS");
+    await include_css("/src/css/markdown.css");
     console.log("Loading .md");
     var x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
     // console.log(".md : " + x);

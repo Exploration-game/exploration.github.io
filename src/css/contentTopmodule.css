@@ -1,0 +1,38 @@
+#content>#TopModule {
+    background-color: var(--main-color-transparent);
+    width: 100%;
+
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+
+    border-style: solid;
+    border-color: var(--second-default);
+    border-width: 3px;
+    border-top: none;
+
+    display: none;
+}
+
+#content>#TopModule>* {
+    margin: 16px;
+    display: none;
+}
+
+#content>#TopModule>#statsContentMenu {
+    display: inline-block;
+    width: 30%;
+}
+
+#content>#TopModule>* {
+    max-width: 70%;
+
+    vertical-align: top;
+    text-align: center;
+}
+
+#content>#TopModule>#statsContentMenu>button {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}

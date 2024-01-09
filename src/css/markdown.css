@@ -1,0 +1,11 @@
+#content>#markdown>img {
+    max-width: 80vw;
+}
+
+#content>#markdown>*:not(hr) {
+    display: inline;
+}
+
+#content>#markdown>a>* {
+    display: inline;
+}

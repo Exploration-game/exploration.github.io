@@ -3,8 +3,19 @@
     height: max-content;
     position: relative;
 
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+    padding-bottom: 2.5vh;
+
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--text-color);
+    border-width: 3px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 #content {
@@ -17,17 +28,7 @@
     gap: 30px;
 }
 
-#content>#markdown>img {
-    max-width: 80vw;
-}
 
-#content>#markdown>*:not(hr) {
-    display: inline;
-}
-
-#content>#markdown>a>* {
-    display: inline;
-}
 
 #content>article {
     width: 100%;
@@ -41,8 +42,8 @@ article>div>h3 {
 
 @media screen and (max-width: 1024px) {
     #content {
-        margin-right: 2vw;
-        margin-left: 2vw;
+        margin-right: 5vw;
+        margin-left: 15vw;
         max-width: 96vw;
     }
 
@@ -53,7 +54,7 @@ article>div>h3 {
 
 @media screen and (min-width: 1024px) {
     #content {
-        margin-right: 15vw;
+        margin-right: 10vw;
         margin-left: 15vw;
         max-width: 70vw;
     }
