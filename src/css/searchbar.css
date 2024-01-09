@@ -24,7 +24,8 @@
 }
 
 #search-box>input::placeholder {
-    padding-left: 25px;
+    color: var(--text-color);
+    opacity: 0.9;
 }
 
 #result-box,
@@ -32,10 +33,6 @@
     border-radius: 10px;
     border: 2px solid var(--second-hover);
     backdrop-filter: var(--blur);
-}
-
-#search-box>input::placeholder {
-    color: var(--second-hover);
 }
 
 #result-box>ul {
