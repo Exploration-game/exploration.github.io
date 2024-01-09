@@ -56,7 +56,7 @@ async function pages() {
             await devTest();
         }
         await includes();
-        
+
         await include_html("/src/html/content/welcome.html", "content", true);
         await include_css("/src/css/welcome.css");
     }
@@ -323,6 +323,10 @@ async function pageDiscord() {
 
         await include_css("/src/css/discord.css");
         await include_script("/src/js/discord-login.js");
+    }
+
+    else if (pathNameMatchPage("/discord", true)) {
+        await includes();
     }
 
     else {
