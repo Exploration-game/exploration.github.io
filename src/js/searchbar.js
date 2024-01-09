@@ -56,15 +56,23 @@ const links = [
     },
     {
         href: "/discord/login.html",
-        text: "Exemple de Discord login Tools",
+        text: "Exemple d'API Discord login",
     },
     {
         href: "/outils/rss.html",
         text: "Flux RSS",
     },
     {
+        href: "/rss.rss",
+        text: "Fichier RSS.rss",
+    },
+    {
         href: "/outils/caesar.html",
         text: "Chiffrement par décalage (Caesar / César)",
+    },
+    {
+        href: "/outils/logger.html",
+        text: "IP v4 v6 logger & browser scan",
     },
     {
         href: "/cours/html.html",
@@ -97,6 +105,22 @@ const links = [
     {
         href: "/404.html",
         text: "Erreur 404",
+    },
+    {
+        href: "/github/readme.html",
+        text: "ReadMe Github",
+    },
+    {
+        href: "/cours/markdown.html",
+        text: "Cours sur le MarkDown .md",
+    },
+    {
+        href: "/cours/github-readme.html",
+        text: "ReadMe de Github (EN)",
+    },
+    {
+        href: "/cours/fibre.html",
+        text: "Cours sur la fibre optique",
     },
 ];
 
