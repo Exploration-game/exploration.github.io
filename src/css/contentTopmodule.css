@@ -1,6 +1,6 @@
 #content>#TopModule {
     background-color: var(--main-color-transparent);
-    max-width: 100%;
+    width: 100%;
 
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
@@ -57,6 +57,13 @@
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
+}
+
+#content>#TopModule>*>iframe {
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    background-color: var(--background-color);
 }
 
 #content>#TopModule>*>button>img.svg {
