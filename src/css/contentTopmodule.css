@@ -40,10 +40,11 @@
     display: none;
 }
 
-#content>#TopModule>#statsContentMenu {
+#content>#TopModule>#statsContentMenuBis {
     display: inline-block !important;
 
-    width: 40%;
+    max-width: 40%;
+    width: 220px;
     height: 100%;
 
     border-right-style: solid;
@@ -51,9 +52,13 @@
     border-right-width: 3px;
 }
 
-#content>#TopModule>#statsContentMenu>button {
+#content>#TopModule>*>button {
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
+}
+
+#content>#TopModule>*>button>img.svg {
+    width: 25px;
 }

@@ -4,13 +4,9 @@
 //stats & metrics gather
 //Gather only on display of menu (lag API)
 
-//go menu btn
-//close all btn
-//Les mettres sur le panel de droite
-//Ou gauche et retirer les autres btn si sur un panel droite de chargé
 const ids = ["statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",
-    "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic"];
+    "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
 
 showTopmodule(true, "default");
 

@@ -1,35 +1,41 @@
 <div id="content">
     <div id="TopModule" style="display:block;">
-        <div id="statsContentMenu">
-            <button onclick="showMenu('statsContentIssues');">
-                <p>Issues</p>
-            </button>
-            <button onclick="showMenu('statsContentContributor');">
-                <p>Contributor</p>
-            </button>
-            <button onclick="showMenu('statsContentBuild');">
-                <p>Build</p>
-            </button>
-            <button onclick="showMenu('statsContentDiscussion');">
-                <p>Discussion</p>
-            </button>
-            <button onclick="showMenu('statsContentGithubStatus');">
-                <p>Status</p>
-            </button>
-            <button onclick="showMenu('statsContentConsoleInfo');">
-                <p>Console</p>
-            </button>
-            <button onclick="showMenu('ContentLatestRSS');">
-                <p>RSS</p>
-            </button>
-            <button onclick="showMenu('ContentMusic');">
-                <p>Musique</p>
-            </button>
+        <div id="statsContentMenuBis">
             <button onclick="showTopmodule(false);">
-                <p>Close</p>
+                <img src="/assets/svg/close.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentMenu');">
+                <img src="/assets/svg/menu.svg" class="svg" alt="">
             </button>
         </div>
 
+        <div id="statsContentMenu">
+            <button onclick="showMenu('statsContentBuild');">
+                <img src="/assets/svg/app-gear.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentContributor');">
+                <img src="/assets/svg/people.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentIssues');">
+                <img src="/assets/svg/issue.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentDiscussion');">
+                <img src="/assets/svg/contact.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentGithubStatus');">
+                <img src="/assets/svg/network.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('statsContentConsoleInfo');">
+                <img src="/assets/svg/console.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('ContentLatestRSS');">
+                <img src="/assets/svg/languages/rss.svg" class="svg" alt="">
+            </button>
+            <button onclick="showMenu('ContentMusic');">
+                <img src="/assets/svg/music.svg" class="svg" alt="">
+            </button>
+        </div>
+        
         <div id="statsContentIssues">
             <h1>Issues (Lien)</h1>
             <p>Count : 00</p>
