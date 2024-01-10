@@ -9,7 +9,7 @@
     border-right-style: solid;
     border-left-style: solid;
     border-bottom-style: solid;
-    border-color: var(--text-color);
+    border-color: var(--main-color);
     border-width: 3px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
