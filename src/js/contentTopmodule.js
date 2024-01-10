@@ -4,9 +4,9 @@
 //stats & metrics gather
 //Gather only on display of menu (lag API)
 
-const ids = ["statsContentIssues", "statsContentContributor",
-    "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",
-    "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
+const ids = [/*"statsContentIssues", "statsContentContributor",
+    "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",*/
+    "statsContentConsoleInfo"/*, "ContentLatestRSS"*/, "ContentMusic", "statsContentMenu"];
 
 showTopmodule(true, "default");
 
