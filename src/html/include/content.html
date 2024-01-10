@@ -1,31 +1,31 @@
 <div id="content">
-    <div id="TopModule">
+    <div id="TopModule" style="display:block;">
         <div id="statsContentMenu">
-            <button>
+            <button onclick="showMenu('statsContentIssues');">
                 <p>Issues</p>
             </button>
-            <button>
+            <button onclick="showMenu('statsContentContributor');">
                 <p>Contributor</p>
             </button>
-            <button>
+            <button onclick="showMenu('statsContentBuild');">
                 <p>Build</p>
             </button>
-            <button>
+            <button onclick="showMenu('statsContentDiscussion');">
                 <p>Discussion</p>
             </button>
-            <button>
+            <button onclick="showMenu('statsContentGithubStatus');">
                 <p>Status</p>
             </button>
-            <button>
+            <button onclick="showMenu('statsContentConsoleInfo');">
                 <p>Console</p>
             </button>
-            <button>
+            <button onclick="showMenu('ContentLatestRSS');">
                 <p>RSS</p>
             </button>
-            <button>
+            <button onclick="showMenu('ContentMusic');">
                 <p>Musique</p>
             </button>
-            <button>
+            <button onclick="showTopmodule(false);">
                 <p>Close</p>
             </button>
         </div>
@@ -68,24 +68,28 @@
         </div>
 
         <div id="statsContentConsoleInfo">
-            <div id="statsContentDiscussion">
-                <h1>Console</h1>
-                <p>Info : 00</p>
-                <p>Warn : 00</p>
-                <p>Error : 00</p>
-                <p>Latest MSG : ABC ABC</p>
-            </div>
+            <h1>Console</h1>
+            <br>
+            <p id="statsContentConsoleInfoInfo"></p>
+            <p>Warn : 00</p>
+            <p>Error : 00</p>
+            <p>Latest MSG : ABC ABC</p>
         </div>
 
         <div id="ContentLatestRSS">
-            <div id="statsContentDiscussion">
-                <h1>RSS (Lien)</h1>
-                <a href="">LatestNewsTitle<p>01/01/24</p></a>
-                <a href="">LatestNewsTitle2<p>01/01/24</p></a>
-                <a href="">LatestNewsTitle3<p>01/01/24</p></a>
-            </div>
+            <h1>RSS (Lien)</h1>
+            <a href="">LatestNewsTitle<p>01/01/24</p></a>
+            <a href="">LatestNewsTitle2<p>01/01/24</p></a>
+            <a href="">LatestNewsTitle3<p>01/01/24</p></a>
         </div>
 
-        <div id="ContentMusic"> </div>
+        <div id="ContentMusic">
+            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/8zeyRAFMizc"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </div>

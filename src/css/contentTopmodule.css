@@ -1,6 +1,6 @@
 #content>#TopModule {
     background-color: var(--main-color-transparent);
-    width: 100%;
+    max-width: 100%;
 
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
@@ -10,24 +10,45 @@
     border-width: 3px;
     border-top: none;
 
-    display: none;
+    display: block;
+}
+
+#content>#TopModule>.visible {
+    display: inline-block !important;
+
+    width: 55%;
+    height: 100%;
+
+    border-left-style: solid;
+    border-left-color: var(--second-default);
+    border-left-width: 3px;
+}
+
+#content>#TopModule>.visible>* {
+    display: inline-block;
+    height: 100%;
 }
 
 #content>#TopModule>* {
-    margin: 16px;
+    max-width: fit-content;
+    max-height: fit-content;
+
+    vertical-align: middle;
+    text-align: center;
+    align-self: center;
+
     display: none;
 }
 
 #content>#TopModule>#statsContentMenu {
-    display: inline-block;
-    width: 30%;
-}
+    display: inline-block !important;
 
-#content>#TopModule>* {
-    max-width: 70%;
+    width: 40%;
+    height: 100%;
 
-    vertical-align: top;
-    text-align: center;
+    border-right-style: solid;
+    border-right-color: var(--second-default);
+    border-right-width: 3px;
 }
 
 #content>#TopModule>#statsContentMenu>button {

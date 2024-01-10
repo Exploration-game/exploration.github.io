@@ -92,10 +92,7 @@ async function pages() {
     await include_script("/src/js/cursor.js");
     await include_script("/src/js/date.js");
     await include_script("/src/js/searchbar.js");
-
-    if (devMode()) {
-        await include_script("/src/js/contentTopmodule.js");
-    }
+    await include_script("/src/js/contentTopmodule.js");
 }
 
 async function pageGithub() {
