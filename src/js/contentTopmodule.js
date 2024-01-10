@@ -61,7 +61,7 @@ function showMenu(module) {
 function activateMenu(menuName, msg) {
     if (menuName === "statsContentConsoleInfo") {
         var countInfo = document.getElementById("statsContentConsoleInfoInfo");
-        countInfo.textContent = warnCount + ", " + msg;
+        countInfo.textContent = "Warn : " + warnCount + ", " + msg;
     }
 }
 
