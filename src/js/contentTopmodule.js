@@ -12,28 +12,26 @@ const ids = ["statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",
     "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic"];
 
-showTopmodule(true);
+showTopmodule(true, "default");
 
-function showTopmodule(forceBlock) {
-    if (devMode()) {
-        var topModule = document.getElementById("TopModule");
+function showTopmodule(forceBlock, menuName) {
+    var topModule = document.getElementById("TopModule");
 
-        if (topModule.style.display == "block") {
-            topModule.style = "display:none;";
-            closeMenu();
-        } else if (topModule.style.display == "none") {
-            topModule.style = "display:block;";
-            showMenu("default");
-        }
+    if (topModule.style.display == "block") {
+        topModule.style = "display:none;";
+        closeMenu();
+    } else if (topModule.style.display == "none") {
+        topModule.style = "display:block;";
+        showMenu(menuName);
+    }
 
-        if (forceBlock === true) {
-            topModule.style = "display:block;";
-            showMenu("default");
-        }
-        else if (forceBlock === false) {
-            topModule.style = "display:none;";
-            closeMenu();
-        }
+    if (forceBlock === true) {
+        topModule.style = "display:block;";
+        showMenu(menuName);
+    }
+    else if (forceBlock === false) {
+        topModule.style = "display:none;";
+        closeMenu();
     }
 }
 
