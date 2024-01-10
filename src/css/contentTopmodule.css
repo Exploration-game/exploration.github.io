@@ -6,7 +6,7 @@
     border-bottom-right-radius: 32px;
 
     border-style: solid;
-    border-color: var(--second-default);
+    border-color: var(--main-color);
     border-width: 3px;
     border-top: none;
 
@@ -20,7 +20,7 @@
     height: 100%;
 
     border-left-style: solid;
-    border-left-color: var(--second-default);
+    border-left-color: var(--main-color);
     border-left-width: 3px;
 }
 
@@ -48,7 +48,7 @@
     height: 100%;
 
     border-right-style: solid;
-    border-right-color: var(--second-default);
+    border-right-color: var(--main-color);
     border-right-width: 3px;
 }
 
