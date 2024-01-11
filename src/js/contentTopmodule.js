@@ -5,9 +5,6 @@ const ids = [/*"statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",*/
     "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
 
-
-showTopmodule(true, "default");
-
 async function showTopmodule(forceBlock, menuName) {
     console.log("Loading top module stats");
     var topModule = document.getElementById("TopModule");
