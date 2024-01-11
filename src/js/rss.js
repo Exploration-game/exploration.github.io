@@ -105,6 +105,14 @@ const linksList = [
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
   },
+  {
+    title: "Ajout d'un module info (RSS, music, console, ...)",
+    link: "github/statistiques",
+    description: "Mise à jour de qualité de vie sur le site et ajouts de fonctions",
+    publicationDate: buildRFC822Date("2024-01-11T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
+  },
 ];
 
 const channelImage = channel.image

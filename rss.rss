@@ -103,6 +103,16 @@
         <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Mise à jour admin music" />]]></content:encoded>
       </item>
     
+      <item>
+        <title><![CDATA[Ajout d'un module info (RSS, music, console, ...)]]></title>
+        <link>https://doc.ghub.fr/github/statistiques</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/github/statistiques</guid>
+        <pubDate>Wed, 10 Jan 2024 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Mise à jour de qualité de vie sur le site et ajouts de fonctions]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Ajout d'un module info (RSS, music, console, ...)" />]]></content:encoded>
+      </item>
+    
     </channel>
   </rss>
   
