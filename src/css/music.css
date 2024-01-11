@@ -27,8 +27,6 @@
     display: block;
 }
 
-.music>.topvid>div {}
-
 .background-clip {
     color: var(--text-color);
     font-weight: bolder;
