@@ -60,7 +60,7 @@ async function pages() {
     if (pathNameMatchPage("/", true) || pathNameMatchPage("/index", true)) {
         await includes();
 
-        await include_html("/src/html/content/welcome.html", "content", true);
+        await include_html("/src/html/content/welcome.html", "contentArticle", true);
         await include_css("/src/css/welcome.css");
     }
 
@@ -68,7 +68,7 @@ async function pages() {
         await includes();
 
         await include_css("/src/css/settings.css");
-        await include_html("/src/html/content/settings.html", "content", true);
+        await include_html("/src/html/content/settings.html", "contentArticle", true);
         await include_script("/src/js/settings.js");
     }
 
@@ -83,7 +83,7 @@ async function pages() {
         await includes();
 
         await include_css("/src/css/404.css");
-        await include_html("/src/html/content/404.html", "content", true);
+        await include_html("/src/html/content/404.html", "contentArticle", true);
         console.warn("Erreur : 404");
 
         if (pathNameMatchPage("/404", true)) {
@@ -223,12 +223,12 @@ async function pageOutils() {
     if (pathNameMatchPage("/outils/matrice", true)) {
         await include_html("/src/html/include/content.html", "body", false);
         await include_css("/src/css/theme.css");
-        await include_multiple("matrice", "content");
+        await include_multiple("matrice", "contentArticle");
     }
 
     else if (pathNameMatchPage("/outils/cube", true)) {
         await include_html("/src/html/include/content.html", "body", false);
-        await include_html("/src/html/content/cube.html", "content", true);
+        await include_html("/src/html/content/cube.html", "contentArticle", true);
         await include_css("/src/css/cube.css");
         await include_css("/src/css/theme.css");
     }
@@ -241,13 +241,13 @@ async function pageOutils() {
     else if (pathNameMatchPage("/outils/logger", true)) {
         await includes();
         await include_css("/src/css/logger.css");
-        await include_html("/src/html/content/logger.html", "content", true);
+        await include_html("/src/html/content/logger.html", "contentArticle", true);
         await include_script("/src/js/logger.js");
     }
 
     else if (pathNameMatchPage("/outils/caesar", true)) {
         await includes();
-        await include_multiple("caesar", "content");
+        await include_multiple("caesar", "contentArticle");
     }
 
     else {
@@ -261,7 +261,7 @@ async function pageAdmin() {
         await includes();
 
         await include_css("/src/css/film.css");
-        await include_html("/src/html/content/film.html", "content", true);
+        await include_html("/src/html/content/film.html", "contentArticle", true);
     }
 
     else if (pathNameMatchPage("/admin/music", true)) {
@@ -269,14 +269,14 @@ async function pageAdmin() {
 
         await include_css("/src/css/music.css");
         await include_script("/src/js/music.js");
-        await include_html("/src/html/content/music.html", "content", true);
+        await include_html("/src/html/content/music.html", "contentArticle", true);
     }
 
     else if (pathNameMatchPage("/admin/contact", true)) {
         await includes();
 
         await include_css("/src/css/contact.css");
-        await include_html("/src/html/content/contact.html", "content", true);
+        await include_html("/src/html/content/contact.html", "contentArticle", true);
     }
 
     else {
@@ -307,7 +307,7 @@ async function pageDiscord() {
         await includes();
 
         await include_css("/src/css/discord.css");
-        await include_html("/src/html/content/discord-login.html", "content", true);
+        await include_html("/src/html/content/discord-login.html", "contentArticle", true);
     }
 
     else if (pathNameMatchPage("/discord/tools", true)) {
@@ -319,7 +319,7 @@ async function pageDiscord() {
 
     else if (pathNameMatchPage("/discord", true)) {
         await includes();
-        await include_html("/src/html/content/redirect.html", "content", true);
+        await include_html("/src/html/content/redirect.html", "contentArticle", true);
         await include_css("/src/css/redirect.css");
         await include_script("/src/js/redirect.js");
         redirect("discord.gg/rF25kjuv4v");

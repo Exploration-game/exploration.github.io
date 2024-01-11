@@ -52,7 +52,6 @@ function activateMenu(menuName, msg, count, div, text) {
         statsConsoleInfo("statsContentConsoleInfo", msg, count, div, text);
     }
     else if (menuName === "ContentLatestRSS") {
-        console.warn("Beta feature");
         getRSS();
     }
 }
