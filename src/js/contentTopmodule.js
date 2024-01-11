@@ -97,7 +97,7 @@ function ShowRSSPost(data) {
     document.getElementById("titleNews").href = link.textContent;
     document.getElementById("titleNews").style = "padding-left:12px;padding-right:12px;";
     document.getElementById("descriptionNews").textContent = description.textContent;
-    document.getElementById("descriptionNews").style = "padding-right:12px;";
+    document.getElementById("descriptionNews").style = "padding-left:12px;";
     document.getElementById("dateNews").textContent = dateGMT;
 }
 
