@@ -1,5 +1,6 @@
 #content>#TopModule {
     background-color: var(--main-color-transparent);
+    background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
     width: 100%;
 
     border-bottom-left-radius: 32px;
@@ -10,7 +11,12 @@
     border-width: 3px;
     border-top: none;
 
+    backdrop-filter: var(--blur);
+    
     display: block;
+    
+    position: absolute;
+    top: 0;
 }
 
 #content>#TopModule>.visible {
