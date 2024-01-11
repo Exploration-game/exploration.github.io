@@ -1,6 +1,6 @@
 var cursor
 //Cursor trigger often on header / Content wrapper (middle part of screen)
-console.info("Loading cursor");
+console.log("Loading cursor");
 createCursor();
 
 async function createCursor() {

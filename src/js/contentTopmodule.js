@@ -3,12 +3,12 @@
 
 const ids = [/*"statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",*/
-    "statsContentConsoleInfo"/*, "ContentLatestRSS"*/, "ContentMusic", "statsContentMenu"];
+    "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
 
 showTopmodule(true, "default");
 
 function showTopmodule(forceBlock, menuName) {
-    console.info("Loading top module stats");
+    console.log("Loading top module stats");
     var topModule = document.getElementById("TopModule");
 
     if (topModule.style.display == "block") {
@@ -48,9 +48,13 @@ function showMenu(module) {
     }
 }
 
-function activateMenu(menuName, msg, count, div, text) {
+async function activateMenu(menuName, msg, count, div, text) {
     if (menuName === "statsContentConsoleInfo") {
+        await include_script("/src/js/consoleInfo.js");
         statsConsoleInfo("statsContentConsoleInfo", msg, count, div, text);
+    }
+    else if (menuName === "ContentLatestRSS") {
+        console.warn("Beta feature");
     }
 }
 
@@ -61,52 +65,13 @@ function closeMenu() {
     }
 }
 
-var warnCount = 0;
-console.warn = function (msg) {
-    warnCount++;
-    activateMenu("statsContentConsoleInfo", msg, warnCount, "statsContentConsoleInfoWarn", "Warn");
-    console.log(msg);
-}
 
-var errorCount = 0;
-console.error = function (msg) {
-    errorCount++;
-    activateMenu("statsContentConsoleInfo", msg, errorCount, "statsContentConsoleInfoError", "Error");
-    console.log(msg);
-}
 
-var infoCount = 0;
-console.info = function (msg) {
-    infoCount++;
-    activateMenu("statsContentConsoleInfo", msg, infoCount, "statsContentConsoleInfoInfo", "Info");
-    console.log(msg);
-}
+function getRSS() {
+    const RSS_URL = `https://codepen.io/picks/feed/`;
 
-var traceCount = 0;
-console.trace = function (msg) {
-    traceCount++;
-    activateMenu("statsContentConsoleInfo", msg, traceCount, "statsContentConsoleInfoTrace", "Trace");
-    console.log(msg);
-}
-
-function statsConsoleInfo(menuName, msg, count, div, text) {
-    if (menuName === "statsContentConsoleInfo") {
-        if (div !== undefined) {
-            if (msg === undefined) {
-                msg = "...";
-            }
-            if (count === undefined) {
-                count = 0;
-            }
-
-            if (text === undefined) {
-                text = "ErrorType";
-            }
-
-            var countInfo = document.getElementById(div);
-            var textOutput = text + " : " + count + " : " + msg;
-
-            countInfo.textContent = textOutput;
-        }
-    }
+    fetch(RSS_URL)
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => console.log(data))
 }
