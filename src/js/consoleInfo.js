@@ -44,6 +44,7 @@ function statsConsoleInfo(menuName, msg, count, div, text) {
             var textOutput = text + " : " + count + " : " + msg;
 
             countInfo.textContent = textOutput;
+            countInfo.style = "padding-left: 12px;";
         }
     }
 }

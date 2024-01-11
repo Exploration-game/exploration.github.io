@@ -5,9 +5,10 @@ const ids = [/*"statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",*/
     "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
 
+
 showTopmodule(true, "default");
 
-function showTopmodule(forceBlock, menuName) {
+async function showTopmodule(forceBlock, menuName) {
     console.log("Loading top module stats");
     var topModule = document.getElementById("TopModule");
 
@@ -29,7 +30,8 @@ function showTopmodule(forceBlock, menuName) {
     }
 }
 
-function showMenu(module) {
+async function showMenu(module) {
+    await include_script("/src/js/consoleInfo.js");
     closeMenu();
 
     if (module === "default") {
@@ -48,13 +50,13 @@ function showMenu(module) {
     }
 }
 
-async function activateMenu(menuName, msg, count, div, text) {
+function activateMenu(menuName, msg, count, div, text) {
     if (menuName === "statsContentConsoleInfo") {
-        await include_script("/src/js/consoleInfo.js");
         statsConsoleInfo("statsContentConsoleInfo", msg, count, div, text);
     }
     else if (menuName === "ContentLatestRSS") {
         console.warn("Beta feature");
+        getRSS();
     }
 }
 
@@ -68,10 +70,42 @@ function closeMenu() {
 
 
 function getRSS() {
-    const RSS_URL = `https://codepen.io/picks/feed/`;
+    const RSS_URL = "https://doc.ghub.fr/rss.rss";
 
     fetch(RSS_URL)
         .then(response => response.text())
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-        .then(data => console.log(data))
+        .then(data => getLastRSSFeed(data))
+}
+
+function getLastRSSFeed(data) {
+    const items = data.querySelectorAll("item");
+    var size = items.length;
+    size--;
+    ShowRSSPost(items[size]);
+}
+
+function ShowRSSPost(data) {
+    var link = data.querySelector("link");
+    var title = data.querySelector("title");
+    var description = data.querySelector("description");
+    var date = data.querySelector("pubDate").textContent; 
+
+   var dateGMT =  getRSSToDate(date);
+
+    document.getElementById("titleNews").textContent = title.textContent;
+    document.getElementById("titleNews").href = link.textContent;
+    document.getElementById("titleNews").style = "padding-left:12px;padding-right:12px;";
+    document.getElementById("descriptionNews").textContent = description.textContent;
+    document.getElementById("descriptionNews").style = "padding-right:12px;";
+    document.getElementById("dateNews").textContent = dateGMT;
+}
+
+function getRSSToDate(pubDate) {
+    var date = new Date(pubDate);
+
+    var months = Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+    var string = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+
+    return string;
 }
