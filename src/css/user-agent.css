@@ -1,5 +1,6 @@
 button {
-    background-color: var(--main-color-transparent);;
+    background-color: var(--main-color-transparent);
+    ;
     border-color: var(--text-color);
     backdrop-filter: blur(12px);
 }
@@ -47,12 +48,8 @@ textarea {
     padding-top: 8px;
     padding-bottom: 8px;
 
-    min-width: 50vw;
-    width: 80vw;
-    max-width: 80vw;
-
-    height: 10vh;
-    max-height: 50vh;
+    width: 100%;
+    height: 100%;
 
     border-color: var(--link-color);
     color: var(--main-color);
@@ -94,7 +91,11 @@ code {
     background-color: var(--second-default);
     display: block !important;
     color: var(--main-color);
-    max-width: fit-content;
+
+    min-width: 40%;
+    min-height: 10vh;
+    width: max-content;
+
     padding: 16px;
 
     white-space: pre;
@@ -104,8 +105,6 @@ code {
     border-style: solid;
 
     border-radius: 10px;
-
-    max-width: fit-content;
 }
 
 input[type=checkbox] {

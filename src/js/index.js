@@ -17,6 +17,8 @@ async function includes() {
     await setIconTheme();
 
     await include_html("/src/html/include/content.html", "body", false);
+    await include_script("/src/js/contentTopmodule.js");
+    
     await include_html("/src/html/include/searchbar.html", "body", false);
 
     await include_html("/src/html/include/footer.html", "body", false);
@@ -32,8 +34,10 @@ async function styles() {
     await include_css("/src/css/header.css");
     await include_css("/src/css/header-navbar.css");
     await include_css("/src/css/anchor.css");
+
     await include_css("/src/css/content.css");
     await include_css("/src/css/contentTopmodule.css");
+
     await include_css("/src/css/footer.css");
     await include_css("/src/css/scrollbar.css");
     await include_css("/src/css/searchbar.css");
@@ -92,7 +96,6 @@ async function pages() {
     await include_script("/src/js/cursor.js");
     await include_script("/src/js/date.js");
     await include_script("/src/js/searchbar.js");
-    await include_script("/src/js/contentTopmodule.js");
 }
 
 async function pageGithub() {

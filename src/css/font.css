@@ -74,10 +74,22 @@ u {
     color: var(--text-color);
 }
 
+hr {
+    border-color: var(--main-color);
+
+    width: 100%;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+    text-align: center;
+
+    border-width: 2px;
+}
+
 a,
 summary,
-li::marker,
-hr {
+li::marker {
     color: var(--link-color);
 }
 

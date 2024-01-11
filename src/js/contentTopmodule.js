@@ -1,6 +1,3 @@
-//Button gesture
-//and close
-
 //stats & metrics gather
 //Gather only on display of menu (lag API)
 
@@ -11,6 +8,7 @@ const ids = [/*"statsContentIssues", "statsContentContributor",
 showTopmodule(true, "default");
 
 function showTopmodule(forceBlock, menuName) {
+    console.info("Loading top module stats");
     var topModule = document.getElementById("TopModule");
 
     if (topModule.style.display == "block") {
@@ -32,8 +30,6 @@ function showTopmodule(forceBlock, menuName) {
 }
 
 function showMenu(module) {
-    console.info("Loading top module stats sub module");
-
     closeMenu();
 
     if (module === "default") {
@@ -52,15 +48,13 @@ function showMenu(module) {
     }
 }
 
-function activateMenu(menuName, msg) {
+function activateMenu(menuName, msg, count, div, text) {
     if (menuName === "statsContentConsoleInfo") {
-        var countInfo = document.getElementById("statsContentConsoleInfoInfo");
-        countInfo.textContent = "Warn : " + warnCount + ", " + msg;
+        statsConsoleInfo("statsContentConsoleInfo", msg, count, div, text);
     }
 }
 
 function closeMenu() {
-    console.log("Closing other subMenu")
     for (i in ids) {
         var element = document.getElementById(ids[i]);
         element.classList.remove("visible");
@@ -70,6 +64,49 @@ function closeMenu() {
 var warnCount = 0;
 console.warn = function (msg) {
     warnCount++;
-    activateMenu("statsContentConsoleInfo", msg, warnCount);
-    console.info(msg);
+    activateMenu("statsContentConsoleInfo", msg, warnCount, "statsContentConsoleInfoWarn", "Warn");
+    console.log(msg);
+}
+
+var errorCount = 0;
+console.error = function (msg) {
+    errorCount++;
+    activateMenu("statsContentConsoleInfo", msg, errorCount, "statsContentConsoleInfoError", "Error");
+    console.log(msg);
+}
+
+var infoCount = 0;
+console.info = function (msg) {
+    infoCount++;
+    activateMenu("statsContentConsoleInfo", msg, infoCount, "statsContentConsoleInfoInfo", "Info");
+    console.log(msg);
+}
+
+var traceCount = 0;
+console.trace = function (msg) {
+    traceCount++;
+    activateMenu("statsContentConsoleInfo", msg, traceCount, "statsContentConsoleInfoTrace", "Trace");
+    console.log(msg);
+}
+
+function statsConsoleInfo(menuName, msg, count, div, text) {
+    if (menuName === "statsContentConsoleInfo") {
+        if (div !== undefined) {
+            if (msg === undefined) {
+                msg = "...";
+            }
+            if (count === undefined) {
+                count = 0;
+            }
+
+            if (text === undefined) {
+                text = "ErrorType";
+            }
+
+            var countInfo = document.getElementById(div);
+            var textOutput = text + " : " + count + " : " + msg;
+
+            countInfo.textContent = textOutput;
+        }
+    }
 }
