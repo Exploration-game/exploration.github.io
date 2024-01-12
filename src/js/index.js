@@ -382,6 +382,6 @@ async function devFooter() {
 }
 
 async function devTest() {
-    console.log("Dev mode ON : " + window.location.hostname);
+    console.info("Dev mode ON : " + window.location.hostname);
     //Test module ⏬
 }
