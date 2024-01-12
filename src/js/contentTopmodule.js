@@ -1,6 +1,3 @@
-//stats & metrics gather
-//Gather only on display of menu (lag API)
-
 const ids = [/*"statsContentIssues", "statsContentContributor",
     "statsContentBuild", "statsContentDiscussion", "statsContentGithubStatus",*/
     "statsContentConsoleInfo", "ContentLatestRSS", "ContentMusic", "statsContentMenu"];
@@ -28,7 +25,6 @@ async function showTopmodule(forceBlock, menuName) {
 }
 
 async function showMenu(module) {
-    await include_script("/src/js/consoleInfo.js");
     closeMenu();
 
     if (module === "default") {
@@ -47,9 +43,9 @@ async function showMenu(module) {
     }
 }
 
-function activateMenu(menuName, msg, count, div, text) {
+function activateMenu(menuName) {
     if (menuName === "statsContentConsoleInfo") {
-        statsConsoleInfo("statsContentConsoleInfo", msg, count, div, text);
+        statsConsoleSetup();
     }
     else if (menuName === "ContentLatestRSS") {
         getRSS();

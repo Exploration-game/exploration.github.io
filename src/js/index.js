@@ -1,15 +1,16 @@
 index();
 
 async function index() {
-    console.log("Loading website");
-    await Metadata();
+    await include_script("/src/js/consoleInfo.js");
+    console.info("Loading website");
+    await Metadata(); 
     await pages();
 }
 
 async function includes() {
     await styles();
 
-    console.log("Loading includes");
+    console.info("Loading includes");
 
     await include_html("/src/html/include/header.html", "body", false);
 
@@ -25,7 +26,7 @@ async function includes() {
 }
 
 async function styles() {
-    console.log("Loading style");
+    console.info("Loading style");
 
     await include_css("/src/css/theme.css");
     await include_script("/src/js/theme.js");
@@ -55,7 +56,7 @@ async function Metadata() {
 }
 
 async function pages() {
-    console.log("Loading custom page");
+    console.info("Loading custom page");
 
     if (pathNameMatchPage("/", true) || pathNameMatchPage("/index", true)) {
         await includes();
@@ -341,14 +342,14 @@ function pathNameMatchPage(path, strict) {
     var pathname = getShortPathname();
     if (strict === true) {
         if (path.toLowerCase() === pathname.toLowerCase()) {
-            console.log("Loading : " + pathname);
+            console.info("Loading : " + pathname);
             return true;
         }
     }
     else if (strict === false) {
         var lowerCasePath = path.toLowerCase();
         if (pathname.startsWith(lowerCasePath.toLowerCase())) {
-            console.log("Finding : " + lowerCasePath + "/...");
+            console.info("Finding : " + lowerCasePath + "/...");
             return true;
         }
     }
