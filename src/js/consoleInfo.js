@@ -1,36 +1,36 @@
 var warnCount = 0;
 var warnMsg = "";
-console.warn = function (msg) {
+console.warn = async function (msg) {
     warnCount++;
     warnMsg = msg;
-    statsConsoleInfo( msg, warnCount, "statsContentConsoleInfoWarn", "Warn");
+    await statsConsoleInfo( msg, warnCount, "statsContentConsoleInfoWarn", "Warn");
     console.log(msg);
 }
 
 var errorCount = 0;
 var errorMsg = "";
-console.error = function (msg) {
+console.error = async function (msg) {
     errorCount++;
     errorMsg = msg;
-    statsConsoleInfo( msg, errorCount, "statsContentConsoleInfoError", "Error");
+    await statsConsoleInfo( msg, errorCount, "statsContentConsoleInfoError", "Error");
     console.log(msg);
 }
 
 var infoCount = 0;
 var infoMsg = "";
-console.info = function (msg) {
+console.info = async function (msg) {
     infoCount++;
     infoMsg = msg;
-    statsConsoleInfo( msg, infoCount, "statsContentConsoleInfoInfo", "Info");
+    await statsConsoleInfo( msg, infoCount, "statsContentConsoleInfoInfo", "Info");
     console.log(msg);
 }
 
 var traceCount = 0;
 var traceMsg = "";
-console.trace = function (msg) {
+console.trace = async function (msg) {
     traceCount++;
     traceMsg = msg;
-    statsConsoleInfo( msg, traceCount, "statsContentConsoleInfoTrace", "Trace");
+    await statsConsoleInfo( msg, traceCount, "statsContentConsoleInfoTrace", "Trace");
     console.log(msg);
 }
 
