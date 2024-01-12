@@ -60,7 +60,7 @@
 
     border-style: solid;
     border-width: 1px;
-    border-color: var(--text-color);
+    border-color: var(--main-color);
 
     padding: 5px;
     margin: 25px;
