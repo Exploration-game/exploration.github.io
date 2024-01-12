@@ -85,7 +85,7 @@ async function addMarkdown(repo, file) {
     //edit ancre
     var content = document.querySelector("#anchor");
     var link = document.createElement("a");
-    link.href = "https://github.com/" + repo + "/edit/main/" + file;
+    link.href = "https://github.com/" + repo + "/blob/main/" + file;
     link.target = "_blank";
     var button = document.createElement("button");
     button.id = "edit-md"
