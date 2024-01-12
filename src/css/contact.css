@@ -50,6 +50,11 @@
     padding-right: 12px;
 }
 
+.contact>div>a>img.svg {
+    max-width: 50px;
+    padding-right: 12px;
+}
+
 .contact>div>a {
     display: flex;
     justify-content: flex-start;
