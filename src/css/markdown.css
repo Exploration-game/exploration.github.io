@@ -36,8 +36,8 @@
     display: grid;
     
     border-style: solid;
-    border-width: 1px;
-    border-color: var(--main-color);
+    border-width: 2px;
+    border-color: var(--text-color);
     border-radius: 16px;
 
     background-color: var(--main-color-transparent);
@@ -48,9 +48,9 @@
 
     max-width: fit-content;
     
-    opacity: 0.5;
-    scale: 0.35;
-    translate: -35%;
+    opacity: 0.75;
+    scale: 0.45;
+    transform: translateX(-60%);
     transition: 1s;
     z-index: 998;
 }
@@ -60,7 +60,7 @@
 {
     opacity: 1;
     scale: 1;
-    translate: 0%;
+    transform: translateX(0%);
     z-index: 1001;
     backdrop-filter: blur(10px);
     top: 60vh !important;
@@ -68,9 +68,12 @@
 
 #anchorList>a{
     pointer-events: none;
+    padding-bottom: 4px;
+    transition: 0.5s;
 }
 
 #anchorList:hover>a,
 #anchorList:active>a{
     pointer-events: all !important;
+    padding-bottom: 12px;
 }
