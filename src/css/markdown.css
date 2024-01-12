@@ -1,11 +1,21 @@
-#content>#markdown>img {
+#markdown>img {
     max-width: 80vw;
 }
 
-#content>#markdown>*:not(hr) {
+#markdown>*:not(hr) {
     display: inline;
 }
 
-#content>#markdown>a>* {
+#markdown>a>* {
     display: inline;
+}
+
+#markdown {
+    min-width: 85%;
+}
+
+#markdown>*>p {
+    max-width: fit-content;
+    display: inline-block;
+    white-space: pre;
 }

@@ -1,7 +1,7 @@
-#content>#TopModule {
+#TopModule {
     background-color: var(--main-color-transparent);
     background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
-    width: 100%;
+    width: 90%;
 
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
@@ -13,16 +13,16 @@
 
     backdrop-filter: var(--blur);
     
-    position: absolute;
+    position: sticky;
     
-    top: 0; 
-    left: 0;
-    right: 0;
+    top: 0;
+    left: 5%;
+    right: 5%;
 
     z-index: 990;
 }
 
-#content>#TopModule>.visible {
+#TopModule>.visible {
     display: inline-block !important;
 
     width: 85%;
@@ -33,12 +33,12 @@
     border-left-width: 3px;
 }
 
-#content>#TopModule>.visible>* {
+#TopModule>.visible>* {
     display: inline-block;
     height: 100%;
 }
 
-#content>#TopModule>* {
+#TopModule>* {
     max-width: fit-content;
     max-height: fit-content;
 
@@ -49,7 +49,7 @@
     display: none;
 }
 
-#content>#TopModule>#statsContentMenuBis {
+#TopModule>#statsContentMenuBis {
     display: inline-block !important;
 
     max-width: 10%;
@@ -61,14 +61,14 @@
     border-right-width: 3px;
 }
 
-#content>#TopModule>*>button {
+#TopModule>*>button {
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
     display: inline-block;
 }
 
-#content>#TopModule>*>iframe {
+#TopModule>*>iframe {
     margin: 10px;
     padding: 5px;
     display: inline-block;
@@ -77,6 +77,6 @@
     height: 15%;
 }
 
-#content>#TopModule>*>button>img.svg {
+#TopModule>*>button>img.svg {
     width: 25px;
 }

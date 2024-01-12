@@ -5,7 +5,11 @@ header {
     text-align: center;
 
     z-index: 999;
+}
 
+header>#navlinklist{
+    width: 100%;
+    
     background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
     backdrop-filter: var(--blur);
 
@@ -15,7 +19,7 @@ header {
 }
 
 
-header>a {
+header>#navlinklist>a {
     margin-right: 50px;
     text-decoration: none;
 }
@@ -32,7 +36,7 @@ header>div>div>.subnav-text>h2 {
     font-family: Varela;
 }
 
-header>a>h1,
+header>#navlinklist>a>h1,
 header>div,
 header>div>div,
 header>div>div>.subnav-text>h2 {
