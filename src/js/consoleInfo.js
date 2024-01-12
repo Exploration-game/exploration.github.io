@@ -35,7 +35,6 @@ console.trace = async function (msg) {
 }
 
 async function statsConsoleInfo(msg, count, div, text) {
-    await include_script("/src/js/contentTopModule.js");
         if (div !== undefined) {
             if (msg === undefined) {
                 msg = "...";
