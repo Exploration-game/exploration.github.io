@@ -11,7 +11,7 @@
 }
 
 #markdown {
-    min-width: 85%;
+    min-width: 85%; 
 }
 
 #markdown>*>p {
@@ -28,4 +28,49 @@
 
     padding-bottom: 12px;
     padding-top: 12px;
+}
+
+#anchorList{
+    padding: 16px;
+    
+    display: grid;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--main-color);
+    border-radius: 16px;
+
+    background-color: var(--main-color-transparent);
+
+    position: fixed;
+    left: 12px;
+    top: 70vh;
+
+    max-width: fit-content;
+    
+    opacity: 0.5;
+    scale: 0.35;
+    translate: -35%;
+    transition: 1s;
+    z-index: 998;
+}
+
+#anchorList:hover,
+#anchorList:active
+{
+    opacity: 1;
+    scale: 1;
+    translate: 0%;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    top: 60vh !important;
+}
+
+#anchorList>a{
+    pointer-events: none;
+}
+
+#anchorList:hover>a,
+#anchorList:active>a{
+    pointer-events: all !important;
 }

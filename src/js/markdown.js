@@ -70,16 +70,17 @@ async function addMarkdown(repo, file) {
     var newDiv = document.createElement("div");
     newDiv.id = "markdown";
     newDiv.innerHTML = x2;
+    content.appendChild(newDiv);
 
     var anchorList = document.createElement("div");
-    anchorList.style = "padding:16px;display:grid;border-style:solid;border-width:1px;border-color:var(--text-color);border-radius:16px;background-color:var(--main-color-transparent);max-width: fit-content;";
+    anchorList.id = "anchorList";
     content.appendChild(anchorList);
 
     var anchorTitle = document.createElement("b");
     anchorTitle.textContent = "Sommaire :"
     anchorList.appendChild(anchorTitle);
 
-    content.appendChild(newDiv);
+
 
 
     //edit ancre
