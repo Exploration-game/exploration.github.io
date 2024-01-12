@@ -114,20 +114,20 @@ async function addMarkdown(repo, file) {
         var anchorOnList = document.createElement("a");
         anchorOnList.href = "#" + text;
         if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
-            anchorOnList.textContent = textPre;
+            anchorOnList.textContent = "- " + textPre;
             anchorOnList.style = "padding-left:0px";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
-            anchorOnList.textContent = textPre;
+            anchorOnList.textContent = "# " + textPre;
             anchorOnList.style = "padding-left:15px";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
-            anchorOnList.textContent = textPre;
+            anchorOnList.textContent = "~ " + textPre;
             anchorOnList.style = "padding-left:45px";
         }
         else {
             anchorOnList.style = "padding-left:60px";
-            anchorOnList.textContent = textPre;
+            anchorOnList.textContent = "- " + textPre;
         }
         anchorList.appendChild(anchorOnList);
     }
