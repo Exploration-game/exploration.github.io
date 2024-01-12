@@ -19,3 +19,13 @@
     display: inline-block;
     white-space: pre;
 }
+
+#markdown>h1,#markdown>h2,#markdown>h3,#markdown>h4,#markdown>h5,#markdown>h6 {
+    display: block;
+
+    text-decoration: underline;
+    text-decoration-color: var(--link-color);
+
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
