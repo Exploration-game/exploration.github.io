@@ -80,9 +80,12 @@
 
 @media screen and (max-width: 1280px) {
     #anchorList{
-        width: 20vw;
+        width: 10vw;
         top: 70vh;
         bottom: 5vh;
+    }
+    #anchorList>b{
+        display: none;
     }
     #anchorList>a {
         font-size: x-small;
