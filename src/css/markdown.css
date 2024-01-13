@@ -37,43 +37,59 @@
     
     border-style: solid;
     border-width: 2px;
-    border-color: var(--text-color);
+    border-color: var(--main-color);
     border-radius: 16px;
 
-    background-color: var(--main-color-transparent);
+    background: linear-gradient(var(--main-color-transparent), var(--background-color-transparent));
 
     position: fixed;
-    left: 12px;
-    top: 70vh;
 
+    left: 12px;
+    top: 20vh;
+    bottom: 20vh;
+
+    backdrop-filter: blur(10px);
+
+    width: 10vw;
     max-width: fit-content;
+
+    padding-right:40px;
     
-    opacity: 0.75;
-    scale: 0.45;
-    transform: translateX(-60%);
+    opacity: 1;
+    scale: 1;
+
+    overflow-y: auto;
+    overflow-x: clip;
+
     transition: 1s;
+
     z-index: 998;
 }
 
 #anchorList:hover,
 #anchorList:active
 {
-    opacity: 1;
-    scale: 1;
-    transform: translateX(0%);
     z-index: 1001;
-    backdrop-filter: blur(10px);
-    top: 60vh !important;
 }
 
 #anchorList>a{
-    pointer-events: none;
-    padding-bottom: 4px;
     transition: 0.5s;
+    font-size: small;
+    padding-bottom: 12px;
 }
 
-#anchorList:hover>a,
-#anchorList:active>a{
-    pointer-events: all !important;
-    padding-bottom: 12px;
+@media screen and (max-width: 1280px) {
+    #anchorList{
+        width: 20vw;
+        top: 70vh;
+        bottom: 5vh;
+    }
+    #anchorList>a {
+        font-size: x-small;
+        pointer-events: none;
+    }
+    #anchorList:hover>a,
+    #anchorList:active>a{
+        pointer-events: all !important;
+    }
 }
