@@ -11,3 +11,8 @@
 <br>
 <a href=""><img src="https://img.shields.io/github/languages/code-size/GHub-fr/GHub-fr.github.io?color=red"></a>
 <a href=""><img src="https://img.shields.io/github/repo-size/GHub-fr/GHub-fr.github.io?color=red"></a>
+
+- [Tableau](https://github.com/orgs/GHub-fr/projects/4/)
+- [Issues](https://github.com/GHub-fr/GHub-fr.github.io/issues)
+- [Commits](https://github.com/GHub-fr/GHub-fr.github.io/commits/main)
+- [Deployments](https://github.com/GHub-fr/GHub-fr.github.io/deployments)
