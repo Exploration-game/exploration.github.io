@@ -113,6 +113,14 @@ const linksList = [
     image: "https://doc.ghub.fr/assets/icon/icone.png",
     creator: "GHub",
   },
+  {
+    title: "Mise à jour de la documentation",
+    link: "github/readme",
+    description: "Les documentations, README, liens, etc ..., ont étés mises à jour",
+    publicationDate: buildRFC822Date("2024-01-13T00:00:00.0000"),
+    image: "https://doc.ghub.fr/assets/icon/icone.png",
+    creator: "GHub",
+  },
 ];
 
 const channelImage = channel.image

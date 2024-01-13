@@ -113,6 +113,16 @@
         <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Ajout d'un module info (RSS, music, console, ...)" />]]></content:encoded>
       </item>
     
+      <item>
+        <title><![CDATA[Mise à jour de la documentation]]></title>
+        <link>https://doc.ghub.fr/github/readme</link>
+        <guid isPermaLink="true">https://doc.ghub.fr/github/readme</guid>
+        <pubDate>Fri, 12 Jan 2024 23:00:00 GMT</pubDate>
+        <dc:creator><![CDATA[doc.ghub.fr]]></dc:creator>
+        <description><![CDATA[Les documentations, README, liens, etc ..., ont étés mises à jour]]></description>
+        <content:encoded><![CDATA[<img src="https://doc.ghub.fr/assets/icon/icone.png" alt="Mise à jour de la documentation" />]]></content:encoded>
+      </item>
+    
     </channel>
   </rss>
   
