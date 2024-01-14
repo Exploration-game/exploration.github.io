@@ -44,16 +44,24 @@ async function getMarkdown(url) {
     });
 }
 
-async function addMarkdown(repo, file) {
+async function addMarkdown(repo, file, gist, doesSetAnchor) {
     console.log("Loading markdown CSS");
     await include_css("/src/css/markdown.css");
     console.log("Loading .md");
-    var x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
+    var x;
+    var x2;
+    if (gist === true) {
+        x = await getMarkdown('https://gist.githubusercontent.com/' + repo + "/" + file + "/raw")
+        x = "<h1>code</h1>\n<textarea>" + x + "</textarea>";
+        x2 = x;
+    }else if(gist === false){
+        x = await getMarkdown('https://raw.githubusercontent.com/' + repo + "/main/" + file);
+        x2 = parseMarkdown(x);
+    }
     // console.log(".md : " + x);
-    var x2 = parseMarkdown(x);
     // console.log("Loading HTML wrapped .md :" + x2);
-
-    console.log("Loading clean code in .md");
+   
+    //console.log("Loading clean code in .md");
     var regex = /<textarea>((?!<<textarea>>))*((?!<\/textarea>)[\s\S])*<\/textarea>/gim;
     var x3 = x2.match(regex);
     //console.log(x3);
@@ -67,11 +75,46 @@ async function addMarkdown(repo, file) {
 
     var content = document.querySelector("#contentArticle");
 
-    var newDiv = document.createElement("div");
-    newDiv.id = "markdown";
-    newDiv.innerHTML = x2;
-    content.appendChild(newDiv);
+    var markdownHolder = document.getElementById("markdown");
+    if(markdownHolder === null || markdownHolder === undefined){
+        var newDiv = document.createElement("div");
+        newDiv.id = "markdown";
+        content.appendChild(newDiv);
+    }
+    markdownHolder = document.getElementById("markdown");
+    markdownHolder.innerHTML += x2;
 
+    anchorButton(repo, file, gist);
+    if (doesSetAnchor === true){
+        setAnchor();
+    }
+    autoScroll();
+    console.log("Fin markdown");
+}
+
+function anchorButton(repo, file, gist) {
+    var content = document.querySelector("#anchor");
+    var link = document.createElement("a");
+    var button = document.createElement("button");
+    var image = document.createElement("img");
+    if (gist === true) {
+        link.href = "https://gist.github.com/" + repo + "/" + file;
+        image.src = "/assets/svg/language.svg";
+        button.id = "edit-gist"
+     }
+    else if (gist === false) {
+        link.href = "https://github.com/" + repo + "/blob/main/" + file;
+        image.src = "/assets/svg/edit.svg";
+        button.id = "edit-md"
+    }
+    link.target = "_blank";
+    image.classList = "svg";
+    button.appendChild(image);
+    link.appendChild(button);
+    content.appendChild(link);
+}
+
+function setAnchor() {
     var anchorList = document.createElement("div");
     anchorList.id = "anchorList";
     content.appendChild(anchorList);
@@ -80,24 +123,6 @@ async function addMarkdown(repo, file) {
     anchorTitle.textContent = "Sommaire :"
     anchorList.appendChild(anchorTitle);
 
-
-
-
-    //edit ancre
-    var content = document.querySelector("#anchor");
-    var link = document.createElement("a");
-    link.href = "https://github.com/" + repo + "/blob/main/" + file;
-    link.target = "_blank";
-    var button = document.createElement("button");
-    button.id = "edit-md"
-    var image = document.createElement("img");
-    image.src = "/assets/svg/edit.svg";
-    image.classList = "svg";
-    button.appendChild(image);
-    link.appendChild(button);
-    content.appendChild(link);
-
-    //chapter ancre
     var childDivs = document.getElementById('markdown').querySelectorAll("h1, h2, h3, h4, h5, h6");
 
     for (i = 0; i < childDivs.length; i++) {
@@ -131,9 +156,6 @@ async function addMarkdown(repo, file) {
         }
         anchorList.appendChild(anchorOnList);
     }
-
-    autoScroll();
-    console.log("Fin markdown");
 }
 
 function autoScroll() {
