@@ -19,5 +19,14 @@
 - [Deployments](https://github.com/GHub-fr/GHub-fr.github.io/deployments)
 
 # Index / Main
-[index.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/index.html) / ['folderName' / 'pageName'.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/github/contribuer.html)  
-[index.js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js/index.js)
+- [index.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/index.html)
+- 'folderName' / 'pageName' .html
+  - [github/contribuer.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/github/contribuer.html)
+- [index.js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js/index.js)
+
+# src folders
+- [/assets](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/assets)
+- [/src](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src)
+  - [src/html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/html)
+  - [src/css](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/css)
+  - [src/js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js)
