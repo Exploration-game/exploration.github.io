@@ -12,7 +12,21 @@
 <a href=""><img src="https://img.shields.io/github/languages/code-size/GHub-fr/GHub-fr.github.io?color=red"></a>
 <a href=""><img src="https://img.shields.io/github/repo-size/GHub-fr/GHub-fr.github.io?color=red"></a>
 
+# Liens
 - [Tableau](https://github.com/orgs/GHub-fr/projects/4/)
 - [Issues](https://github.com/GHub-fr/GHub-fr.github.io/issues)
 - [Commits](https://github.com/GHub-fr/GHub-fr.github.io/commits/main)
 - [Deployments](https://github.com/GHub-fr/GHub-fr.github.io/deployments)
+
+# Index / Main
+- [index.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/index.html)
+- 'folderName' / 'pageName' .html
+  - [github/contribuer.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/github/contribuer.html)
+- [index.js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js/index.js)
+
+# src folders
+- [/assets](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/assets)
+- [/src](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src)
+  - [src/html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/html)
+  - [src/css](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/css)
+  - [src/js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js)
