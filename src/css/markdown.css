@@ -81,7 +81,9 @@
 @media screen and (max-width: 1280px) {
     #anchorList{
         width: 10vw;
-        top: 70vh;
+        min-width: 100px;
+
+        top: 80vh;
         bottom: 5vh;
     }
     #anchorList>b{
