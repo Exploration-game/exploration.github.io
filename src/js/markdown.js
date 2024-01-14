@@ -139,6 +139,9 @@ async function addMarkdown(repo, file) {
 function autoScroll() {
     var hash = decodeURIComponent(window.location.hash);
     hash = hash.replace("#", "");
+
     var element = document.getElementById(hash);
-    element.scrollIntoView();
+    if (element !== null) {
+        element.scrollIntoView();
+    } 
 }
