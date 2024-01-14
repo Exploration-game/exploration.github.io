@@ -19,5 +19,5 @@
 - [Deployments](https://github.com/GHub-fr/GHub-fr.github.io/deployments)
 
 # Index / Main
-[index.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/index.html) / ['folderName' / 'pageName'.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/github/contribuer.html)
+[index.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/index.html) / ['folderName' / 'pageName'.html](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/github/contribuer.html)  
 [index.js](https://github.com/GHub-fr/GHub-fr.github.io/blob/main/src/js/index.js)
