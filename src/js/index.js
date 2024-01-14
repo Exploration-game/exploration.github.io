@@ -253,6 +253,11 @@ async function pageOutils() {
         await include_multiple("caesar", "contentArticle");
     }
 
+    else if (pathNameMatchPage("/outils/liens", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', '/note/Liens.md', false, true); });
+    }
+
     else {
         return false;
     }
