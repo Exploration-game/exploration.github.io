@@ -52,12 +52,14 @@
     padding-right: 12px;
 }
 
-.contact>div>a>img.svg {
+.contact>div>a>img.svg,
+.contact>div>div>img.svg {
     max-width: 50px;
     padding-right: 12px;
 }
 
-.contact>div>a {
+.contact>div>a,
+.contact>div>div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -73,7 +75,8 @@
     text-decoration: none !important;
 }
 
-.contact>div>a:hover {
+.contact>div>a:hover,
+.contact>div>div:hover {
     background-color: var(--main-color);
     box-shadow: var(--box-shadow-all-inset-main-color);
 }
