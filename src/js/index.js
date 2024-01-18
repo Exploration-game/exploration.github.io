@@ -204,6 +204,11 @@ async function pageCours() {
     else if (pathNameMatchPage("/cours/css", true)) {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/learning.md', false, false); });
+       
+        var hr = document.createElement("hr");
+        hr.style.marginTop = "100px"; hr.style.marginBottom = "100px";
+        document.getElementById("markdown").appendChild(hr);
+        
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/liste.md', false, true); });
     }
         
@@ -215,6 +220,11 @@ async function pageCours() {
     else if (pathNameMatchPage("/cours/binaire", true)) {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/Binaire/learning.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/cours/lm-studio", true)) {
+        await includes();
+       // await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/................................/.md', false, true); });
     }
 
     else {
