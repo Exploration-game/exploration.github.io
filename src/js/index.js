@@ -203,9 +203,10 @@ async function pageCours() {
 
     else if (pathNameMatchPage("/cours/css", true)) {
         await includes();
-        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/learning.md', false, true); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/learning.md', false, false); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/liste.md', false, true); });
     }
-
+        
     else if (pathNameMatchPage("/cours/js", true)) {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/JS/learning.md', false, true); });
