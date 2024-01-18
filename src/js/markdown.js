@@ -14,7 +14,8 @@ const parseMarkdown = (text) => {
         .replace(/\n(?:&gt;|\>)\W*(.*)/gim, '<blockquote><p>$1</p></blockquote>') // <blockquote>
 
         .replace(/\*\*(.*?)\*\*/gm, '<b>$1</b>') // bold text
-        .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
+        .replace(/\*(?![^]*(`{1,3}|<|&gt;|<code>\s*|<textarea>\s*)).*?(?=\s*(?!`{0,3}|<\/textarea>)|<|\/code>)/gm, '<em>$&</em>') // italic text inside code or textarea tags
+        // .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
         .replace(/\_\_(.*?)\_\_/gm, '<u>$1</u>') // underline
 
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
