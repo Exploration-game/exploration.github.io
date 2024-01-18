@@ -133,7 +133,6 @@ function setAnchor() {
         var anchor = document.createElement("a");
         anchor.href = "#" + text;
         anchor.id = text;
-        anchor.textContent = "#";
         anchor.style = "padding-left:12px;scroll-margin-top: 100px;";
         childDiv.append(anchor);
 
@@ -141,18 +140,22 @@ function setAnchor() {
         anchorOnList.href = "#" + text;
         if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
             anchorOnList.textContent = "- " + textPre;
+            anchor.textContent = "#-";
             anchorOnList.style = "padding-left:0px;font-size: large;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
             anchorOnList.textContent = "# " + textPre;
+            anchor.textContent = "##";
             anchorOnList.style = "padding-left:15px;text-decoration:none;font-size: medium;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
             anchorOnList.textContent = "~ " + textPre;
+            anchor.textContent = "#~";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
         }
         else {
             anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: x-small;";
+            anchor.textContent = "--";
             anchorOnList.textContent = "- " + textPre;
         }
         anchorList.appendChild(anchorOnList);
