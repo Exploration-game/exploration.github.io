@@ -205,11 +205,13 @@ async function pageCours() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/learning.md', false, false); });
        
-        var hr = document.createElement("hr");
-        hr.style.marginTop = "100px"; hr.style.marginBottom = "100px";
-        document.getElementById("markdown").appendChild(hr);
+        addHRChapter();
+
+        await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/media-queries.md', false, false);
+
+        addHRChapter();
         
-        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/liste.md', false, true); });
+        await addMarkdown('GHub-fr/.github', 'note/Code/Web/CSS/liste.md', false, true);
     }
         
     else if (pathNameMatchPage("/cours/js", true)) {

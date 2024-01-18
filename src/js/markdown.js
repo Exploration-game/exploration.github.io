@@ -141,18 +141,18 @@ function setAnchor() {
         anchorOnList.href = "#" + text;
         if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
             anchorOnList.textContent = "- " + textPre;
-            anchorOnList.style = "padding-left:0px";
+            anchorOnList.style = "padding-left:0px;font-size: large;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
             anchorOnList.textContent = "# " + textPre;
-            anchorOnList.style = "padding-left:15px";
+            anchorOnList.style = "padding-left:15px;text-decoration:none;font-size: medium;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
             anchorOnList.textContent = "~ " + textPre;
-            anchorOnList.style = "padding-left:45px";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
         }
         else {
-            anchorOnList.style = "padding-left:60px";
+            anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: x-small;";
             anchorOnList.textContent = "- " + textPre;
         }
         anchorList.appendChild(anchorOnList);
@@ -167,4 +167,10 @@ function autoScroll() {
     if (element !== null) {
         element.scrollIntoView();
     } 
+}
+
+function addHRChapter() {
+    var hr = document.createElement("hr");
+    hr.style.marginTop = "100px"; hr.style.marginBottom = "100px";
+    document.getElementById("markdown").appendChild(hr);
 }
