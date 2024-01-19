@@ -325,6 +325,16 @@ async function pageGames() {
         await include_script("/src/js/fruits.js");
     }
 
+    else if (pathNameMatchPage("/games/shopTitans", true)) {
+        await includes();
+
+        await include_html("/src/html/content/shopTitans.html", "content", true);
+        await include_css("/src/css/shopTitans.css");
+        await include_script("/src/js/gather.js");
+        await include_script("/src/js/math.js");
+        await include_script("/src/js/shopTitans.js");
+    }
+
     else {
         return false;
     }

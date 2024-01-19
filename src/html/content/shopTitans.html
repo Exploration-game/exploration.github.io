@@ -1,0 +1,32 @@
+
+<div id="ShopTitansMenu">
+    <div>
+       <p>Pour obtenir votre identifiant de joueur :</p>
+       <p>- Onglet "Paramètres" en jeu</p>
+       <p>- recoppier la valeur "Appareil"</p>
+       <hr>
+       <p>Exemple : 5f42e6dba8f22a129d2a2748</p>
+    </div>
+
+    <input type="text" placeholder="ID ShopTitans" id="ShopTitansID">
+    <button id="statsButton" onclick="fetchShopTitansDataStart(false)">
+        <p>Stats</p>
+    </button>
+    <button id="investButton" onclick="fetchShopTitansDataStart(true)">
+        <p>Invest</p>
+    </button>
+</div>
+
+
+<div id="ShopTitansData" style="display:none">
+    <h1>Statistiques</h1>
+</div>
+
+<div id="ShopTitanDataInvestMenu" style="display:none">
+    <div id="ShopTitansDataInvest">
+        <h1>Bâtiment</h1>
+    </div>
+    <div id="ShopTitansDataInvestVIP">
+        <h1>Bâtiment VIP (€)</h1>
+    </div>
+</div>
