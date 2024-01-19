@@ -96,24 +96,31 @@ async function addMarkdown(repo, file, gist, doesSetAnchor) {
 
 function anchorButton(repo, file, gist) {
     var content = document.querySelector("#anchor");
+    var divEdit = document.querySelector("#editAnchor");
+    if (divEdit === null || divEdit === undefined) {
+        var newDivEdit = document.createElement("div");
+        newDivEdit.id = "editAnchor";
+        content.appendChild(newDivEdit);
+    }
+    divEdit = document.querySelector("#editAnchor");
     var link = document.createElement("a");
     var button = document.createElement("button");
     var image = document.createElement("img");
     if (gist === true) {
         link.href = "https://gist.github.com/" + repo + "/" + file;
         image.src = "/assets/svg/language.svg";
-        button.id = "edit-gist"
+        button.classList = "edit-gist"
      }
     else if (gist === false) {
         link.href = "https://github.com/" + repo + "/blob/main/" + file;
         image.src = "/assets/svg/edit.svg";
-        button.id = "edit-md"
+        button.classList = "edit-md"
     }
     link.target = "_blank";
     image.classList = "svg";
     button.appendChild(image);
     link.appendChild(button);
-    content.appendChild(link);
+    divEdit.appendChild(link);
 }
 
 function setAnchor() {

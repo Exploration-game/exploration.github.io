@@ -1,4 +1,6 @@
 #anchor>a>button>img,
+#editAnchor>img,
+#editAnchor>a>button>img,
 #anchor>button>img {
     width: 2vw;
     height: 2vw;
@@ -17,19 +19,21 @@
 }
 
 #anchor>a>button,
+#editAnchor>button,
+#editAnchor>a>button,
 #anchor>button {
     border-radius: 10px;
     margin: 5px;
+    background-color: var(--main-color-transparent);
+}
+
+#editAnchor{
+    margin-top:25px;
 }
 
 #scroll-up {
     position: fixed;
     bottom: 5px;
-}
-
-#anchor>button,
-#anchor>a>button {
-    background-color: var(--main-color-transparent);
 }
 
 @media screen and (max-width: 1024px) {
