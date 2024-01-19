@@ -1,5 +1,5 @@
 var APIURL = "https://smartytitans.com/api/info/";
-fetchShopTitansDataStart("guilde")
+fetchShopTitansDataStart("guilde");
 
 function fetchShopTitansDataStart(statsType) {
     var idHolder = document.getElementById("ShopTitansID");
