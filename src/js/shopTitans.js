@@ -25,7 +25,7 @@ function fetchShopTitansDataStart(statsType) {
         docMenu.style = "display:flex";
     }
 }
-//
+
 async function fetchShopTitansDataGuilde(id) {
     var city = await gather(APIURL + 'city/' + id);
     console.log(city);
@@ -118,7 +118,7 @@ async function fetchShopTitansDataInvest(id) {
 
 async function fetchShopTitansData(id) {
     var player = await gather(APIURL + 'player/' + id);
-    //console.log(player);
+    console.log(player);
     
     var data = await getValue(player, "data");
     console.log(data);
