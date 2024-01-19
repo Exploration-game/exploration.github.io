@@ -1,10 +1,17 @@
 var APIURL = "https://smartytitans.com/api/info/";
-fetchShopTitansDataStart("guilde");
+fetchShopTitansDataStart("guilde", "64766ee4300f3e7b2917892e"); 
 
-function fetchShopTitansDataStart(statsType) {
-    var idHolder = document.getElementById("ShopTitansID");
-    var id = idHolder.value;
-    if (id !== null && id !== undefined) {
+function fetchShopTitansDataStart(statsType, id) {
+    if (id === null || id === 'undefined') {
+        console.log("get holder");
+        var idHolder = document.getElementById("ShopTitansID");
+        id = idHolder.value;
+        if (id !== null && id !== 'undefined' && id !== '') { 
+            fetchShopTitansDataStart(statsType, id);
+        }
+    }
+    else {
+        if (id !== null && id !== 'undefined') { 
         var button; var docMenu;
         if (statsType === "stats"){
             fetchShopTitansData(id);
@@ -17,12 +24,13 @@ function fetchShopTitansDataStart(statsType) {
             docMenu = document.getElementById("ShopTitanDataInvestMenu");
         }
         else if (statsType === "guilde") {
-            fetchShopTitansDataGuilde("64766ee4300f3e7b2917892e");
+            fetchShopTitansDataGuilde(id);
             button = document.getElementById("guildButton");
             docMenu = document.getElementById("ShopTitansDataGuild");
         }
         button.style = "display:none";
         docMenu.style = "display:flex";
+        }
     }
 }
 
@@ -49,6 +57,23 @@ async function fetchShopTitansDataGuilde(id) {
 
         addData("ShopTitansDataGuild", pre, member.name);
         addData("ShopTitansDataGuild", "ID", member._id)
+
+        var div = document.getElementById("ShopTitansDataGuild");
+        var button1 = document.createElement("button");
+        var button1p = document.createElement("p");
+        button1.setAttribute("onClick", "fetchShopTitansDataStart('invest', '" + member._id + "')");
+        button1p.textContent = "Invest";
+        button1.appendChild(button1p);
+        div.appendChild(button1);
+
+        var div = document.getElementById("ShopTitansDataGuild");
+        var button2 = document.createElement("button");
+        var button2p = document.createElement("p");
+        button2.setAttribute("onClick", "fetchShopTitansDataStart('stats', '" + member._id + "')");
+        button2p.textContent = "Stats";
+        button2.appendChild(button2p);
+        div.appendChild(button2);
+
         addData("ShopTitansDataGuild", "Level", member.level);
         addData("ShopTitansDataGuild", "Gold", formatCompactNumber(member.gld));
         addData("ShopTitansDataGuild", "Investissement", formatCompactNumber(member.invst));
