@@ -1,4 +1,5 @@
 var APIURL = "https://smartytitans.com/api/info/";
+fetchShopTitansDataStart("guilde")
 
 function fetchShopTitansDataStart(statsType) {
     var idHolder = document.getElementById("ShopTitansID");
@@ -59,6 +60,11 @@ async function fetchShopTitansDataGuilde(id) {
 
     var button = document.getElementById("guildButton");
     button.style = "";
+
+    //ajouter bâtiment data (même request)
+    //ajouter les settings de guilde (pareil)
+    //ajouter un logo ancien / nouveau (la liste membre est trié par défaut par âge en guilde)
+    //bost upgrade lvl
 }
 
 async function fetchShopTitansDataInvest(id) {
