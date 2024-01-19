@@ -1,23 +1,64 @@
 var APIURL = "https://smartytitans.com/api/info/";
 
-function fetchShopTitansDataStart(booleanInvest) {
+function fetchShopTitansDataStart(statsType) {
     var idHolder = document.getElementById("ShopTitansID");
     var id = idHolder.value;
     if (id !== null && id !== undefined) {
         var button; var docMenu;
-        if(booleanInvest === false){
+        if (statsType === "stats"){
             fetchShopTitansData(id);
             button = document.getElementById("statsButton");
             docMenu = document.getElementById("ShopTitansData");
         }
-        else if (booleanInvest === true) {
+        else if (statsType === "invest") {
             fetchShopTitansDataInvest(id);
             button = document.getElementById("investButton");
             docMenu = document.getElementById("ShopTitanDataInvestMenu");
         }
+        else if (statsType === "guilde") {
+            fetchShopTitansDataGuilde("64766ee4300f3e7b2917892e");
+            button = document.getElementById("guildButton");
+            docMenu = document.getElementById("ShopTitansDataGuild");
+        }
         button.style = "display:none";
         docMenu.style = "display:flex";
     }
+}
+//
+async function fetchShopTitansDataGuilde(id) {
+    var city = await gather(APIURL + 'city/' + id);
+    console.log(city);
+
+    var data = await getValue(city, "data");
+    console.log(data);
+
+    var members = await getValue(data, "members");
+    console.log(members);
+
+    for (value in members) {
+        var member = members[value];
+        var pre;
+        if (member.rank === 0) {
+            pre = "🐤";
+        } else if (member.rank === 1) {
+            pre = "👔";
+        } else if (member.rank === 2) {
+            pre = "👑";
+        }
+
+        addData("ShopTitansDataGuild", pre, member.name);
+        addData("ShopTitansDataGuild", "ID", member._id)
+        addData("ShopTitansDataGuild", "Level", member.level);
+        addData("ShopTitansDataGuild", "Gold", formatCompactNumber(member.gld));
+        addData("ShopTitansDataGuild", "Investissement", formatCompactNumber(member.invst));
+        addData("ShopTitansDataGuild", "Aides de guilde", member.help);
+        addData("ShopTitansDataGuild", "Primes", member.bounty);
+
+        addDataHR("ShopTitansDataGuild");
+    }
+
+    var button = document.getElementById("guildButton");
+    button.style = "";
 }
 
 async function fetchShopTitansDataInvest(id) {
@@ -66,7 +107,7 @@ async function fetchShopTitansDataInvest(id) {
     }
 
     var button = document.getElementById("investButton");
-    button.style = "display:block";
+    button.style = "";
 }
 
 async function fetchShopTitansData(id) {
@@ -132,7 +173,7 @@ async function fetchShopTitansData(id) {
     //rankStrAdv > strAdvClass,strAdvId,strAdvPow
 
     var button = document.getElementById("statsButton");
-    button.style = "display:block";
+    button.style = "";
 }
 
 function addData(divID, titleData, dataValue) {
