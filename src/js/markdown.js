@@ -22,7 +22,7 @@ const parseMarkdown = (text) => {
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
         .replace(/\n\s?[0-9]+\.\s*(.*)/gim, '<ol>\n\t<li>$1</li>\n</ol>') // <ol>
 
-        .replace(/(?!>)([a-z0-9 :;|!§%'’"°«»(){}@&=+-/^_¨$£¤µ*€.,âôœûùéêëèàç/]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
+        .replace(/(?!>)([a-z0-9:;|!§%'’"°«»(){}@&=+-/^_¨$£¤µ*€.,âôœûùéêëèàç/]+)(?![^<]*>|[^>]*<\/)/gim, '<p>$1</p>') // text p balise
 
         .replace(/[\n]{1}/g, "<br>") //new line
 
@@ -122,7 +122,7 @@ function setAnchor() {
     content.appendChild(anchorList);
 
     var anchorTitle = document.createElement("b");
-    anchorTitle.textContent = "Sommaire :"
+    anchorTitle.textContent = "Sommaire"
     anchorList.appendChild(anchorTitle);
 
     var childDivs = document.getElementById('markdown').querySelectorAll("h1, h2, h3, h4, h5, h6");
