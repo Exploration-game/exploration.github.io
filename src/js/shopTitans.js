@@ -1,5 +1,5 @@
 var APIURL = "https://smartytitans.com/api/info/";
-fetchShopTitansDataStart("guilde", "64766ee4300f3e7b2917892e"); 
+//fetchShopTitansDataStart("guilde", "64766ee4300f3e7b2917892e"); 
 
 function fetchShopTitansDataStart(statsType, id) {
     if (id === null || id === 'undefined') {
@@ -13,6 +13,9 @@ function fetchShopTitansDataStart(statsType, id) {
     else {
         if (id !== null && id !== 'undefined') { 
         var button; var docMenu;
+            
+        hideDivShopTitans(["ShopTitansData", "ShopTitanDataInvestMenu", "ShopTitansDataGuild"]);
+            
         if (statsType === "stats"){
             fetchShopTitansData(id);
             button = document.getElementById("statsButton");
@@ -31,6 +34,13 @@ function fetchShopTitansDataStart(statsType, id) {
         button.style = "display:none";
         docMenu.style = "display:flex";
         }
+    }
+}
+
+function hideDivShopTitans(id) {
+    for (value in id) {
+        var doc = document.getElementById(id[value]);
+        doc.style = "display: none;";
     }
 }
 
