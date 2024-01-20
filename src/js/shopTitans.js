@@ -10,8 +10,7 @@ function fetchShopTitansDataStart(statsType, id) {
             fetchShopTitansDataStart(statsType, id);
         }
     }
-    else {
-        if (id !== null && id !== 'undefined') { 
+    else if (id !== null && id !== 'undefined') { 
         var button; var docMenu;
             
         hideDivShopTitans(["ShopTitansData", "ShopTitanDataInvestMenu", "ShopTitansDataGuild"]);
@@ -33,13 +32,16 @@ function fetchShopTitansDataStart(statsType, id) {
         }
         button.style = "display:none";
         docMenu.style = "display:flex";
-        }
     }
 }
 
 function hideDivShopTitans(id) {
     for (value in id) {
         var doc = document.getElementById(id[value]);
+        for (const elem in doc.children) {
+            doc.children[elem].remove();
+        }
+
         doc.style = "display: none;";
     }
 }
