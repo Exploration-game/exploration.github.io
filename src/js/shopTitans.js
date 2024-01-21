@@ -1,49 +1,79 @@
 var APIURL = "https://smartytitans.com/api/info/";
-//fetchShopTitansDataStart("guilde", "64766ee4300f3e7b2917892e"); 
+fetchShopTitansDataStart("guilde", "64766ee4300f3e7b2917892e"); 
 
-function fetchShopTitansDataStart(statsType, id) {
+async function fetchShopTitansDataStart(statsType, id) {
     if (id === null || id === 'undefined') {
         console.log("get holder");
         var idHolder = document.getElementById("ShopTitansID");
         id = idHolder.value;
-        if (id !== null && id !== 'undefined' && id !== '') { 
-            fetchShopTitansDataStart(statsType, id);
+        if (id === null || id === 'undefined' || id === '') { 
+            console.log("block return empty id");
+            return;
         }
     }
-    else if (id !== null && id !== 'undefined') { 
-        var button; var docMenu;
-            
-        hideDivShopTitans(["ShopTitansData", "ShopTitanDataInvestMenu", "ShopTitansDataGuild"]);
-            
+    
+    if (id !== null && id !== 'undefined' && id !== '') { 
+        var docMenu;
+
+        console.log("start menu");
+
+        hideDivShopTitans(["ShopTitansData", "ShopTitansDataGuild", "ShopTitansDataInvest", "ShopTitansDataInvestVIP"]);
+        hideButtons(["statsButton", "investButton", "guildButton"]);
+        
         if (statsType === "stats"){
-            fetchShopTitansData(id);
-            button = document.getElementById("statsButton");
             docMenu = document.getElementById("ShopTitansData");
+            docMenu.style = "display:flex";
+            
+            await fetchShopTitansData(id);
         }
         else if (statsType === "invest") {
-            fetchShopTitansDataInvest(id);
-            button = document.getElementById("investButton");
             docMenu = document.getElementById("ShopTitanDataInvestMenu");
+            docMenu.style = "display:flex";
+
+            docMenu = document.getElementById("ShopTitansDataInvest");
+            docMenu.style = "display:block";
+
+            docMenu = document.getElementById("ShopTitansDataInvestVIP");
+            docMenu.style = "display:block";
+
+            await fetchShopTitansDataInvest(id);
         }
         else if (statsType === "guilde") {
-            fetchShopTitansDataGuilde(id);
-            button = document.getElementById("guildButton");
             docMenu = document.getElementById("ShopTitansDataGuild");
+            docMenu.style = "display:flex";
+            
+            await fetchShopTitansDataGuilde(id);
         }
-        button.style = "display:none";
-        docMenu.style = "display:flex";
+
+        showButtons(["statsButton", "investButton", "guildButton"]);
+    }
+}
+
+function hideButtons(id) {
+    for (value in id) {
+        var doc = document.getElementById(id[value]);
+        doc.style = "display: none;";
+    }
+}
+
+function showButtons(id) {
+    for (value in id) {
+        var doc = document.getElementById(id[value]);
+        doc.style = "";
     }
 }
 
 function hideDivShopTitans(id) {
     for (value in id) {
         var doc = document.getElementById(id[value]);
-        for (const elem in doc.children) {
-            doc.children[elem].remove();
-        }
-
         doc.style = "display: none;";
+        cleanInsideDiv(doc);
     }
+    return;
+}
+
+function cleanInsideDiv(doc) {
+    doc.innerHTML = '';
 }
 
 async function fetchShopTitansDataGuilde(id) {
@@ -56,6 +86,11 @@ async function fetchShopTitansDataGuilde(id) {
     var members = await getValue(data, "members");
     console.log(members);
 
+    var div = document.getElementById("ShopTitansDataGuild");
+    var titre = document.createElement("h1");
+    titre.textContent = "Guilde";
+    div.appendChild(titre);
+
     for (value in members) {
         var member = members[value];
         var pre;
@@ -65,12 +100,12 @@ async function fetchShopTitansDataGuilde(id) {
             pre = "👔";
         } else if (member.rank === 2) {
             pre = "👑";
-        }
+        } else { pre = "???"; }
 
-        addData("ShopTitansDataGuild", pre, member.name);
-        addData("ShopTitansDataGuild", "ID", member._id)
+        await addData("ShopTitansDataGuild", pre, member.name);
+        await addData("ShopTitansDataGuild", "ID", member._id)
 
-        var div = document.getElementById("ShopTitansDataGuild");
+
         var button1 = document.createElement("button");
         var button1p = document.createElement("p");
         button1.setAttribute("onClick", "fetchShopTitansDataStart('invest', '" + member._id + "')");
@@ -78,7 +113,6 @@ async function fetchShopTitansDataGuilde(id) {
         button1.appendChild(button1p);
         div.appendChild(button1);
 
-        var div = document.getElementById("ShopTitansDataGuild");
         var button2 = document.createElement("button");
         var button2p = document.createElement("p");
         button2.setAttribute("onClick", "fetchShopTitansDataStart('stats', '" + member._id + "')");
@@ -86,17 +120,14 @@ async function fetchShopTitansDataGuilde(id) {
         button2.appendChild(button2p);
         div.appendChild(button2);
 
-        addData("ShopTitansDataGuild", "Level", member.level);
-        addData("ShopTitansDataGuild", "Gold", formatCompactNumber(member.gld));
-        addData("ShopTitansDataGuild", "Investissement", formatCompactNumber(member.invst));
-        addData("ShopTitansDataGuild", "Aides de guilde", member.help);
-        addData("ShopTitansDataGuild", "Primes", member.bounty);
+        await addData("ShopTitansDataGuild", "Level", member.level);
+        await addData("ShopTitansDataGuild", "Gold", formatCompactNumber(member.gld));
+        await addData("ShopTitansDataGuild", "Investissement", formatCompactNumber(member.invst));
+        await addData("ShopTitansDataGuild", "Aides de guilde", member.help);
+        await addData("ShopTitansDataGuild", "Primes", member.bounty);
 
-        addDataHR("ShopTitansDataGuild");
+        await addDataHR("ShopTitansDataGuild");
     }
-
-    var button = document.getElementById("guildButton");
-    button.style = "";
 
     //ajouter bâtiment data (même request)
     //ajouter les settings de guilde (pareil)
@@ -112,6 +143,16 @@ async function fetchShopTitansDataInvest(id) {
     console.log(data);
 
     var dataSorted = data.sort((a, b) => (a.value - b.value || a.uid.localeCompare(b.uid)));
+
+    var div = document.getElementById("ShopTitansDataInvestVIP");
+    var titre = document.createElement("h1");
+    titre.textContent = "Bâtiment VIP (€)";
+    div.appendChild(titre);
+
+    var div = document.getElementById("ShopTitansDataInvest");
+    var titre = document.createElement("h1");
+    titre.textContent = "Bâtiment";
+    div.appendChild(titre);
 
     for (value in dataSorted) {
         var divID;
@@ -133,24 +174,21 @@ async function fetchShopTitansDataInvest(id) {
         }
 
         if (urgentInvest === true) {
-            addData(divID, "Bâtiment", getValue(data[value], "uid"));
-            addData(divID, "Click", getValue(data[value], "ticks"));
-            addData(divID, "Gold 👎", formatCompactNumber(getValue(data[value], "value")));
+            await addData(divID, "Bâtiment", getValue(data[value], "uid"));
+            await addData(divID, "Click", getValue(data[value], "ticks"));
+            await addData(divID, "Gold 👎", formatCompactNumber(getValue(data[value], "value")));
         } else if (topInvest === true) {
-            addData(divID, "Bâtiment", getValue(data[value], "uid"));
-            addData(divID, "Click", getValue(data[value], "ticks"));
-            addData(divID, "Gold 👌", formatCompactNumber(getValue(data[value], "value")));
+            await addData(divID, "Bâtiment", getValue(data[value], "uid"));
+            await addData(divID, "Click", getValue(data[value], "ticks"));
+            await addData(divID, "Gold 👌", formatCompactNumber(getValue(data[value], "value")));
         }
         else {
-            addData(divID, "Bâtiment", getValue(data[value], "uid"));
-            addData(divID, "Click", getValue(data[value], "ticks"));
-            addData(divID, "Gold", formatCompactNumber(getValue(data[value], "value")));
+            await addData(divID, "Bâtiment", getValue(data[value], "uid"));
+            await addData(divID, "Click", getValue(data[value], "ticks"));
+            await addData(divID, "Gold", formatCompactNumber(getValue(data[value], "value")));
         }
-        addDataHR(divID);
+        await addDataHR(divID);
     }
-
-    var button = document.getElementById("investButton");
-    button.style = "";
 }
 
 async function fetchShopTitansData(id) {
@@ -164,69 +202,71 @@ async function fetchShopTitansData(id) {
     var rankGld = await getValue(data, "rankGld");
     console.log(rankGld);
 
+    var div = document.getElementById("ShopTitansData");
+    var titre = document.createElement("h1");
+    titre.textContent = "Statistiques";
+    div.appendChild(titre);
+
     var name = await getValue(data, "name");
-    addData("ShopTitansData", "Nom", name);
+    await addData("ShopTitansData", "Nom", name);
 
     var lvl = await getValue(stats, "lvl");
-    addData("ShopTitansData", "Niveau de marchand", lvl);
+    await addData("ShopTitansData", "Niveau de marchand", lvl);
 
     var vip = await getValue(stats, "vip");
-    addData("ShopTitansData", "VIP", vip);
+    await addData("ShopTitansData", "VIP", vip);
 
-    addDataHR("ShopTitansData",);
+    await addDataHR("ShopTitansData",);
 
     var cityName = await getValue(data, "cityName");
-    addData("ShopTitansData", "Guilde", cityName);
+    await addData("ShopTitansData", "Guilde", cityName);
 
     var cityLevel = await getValue(data, "cityLevel");
-    addData("ShopTitansData", "Niveau de guilde", cityLevel);
+    await addData("ShopTitansData", "Niveau de guilde", cityLevel);
 
-    addDataHR("ShopTitansData",);
+    await addDataHR("ShopTitansData",);
 
     var gld = await getValue(stats, "gld");
-    addData("ShopTitansData", "Gold", formatCompactNumber(gld));
+    await addData("ShopTitansData", "Gold", formatCompactNumber(gld));
 
     var sellfk = await getValue(stats, "sellfk");
-    addData("ShopTitansData", "Vente au roi", formatCompactNumber(sellfk));
+    await addData("ShopTitansData", "Vente au roi", formatCompactNumber(sellfk));
 
     var invst = await getValue(stats, "invst");
-    addData("ShopTitansData", "Investissement", formatCompactNumber(invst));
+    await addData("ShopTitansData", "Investissement", formatCompactNumber(invst));
     
-    addDataHR("ShopTitansData",);
+    await addDataHR("ShopTitansData",);
 
     var bounty = await getValue(stats, "bounty");
-    addData("ShopTitansData", "Primes", bounty);
+    await addData("ShopTitansData", "Primes", bounty);
 
     var help = await getValue(stats, "help");
-    addData("ShopTitansData", "Aides de guilde", help);
+    await addData("ShopTitansData", "Aides de guilde", help);
 
-    addDataHR("ShopTitansData",);
+    await addDataHR("ShopTitansData",);
 
     var accountage = await getValue(stats, "accountage");
-    addData("ShopTitansData", "Âge du compte" ,accountage);
+    await addData("ShopTitansData", "Âge du compte" ,accountage);
 
     var accountdb = await getValue(stats, "accountdb");
-    addData("ShopTitansData", "Date du compte" , accountdb);
+    await addData("ShopTitansData", "Date du compte" , accountdb);
 
-    addDataHR("ShopTitansData",);
+    await addDataHR("ShopTitansData",);
 
     var rank = await getValue(rankGld, "rank");
-    addData("ShopTitansData", "Rang global", rank);
+    await addData("ShopTitansData", "Rang global", rank);
 
     //rankStrAdv > strAdvClass,strAdvId,strAdvPow
-
-    var button = document.getElementById("statsButton");
-    button.style = "";
 }
 
-function addData(divID, titleData, dataValue) {
+async function  addData(divID, titleData, dataValue) {
     var dataHolder = document.getElementById(divID);
     var elem = document.createElement("p");
     elem.textContent = titleData + " : " + dataValue;
     dataHolder.appendChild(elem);
 }
 
-function addDataHR(divID) {
+async function  addDataHR(divID) {
     var dataHolder = document.getElementById(divID);
     var elem = document.createElement("hr");
     dataHolder.appendChild(elem);
