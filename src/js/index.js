@@ -168,6 +168,36 @@ async function pageGithub() {
         await includes();
         await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'CODE_OF_CONDUCT.md', false, true); });
     }
+        
+    else if (pathNameMatchPage("/github/GHub-fr.github.io", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/GHub-fr.github.io', 'README.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/github/.github", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'README.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/github/plugin", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/plugin', 'README.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/github/resourcePack", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/resourcePack', 'README.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/github/bot", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/bot', 'README.md', false, true); });
+    }
+        
+    else if (pathNameMatchPage("/github/server", true)) {
+        await includes();
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/server', 'README.md', false, true); });
+    }
 
     else {
         return false;
