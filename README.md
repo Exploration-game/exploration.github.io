@@ -11,7 +11,8 @@
 <a href=""><img src="https://img.shields.io/github/repo-size/GHub-fr/GHub-fr.github.io?color=red"></a>
 
 # Liens
-[GHub-fr.github.io](https://GHub-fr.github.io) | [doc.GHub.fr](https://doc.ghub.fr)
+- [GHub-fr.github.io](https://GHub-fr.github.io)
+- [doc.GHub.fr](https://doc.ghub.fr)
 
 # Github
 - [Tableau](https://github.com/orgs/GHub-fr/projects/4/)
