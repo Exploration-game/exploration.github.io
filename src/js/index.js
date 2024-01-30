@@ -264,7 +264,7 @@ async function pageCours() {
         
     else if (pathNameMatchPage("/cours/lm-studio", true)) {
         await includes();
-       // await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/................................/.md', false, true); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/IA/learning.md', false, true); });
     }
 
     else {
