@@ -269,7 +269,7 @@ async function pageCours() {
         
     else if (pathNameMatchPage("/cours/retraite", true)) {
         await includes();
-        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/retraite/learning.md', false, true); });
+        await include_script("/src/js/markdown.js").then(async () => { await addMarkdown('GHub-fr/.github', 'note/Retraite/learning.md', false, true); });
     }
 
     else {
