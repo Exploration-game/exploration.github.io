@@ -128,11 +128,6 @@ function setAnchorButton() {
 
     var button = document.createElement("button");
     var image = document.createElement("img");
-
-    /*
-    set button to close anchor summary list
-    If display none, block, etc
-    */
     
     button.onclick = function () {
         var anchorList = document.getElementById("anchorList");
