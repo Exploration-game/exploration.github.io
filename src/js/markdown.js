@@ -165,7 +165,7 @@ function setAnchor() {
     for (i = 0; i < childDivs.length; i++) {
         var childDiv = childDivs[i];
         var textPre = childDiv.textContent;
-        var text = textPre.replaceAll(" ", "_");
+        var text = textPre.replaceAll(" ", "-");
         var anchor = document.createElement("a");
         anchor.href = "#" + text;
         anchor.id = text;
