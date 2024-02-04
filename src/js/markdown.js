@@ -192,22 +192,22 @@ function setAnchor() {
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h4") {
             anchorOnList.textContent = "#4 " + textPre;
             anchor.textContent = "####";
-            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: x-small;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h5") {
             anchorOnList.textContent = "#5 " + textPre;
             anchor.textContent = "#####";
-            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: xx-small;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h6") {
             anchorOnList.textContent = "#6 " + textPre;
             anchor.textContent = "######";
-            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: xx-small;";
         }
         else {
             anchorOnList.textContent = "#7+ " + textPre;
             anchor.textContent = "#7+";
-            anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: x-small;";
+            anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: xx-small;";
         }
         anchorList.appendChild(anchorOnList);
     }
