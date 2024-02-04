@@ -5,6 +5,9 @@ const parseMarkdown = (text) => {
 
         .replace(/([^!])\[([^\[]+)\]\(([^\)]+)\)/gim, '$1<a href=\"$3\">$2</a>') // <a>
         .replace(/!\[([^\[]+)\]\(([^\)]+)\)/gim, '<img src=\"$2\" alt=\"$1\" />') // <img>
+        .replace(/^###### (.*$)/gim, '<h6>$1</h6>') // h6 tag
+        .replace(/^##### (.*$)/gim, '<h5>$1</h5>') // h5 tag
+        .replace(/^#### (.*$)/gim, '<h4>$1</h4>') // h4 tag
         .replace(/^### (.*$)/gim, '<h3>$1</h3>') // h3 tag
         .replace(/^## (.*$)/gim, '<h2>$1</h2>') // h2 tag
         .replace(/^# (.*$)/gim, '<h1>$1</h1>') // h1 tag
@@ -16,7 +19,7 @@ const parseMarkdown = (text) => {
 
         .replace(/\*\*(.*?)\*\*/gm, '<b>$1</b>') // bold text
         .replace(/\*(?![^]*(`{1,3}|<|&gt;|<code>\s*|<textarea>\s*)).*?(?=\s*(?!`{0,3}|<\/textarea>)|<|\/code>)/gm, '<em>$&</em>') // italic text inside code or textarea tags
-        // .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
+        .replace(/\*(.*?)\*/gm, '<i>$1</i>') // italic text
         .replace(/\_\_(.*?)\_\_/gm, '<u>$1</u>') // underline
 
         .replace(/\n\s?\*\s*(.*)/gim, '<ul>\n\t<li>$1</li>\n</ul>') // <ul>
@@ -172,24 +175,39 @@ function setAnchor() {
         var anchorOnList = document.createElement("a");
         anchorOnList.href = "#" + text;
         if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
-            anchorOnList.textContent = "- " + textPre;
-            anchor.textContent = "#-";
+            anchorOnList.textContent = "#1 " + textPre;
+            anchor.textContent = "#";
             anchorOnList.style = "padding-left:0px;font-size: large;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
-            anchorOnList.textContent = "# " + textPre;
+            anchorOnList.textContent = "#2 " + textPre;
             anchor.textContent = "##";
             anchorOnList.style = "padding-left:15px;text-decoration:none;font-size: medium;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
-            anchorOnList.textContent = "~ " + textPre;
-            anchor.textContent = "#~";
+            anchorOnList.textContent = "#3 " + textPre;
+            anchor.textContent = "###";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+        }
+        else if (childDivs[i].tagName.toLocaleLowerCase() === "h4") {
+            anchorOnList.textContent = "#4 " + textPre;
+            anchor.textContent = "####";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+        }
+        else if (childDivs[i].tagName.toLocaleLowerCase() === "h5") {
+            anchorOnList.textContent = "#5 " + textPre;
+            anchor.textContent = "#####";
+            anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+        }
+        else if (childDivs[i].tagName.toLocaleLowerCase() === "h6") {
+            anchorOnList.textContent = "#6 " + textPre;
+            anchor.textContent = "######";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
         }
         else {
+            anchorOnList.textContent = "#7+ " + textPre;
+            anchor.textContent = "#7+";
             anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: x-small;";
-            anchor.textContent = "--";
-            anchorOnList.textContent = "- " + textPre;
         }
         anchorList.appendChild(anchorOnList);
     }
