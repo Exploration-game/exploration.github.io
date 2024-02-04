@@ -123,7 +123,37 @@ function anchorButton(repo, file, gist) {
     divEdit.appendChild(link);
 }
 
+function setAnchorButton() { 
+    var content = document.querySelector("#anchor");
+
+    var button = document.createElement("button");
+    var image = document.createElement("img");
+
+    /*
+    set button to close anchor summary list
+    If display none, block, etc
+    */
+    
+    button.onclick = function () {
+        var anchorList = document.getElementById("anchorList");
+
+        if (anchorList.style.display === "none") {
+            anchorList.style.display = "grid";
+        }
+        else {
+            anchorList.style.display = "none";
+        }
+    }
+
+    image.classList = "svg";
+    image.src = "/assets/svg/book.svg";
+
+    button.appendChild(image);
+    content.appendChild(button);
+}
+
 function setAnchor() {
+    setAnchorButton();
     var anchorList = document.createElement("div");
     anchorList.id = "anchorList";
     content.appendChild(anchorList);
