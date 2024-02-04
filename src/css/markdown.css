@@ -81,9 +81,14 @@
 @media screen and (max-width: 1280px) {
     #anchorList{
         padding-right: 50px;
-        left: 0vw;
-        top:80vh;
-        width: 25vw;
+
+        left: 5vw;
+        right: 5vw;
+
+        top: 75vh;
+        bottom: 5vh;
+
+        width: 80vw;
     }
     #anchorList>a {
         padding:5px;
