@@ -158,7 +158,18 @@ function setAnchor() {
 
     var anchorTitle = document.createElement("b");
     anchorTitle.textContent = "Sommaire"
-    anchorList.appendChild(anchorTitle);
+
+    var anchorTitleLogo = document.createElement("img");
+    anchorTitleLogo.src = "/assets/svg/book.svg";
+    anchorTitleLogo.classList = "svg";
+    anchorTitleLogo.style = "max-width: 25px; transform: translateY(25%); padding-right: 15px; padding-left: 10px;"
+
+    var divAnchorTitle = document.createElement("div");
+
+    divAnchorTitle.appendChild(anchorTitleLogo);
+    divAnchorTitle.appendChild(anchorTitle);
+    anchorList.appendChild(divAnchorTitle);
+
 
     var childDivs = document.getElementById('markdown').querySelectorAll("h1, h2, h3, h4, h5, h6");
 
@@ -166,6 +177,9 @@ function setAnchor() {
         var childDiv = childDivs[i];
         var textPre = childDiv.textContent;
         var text = textPre.replaceAll(" ", "-");
+        var text = text.replaceAll("'", "");
+        var text = text.replaceAll(":", "");
+        var text = text.replaceAll("@", "");
         var anchor = document.createElement("a");
         anchor.href = "#" + text;
         anchor.id = text;
@@ -177,7 +191,7 @@ function setAnchor() {
         if (childDivs[i].tagName.toLocaleLowerCase() === "h1") {
             anchorOnList.textContent = "#1 " + textPre;
             anchor.textContent = "#";
-            anchorOnList.style = "padding-left:0px;font-size: large;";
+            anchorOnList.style = "padding-left:5px;font-size: large;";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
             anchorOnList.textContent = "#2 " + textPre;

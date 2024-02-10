@@ -26,8 +26,7 @@
     text-decoration: underline;
     text-decoration-color: var(--link-color);
 
-    padding-bottom: 12px;
-    padding-top: 12px;
+    padding-top: 50px;
 }
 
 #anchorList{
@@ -82,13 +81,12 @@
     #anchorList{
         padding-right: 50px;
 
-        left: 5vw;
-        right: 5vw;
+        left: 2.5vw;
 
         top: 75vh;
         bottom: 5vh;
 
-        width: 80vw;
+        width: 75vw;
     }
     #anchorList>a {
         padding:5px;
