@@ -2,8 +2,8 @@
 #editAnchor>img,
 #editAnchor>a>button>img,
 #anchor>button>img {
-    width: 2vw;
-    height: 2vw;
+    width: 25px;
+    height: 25px;
 
     margin: 5px;
 }
@@ -38,7 +38,7 @@
 
 @media screen and (max-width: 1024px) {
     #anchor {
-        right: 1.5vw;
+        right: 0vw;
     }
 }
 

@@ -180,6 +180,8 @@ function setAnchor() {
         var text = text.replaceAll("'", "");
         var text = text.replaceAll(":", "");
         var text = text.replaceAll("@", "");
+        var text = text.replaceAll("(", "");
+        var text = text.replaceAll(")", "");
         var anchor = document.createElement("a");
         anchor.href = "#" + text;
         anchor.id = text;
