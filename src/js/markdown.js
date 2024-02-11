@@ -168,6 +168,94 @@ function setAnchor() {
 
     divAnchorTitle.appendChild(anchorTitleLogo);
     divAnchorTitle.appendChild(anchorTitle);
+
+    var check = document.createElement("div");
+    check.classList = "check";
+    check.style = "padding:25px;";
+    var checkbox = document.createElement("div");
+    checkbox.classList = "checkbox";
+    var input = document.createElement("input");
+    input.type = "checkbox";
+    var isOn = false;
+    input.onclick = () => {
+        var list = document.getElementById('anchorList').getElementsByClassName("summary-hidder");
+
+        if (isOn) {
+            isOn = false;
+
+        } else {
+            isOn = true;
+        }
+
+        console.log("run");
+        for (i = 0; i < list.length; i++) {
+            var childDiv = list[i];
+            if (isOn) {
+                childDiv.style.display = "none";
+            } else {
+                childDiv.style.display = "block";
+            }
+            console.log("run child");
+        }
+    };
+    var textCheck = document.createElement("p");
+    textCheck.textContent = "Titre #3 +";
+    textCheck.style = "padding:10px;";
+    var span = document.createElement("span");
+
+
+
+    //
+
+    var check2 = document.createElement("div");
+    check2.classList = "check";
+    check2.style = "padding:25px;";
+    var checkbox2 = document.createElement("div");
+    checkbox2.classList = "checkbox";
+    var input2 = document.createElement("input");
+    input2.type = "checkbox";
+    var isOn2 = false;
+    input2.onclick = () => {
+        var list2 = document.getElementById('anchorList').getElementsByClassName("summary-h2");
+
+        if (isOn2) {
+            isOn2 = false;
+
+        } else {
+            isOn2 = true;
+        }
+
+        console.log("run");
+        for (i = 0; i < list2.length; i++) {
+            var childDiv2 = list2[i];
+            if (isOn2) {
+                childDiv2.style.display = "none";
+            } else {
+                childDiv2.style.display = "block";
+            }
+            console.log("run child");
+        }
+    };
+    var textCheck2 = document.createElement("p");
+    textCheck2.textContent = "Titre #2";
+    textCheck2.style = "padding:10px;";
+    var span2 = document.createElement("span");
+
+
+    check2.appendChild(checkbox2);
+    check2.appendChild(textCheck2);
+    checkbox2.appendChild(input2);
+    checkbox2.appendChild(span2);
+    divAnchorTitle.appendChild(check2);
+
+    //
+
+    check.appendChild(checkbox);
+    check.appendChild(textCheck);
+    checkbox.appendChild(input);
+    checkbox.appendChild(span);
+    divAnchorTitle.appendChild(check);
+
     anchorList.appendChild(divAnchorTitle);
 
 
@@ -194,36 +282,43 @@ function setAnchor() {
             anchorOnList.textContent = "#1 " + textPre;
             anchor.textContent = "#";
             anchorOnList.style = "padding-left:5px;font-size: large;";
+            anchorOnList.className = "summary-h1";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h2") {
             anchorOnList.textContent = "#2 " + textPre;
             anchor.textContent = "##";
             anchorOnList.style = "padding-left:15px;text-decoration:none;font-size: medium;";
+            anchorOnList.className = "summary-h2";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h3") {
             anchorOnList.textContent = "#3 " + textPre;
             anchor.textContent = "###";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: small;";
+            anchorOnList.className = "summary-hidder";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h4") {
             anchorOnList.textContent = "#4 " + textPre;
             anchor.textContent = "####";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: x-small;";
+            anchorOnList.className = "summary-hidder";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h5") {
             anchorOnList.textContent = "#5 " + textPre;
             anchor.textContent = "#####";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: xx-small;";
+            anchorOnList.className = "summary-hidder";
         }
         else if (childDivs[i].tagName.toLocaleLowerCase() === "h6") {
             anchorOnList.textContent = "#6 " + textPre;
             anchor.textContent = "######";
             anchorOnList.style = "padding-left:45px;text-decoration:none;font-size: xx-small;";
+            anchorOnList.className = "summary-hidder";
         }
         else {
             anchorOnList.textContent = "#7+ " + textPre;
             anchor.textContent = "#7+";
             anchorOnList.style = "padding-left:60px;text-decoration:none;font-size: xx-small;";
+            anchorOnList.className = "summary-hidder";
         }
         anchorList.appendChild(anchorOnList);
     }
